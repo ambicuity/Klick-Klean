@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>__MSG_welcomeDocumentTitle__</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">__MSG_skipToContent__</a>
+  <main class="welcome-shell" id="main-content">
+    <header class="zone hero">
+      <p class="eyebrow">__MSG_extensionName__</p>
+      <h1>__MSG_welcomeTitle__</h1>
+      <p class="hero-copy">__MSG_welcomeIntro__</p>
+      <p class="warn">__MSG_welcomePermanent__</p>
+    </header>
+
+    <section class="zone card">
+      <h2>__MSG_welcomeHowTo__</h2>
+      <ol>
+        <li>__MSG_welcomeStep1__</li>
+        <li>__MSG_welcomeStep2__</li>
+        <li>__MSG_welcomeStep3__</li>
+        <li>__MSG_welcomeStep4__</li>
+        <li>__MSG_welcomeStep5__</li>
+      </ol>
+    </section>
+
+    <section class="zone card">
+      <h2>__MSG_welcomeNextSteps__</h2>
+      <p>__MSG_welcomeIncognito__</p>
+      <p>__MSG_optionsPrivacyLine__</p>
+      <p id="shortcutCurrent" class="shortcut-current"></p>
+      <p id="shortcutHelp" class="shortcut-help" role="status" aria-live="polite"></p>
+      <div class="actions">
+        <a class="btn" href="/options/options.html">__MSG_welcomeOpenSettings__</a>
+        <button id="openShortcutSettings" class="btn ghost" type="button">__MSG_shortcutChangeCta__</button>
+      </div>
+    </section>
+
+    <footer class="zone zone--support">
+      <p class="footer-meta">__MSG_welcomeVersionLabel__ __MSG_version__</p>
+      <p class="footer-meta">__MSG_welcomeContactLabel__ <a href="mailto:__MSG_contactEmail__">__MSG_contactEmail__</a></p>
+      <p class="footer-meta"><a href="../privacy.html" target="_blank">Privacy Policy</a></p>
+      <p>
+        <a class="support-link" href="https://buymeacoffee.com/ritesh.rana" target="_blank" rel="noopener noreferrer">
+          <svg class="support-link__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 6h14v8a4 4 0 0 1-4 4H9a6 6 0 0 1-6-6V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M17 8h1a3 3 0 0 1 0 6h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>__MSG_buyMeACoffee__</span>
+        </a>
+      </p>
+      <p class="footer-meta">__MSG_byline__</p>
+    </footer>
+  </main>
+  <script src="../i18n.js"></script>
+  <script src="../shared/shortcuts.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>

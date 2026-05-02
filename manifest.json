@@ -1,0 +1,36 @@
+{
+  "action": {
+    "default_icon": "static/icon-128.png",
+    "default_title": "__MSG_extensionName__",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      }
+    }
+  },
+  "default_locale": "en",
+  "description": "__MSG_extensionDescription__",
+  "homepage_url": "https://riteshrana.engineer",
+  "icons": {
+    "48": "static/icon-48.png",
+    "128": "static/icon-128.png"
+  },
+  "manifest_version": 3,
+  "minimum_chrome_version": "88",
+  "name": "__MSG_extensionName__",
+  "options_page": "options/options.html",
+  "permissions": [
+    "browsingData",
+    "notifications",
+    "storage",
+    "tabs"
+  ],
+  "version": "1.0.0"
+}

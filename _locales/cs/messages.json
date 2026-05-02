@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "Vybrané úkoly čištění dokončeny.",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "Čištění nebylo možné úplně dokončit.",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "Čištění již běží. Čekejte prosím.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "Tento požadavek se nepodařilo zpracovat.",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "Než budete pokračovat, vyberte alespoň jednu kategorii čištění.",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "Tato akce není podporována.",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "Rychle odstraňte svá data procházení včetně karet/oken, historie, souborů cookie, historie stahování, dat formulářů a úložiště webu v mezipaměti.",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "Mezipaměti aplikací webových stránek",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "Soubory v mezipaměti",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "data cacheStorage",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "Uložené soubory cookie",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "Historie stahování",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "Souborové systémy webových stránek",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "Data formulářů",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "Historie procházení",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "Indexovaná data webových stránek",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "Data localStorage webových stránek",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "Servisní pracovníci webových stránek",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "Zavřete všechna okna a karty",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "Data WebSQL webových stránek",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "Klikněte pro kontrolu předvoleb čištění.",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "Vyčištění Klick Klean bylo dokončeno",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "Počkejte prosím, než bude čištění probíhat.",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean čistí vybraná data",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "Kategorie úklidu",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "Máte zpětnou vazbu nebo návrhy? Napište nám na contact@riteshrana.engineer",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "Klikněte na Klean: Možnosti",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "Nastavení zkušeností",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "Tip: Pomocí klávesových zkratek Ctrl + Shift + E (Cmd + Shift + E na macOS) rychle otevřete Klick Klean.",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "Zavřete všechna okna a karty (anonymní okna lze ovlivnit pouze v případě, že je toto rozšíření povoleno pro anonymní režim)",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "Zobrazovat systémová oznámení o průběhu čištění",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "Poznámka: Funkce čištění mohou trvale odstranit data a nemusí být vratné.",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "Soukromí: Během čištění neopustí vaše zařízení žádná data o prohlížení.",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "Uložit nastavení",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "Nastavení uloženo!",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "Děkujeme, že používáte Klick Klean. Vyberte typy dat procházení, které může toto rozšíření čistit:",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "Některé vybrané kategorie čištění nejsou v tomto kontextu podporovány.",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "Zpět na recenzi",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "Zrušit",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "Vyberte kategorie čištění",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "Vybrali jste kategorie, které mohou odstraňovat relace nebo zavírat okna. Pokračujte potvrzením.",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "Potvrďte vyčištění",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "Potvrďte a vyčistěte",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "Pokračovat / vyčistit",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "Anonymní data lze ovlivnit pouze v případě, že je toto rozšíření povoleno pro anonymní režim v chrome://extensions.",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "Zatím nejsou vybrány žádné kategorie čištění.",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean používá rozhraní API pro čištění Chrome pouze pro kategorie, které si vyberete. Vyčištění probíhá lokálně ve vašem prohlížeči a na externí servery se neodesílají žádná data o prohlížení.",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "Proč jsou tato oprávnění vyžadována",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "Uložit jako výchozí",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "Úklid zrušen. Nebyla odstraněna žádná data.",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "Čekání na potvrzení.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "Před čištěním zkontrolujte vysoce rizikové akce a potvrďte.",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "Probíhá úklid...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "Zkontrolujte vybrané kategorie čištění a před smazáním dat potvrďte.",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "Upozornění pro vybrané funkce",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "Změnit klávesovou zkratku",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "Aktuální zkratka: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "Pokud se editor zkratek neotevřel, změňte jej pomocí stránky Rozšíření > Klávesové zkratky.",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "Nenastaveno",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "Okna a karty prohlížeče byly podle požadavku zavřeny.",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "Tím vymažete soubory uložené v mezipaměti. Po vymazání mezipaměti se webové stránky mohou dočasně načítat pomaleji.",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "Tím se odstraní data z mezipaměti webu, která používají webové aplikace a servisní pracovníci. Funkce offline může přestat fungovat, dokud weby znovu nenačtou data.",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "Tím se odstraní soubory cookie a data stránek. Můžete být odhlášeni z webových stránek a předvolby webových stránek nebo relace se mohou resetovat.",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "Tím se vymaže seznam/historie stahování. Nemusí nutně smazat stažené soubory z vašeho počítače.",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "Tím se odstraní data systému souborů webových stránek. Může dojít ke ztrátě místně uložených souborů webových stránek nebo dat offline aplikací.",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "Tím se odstraní uložené položky automatického vyplňování/formulářů. Můžete ztratit uložené návrhy formulářů.",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "Tím se z Chromu odstraní záznamy historie procházení. Smazanou historii nemusí být možné obnovit z prohlížeče. Chování synchronizované historie závisí na nastavení synchronizace Chromu.",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "Tím se odstraní databáze IndexedDB používané weby a webovými aplikacemi. Offline data, koncepty nebo místně uložený obsah aplikací mohou být ztraceny.",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "Tím se odstraní data localStorage uložená weby. Předvolby, místní relace, koncepty nebo stav aplikace mohou být ztraceny.",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "Tím se odstraní data servisních pracovníků tam, kde je to podporováno. Chování offline, chování push a chování webových aplikací uložených v mezipaměti se mohou resetovat, dokud weby znovu nezaregistrují pracovníky.",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "Tím se zavřou otevřená okna a karty prohlížeče. Neuložená práce může být ztracena. Anonymní okna a karty lze ovlivnit pouze v případě, že je rozšíření povoleno v anonymním režimu. Tuto akci nelze automaticky vrátit zpět.",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "Tím se odstraní data WebSQL používaná staršími weby. Některé starší webové aplikace mohou ztratit lokálně uložená data.",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "Kontakt:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "Vítejte v Klick Klean",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "Jak používat Klick Klean:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "Anonymní poznámka: Rozšíření pro Chrome nemohou anonymní data ovlivnit, pokud toto rozšíření pro anonymní režim výslovně nepovolíte na stránce chrome://extensions.",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean vám pomůže rychle odstranit vybraná data prohlížení z Chromu.",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "Další kroky",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "Otevřete nastavení rozšíření",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "Otevřete stránku rozšíření",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "Upozornění: Čistící akce mohou trvale odstranit data prohlížeče a nemusí být obnovitelné.",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. Klikněte na ikonu rozšíření Klick Klean.",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. Vyberte datové typy, které chcete vyčistit.",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. Zkontrolujte varování pro vybrané funkce.",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. Potvrďte akci čištění.",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. Některá data nemusí být odstranitelná v závislosti na oprávněních Chrome, aktivních relacích, omezeních anonymního režimu a zásadách webu/prohlížeče.",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "Vítejte v Klick Klean",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "Verze:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "Cleaned:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "Přeskočeno:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "Nelze použít:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "Selhalo:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "Poznámka: Chrome nehlásí přesné počty smazaných položek. Kategorie uvedené jako vyčištěné byly vybrány k odstranění, ale rozšíření nemůže ověřit, kolik jednotlivých položek bylo ovlivněno.",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "Omezení:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "Seznam povolených nemůže tuto kategorii ochránit před globálním vyčištěním, protože Chrome pro ni nepodporuje vyloučení původu.",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "Vyčištění v rozsahu vyžaduje platný původ webu. Nebyl uveden žádný platný původ.",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "Některé vybrané kategorie jsou dostupné pouze pro globální vyčištění a byly pro tento web přeskočeny.",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "Ochrana osobních údajů a oprávnění",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "Proč toto rozšíření potřebuje oprávnění browsingData?",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean používá rozhraní Chrome browsingData API k odstranění typů dat, které vyberete. Bez tohoto oprávnění nemůže rozšíření smazat žádná data o prohlížení. Oprávnění se použije pouze tehdy, když explicitně spustíte akci čištění.",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "Veškeré zpracování je lokální",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "Všechny operace čištění probíhají výhradně ve vašem prohlížeči. Na externí servery se nikdy neodesílají žádné údaje o prohlížení, soubory cookie, historie ani žádné jiné osobní informace. Rozšíření nemá žádný backend, žádné analýzy a žádná síťová volání.",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "Žádná telemetrie nebo sledování",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean neshromažďuje, nepřenáší ani neukládá žádná uživatelská data na externích serverech. Neexistují žádné analýzy, žádné sledovací pixely, žádné skripty třetích stran a žádná reklama. Rozšíření po instalaci funguje zcela offline.",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "Jak je uložen seznam povolených",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "Váš seznam povolených (chráněné weby) je uložen místně v úložišti rozšíření Chrome ve vašem zařízení. Nikdy se nesynchronizuje s externími servery. Pokud rozšíření odinstalujete, tato data se automaticky odstraní.",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "Známá omezení",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "Některé kategorie čištění (jako je historie procházení a stahování) lze odstranit pouze globálně, nikoli pro konkrétní weby. Chrome nehlásí, kolik položek bylo skutečně smazáno. Anonymní data lze ovlivnit pouze v případě, že je u rozšíření povolen anonymní režim. Některé zastaralé datové typy (AppCache, WebSQL) již Chrome nepodporuje.",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "Vymaže nedávnou historii, soubory cookie, mezipaměť, stahování a data formulářů za posledních 24 hodin. Můžete být odhlášeni z některých webových stránek.",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "Resetuje úložiště a mezipaměť pouze pro aktuální web. Může opravit problémy s načítáním nebo chováním. Budete odhlášeni z tohoto webu.",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "Globálně odstraní všechny soubory cookie. Budete odhlášeni ze všech webových stránek. Tím se neodstraní historie procházení ani soubory uložené v mezipaměti.",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "Odstraní veškeré úložiště webových stránek globálně včetně mezipaměti, localStorage, IndexedDB a servisních pracovníků. Webové aplikace mohou ztratit offline data a je třeba je znovu načíst.",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "Resetování aktuálního webu zaměřené na vývojáře. Vymaže veškeré úložiště, mezipaměť, servisní pracovníky a soubory cookie pouze pro aktivní web. Užitečné pro ladění webových aplikací.",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "Odebere globálně všechny podporované typy dat procházení. Toto je nejničivější možnost. Pouze expertní režim. Budete odhlášeni ze všech webů a ztratíte všechna data místních webových aplikací.",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL bylo z Chrome odstraněno. Výběr této možnosti nebude mít žádný účinek.",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "Povolení souborů cookie webu",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "Oprávnění k obrázku webu",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "Oprávnění JavaScript webu",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "Oprávnění k umístění webu",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "Oprávnění pluginu webu",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "Oprávnění vyskakovacího okna webu",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "Oprávnění k oznámení webu",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "Oprávnění webu na celou obrazovku",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "Oprávnění k uzamčení myši webu",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "Oprávnění k mikrofonu webu",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "Oprávnění ke kameře webu",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "Oprávnění pluginů mimo izolovaný prostor",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "Povolení automatického stahování webu",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "Tím se obnoví výchozí nastavení všech oprávnění souborů cookie webu. Weby mohou znovu požádat o povolení.",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "Tím se obnoví výchozí nastavení všech oprávnění k obrázkům webu. Weby mohou znovu požádat o povolení.",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "Tím se resetují všechna oprávnění JavaScriptu webu na výchozí. Některé weby nemusí fungovat správně, dokud nebudou obnovena oprávnění.",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "Tím se obnoví výchozí nastavení všech oprávnění k umístění webu. Weby mohou znovu požádat o přístup k poloze.",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "Tím se resetují všechna oprávnění pluginu webu na výchozí.",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "Tím se obnoví výchozí nastavení všech vyskakovacích oprávnění webu. Vyskakovací okna mohou být blokována nebo povolena na základě výchozího nastavení.",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "Tím se obnoví výchozí nastavení všech oprávnění pro oznámení webu. Weby mohou znovu požádat o povolení oznámení.",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "Tím se všechna oprávnění webu na celou obrazovku resetují na výchozí.",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "Tím se všechna oprávnění uzamčení myši webu obnoví na výchozí.",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "Tím se resetují všechna oprávnění k mikrofonu webu na výchozí. Weby mohou znovu požádat o přístup k mikrofonu.",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "Tím se obnoví výchozí nastavení všech oprávnění pro webovou kameru. Weby mohou znovu požádat o přístup ke kameře.",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "Tím se obnoví výchozí nastavení všech oprávnění pluginu, který není součástí izolovaného prostoru.",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "Tím se obnoví výchozí nastavení všech oprávnění k automatickému stahování webu.",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "Plánovaný úklid",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "Povolit automatické plánované čištění",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "Interval čištění",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "Každou hodinu",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "Každý den",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "Každý týden",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "Typy původu",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "Nechráněné webové stránky (normální procházení)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "Chráněné webové stránky (nainstalované aplikace)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "Rozšíření a zabalené aplikace",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "Nastavení obsahu",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "Během čištění resetujte oprávnění webu",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "Pokud je tato možnost povolena, vybraná oprávnění webu (soubory cookie, obrázky, JavaScript, oznámení atd.) se během čištění resetují na výchozí hodnoty.",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "Obnovení relace",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "Obnovit nedávno zavřené karty",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "Obnovování relací...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "Obnoveno $1nedávno zavřených karet/oken.",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "Nelze obnovit relace. Nebyly nalezeny žádné nedávno uzavřené relace.",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "Obnovte zavřené karty",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "Synchronizováno s nastavením Chromu",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

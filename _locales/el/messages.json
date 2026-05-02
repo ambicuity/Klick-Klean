@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "Ολοκληρώθηκαν οι επιλεγμένες εργασίες καθαρισμού.",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "Δεν ήταν δυνατή η πλήρης εκκαθάριση.",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "Η εκκαθάριση εκτελείται ήδη. Παρακαλώ περιμένετε.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "Δεν ήταν δυνατή η επεξεργασία αυτού του αιτήματος.",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "Επιλέξτε τουλάχιστον μία κατηγορία καθαρισμού πριν συνεχίσετε.",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "Αυτή η ενέργεια δεν υποστηρίζεται.",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "Διαγράψτε γρήγορα τα δεδομένα περιήγησής σας, συμπεριλαμβανομένων των καρτελών/παραθύρων, του ιστορικού, των cookie, του ιστορικού λήψεων, των δεδομένων φόρμας και της προσωρινής αποθήκευσης του ιστότοπου.",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "Κρυφές μνήμες εφαρμογών ιστοτόπων",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "Αποθηκευμένα αρχεία",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "Δεδομένα cacheStorage",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "Αποθηκευμένα cookies",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "Ιστορικό λήψεων",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "Συστήματα αρχείων ιστοσελίδων",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "Δεδομένα φορμών",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "Ιστορικό περιήγησης",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "Δεδομένα IndexedDB ιστοτόπων",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "Δεδομένα τοπικής αποθήκευσης ιστοτόπων",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "Υπάλληλοι εξυπηρέτησης ιστοσελίδων",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "Κλείστε όλα τα παράθυρα και τις καρτέλες",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "Δεδομένα WebSQL ιστοτόπων",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "Κάντε κλικ για να ελέγξετε τις προτιμήσεις εκκαθάρισης.",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "Ο καθαρισμός του Klick Klean ολοκληρώθηκε",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "Περιμένετε όσο η εκκαθάριση είναι σε εξέλιξη.",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Το Klick Klean καθαρίζει επιλεγμένα δεδομένα",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "Κατηγορίες καθαρισμού",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "Έχετε σχόλια ή προτάσεις; Στείλτε μας email στο contact@riteshrana.engineer",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "Κάντε κλικ στο Klean: Επιλογές",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "Ρυθμίσεις εμπειρίας",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "Συμβουλή: Χρησιμοποιήστε την εντολή πληκτρολογίου Ctrl + Shift + E (Cmd + Shift + E στο macOS) για να ανοίξετε γρήγορα το Klick Klean.",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "Κλείστε όλα τα παράθυρα και τις καρτέλες (τα παράθυρα ανώνυμης περιήγησης μπορούν να επηρεαστούν μόνο όταν αυτή η επέκταση είναι ενεργοποιημένη για ανώνυμη περιήγηση)",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "Εμφάνιση ειδοποιήσεων συστήματος για την πρόοδο της εκκαθάρισης",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "Σημείωση: οι λειτουργίες εκκαθάρισης ενδέχεται να καταργήσουν οριστικά τα δεδομένα και ενδέχεται να μην είναι αναστρέψιμες.",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "Απόρρητο: δεν φεύγουν δεδομένα περιήγησης από τη συσκευή σας κατά την εκκαθάριση.",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "Αποθήκευση ρυθμίσεων",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "Οι ρυθμίσεις αποθηκεύτηκαν!",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "Ευχαριστούμε που χρησιμοποιείτε το Klick Klean. Επιλέξτε τους τύπους δεδομένων περιήγησης που επιτρέπεται να καθαρίζει αυτή η επέκταση:",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "Ορισμένες επιλεγμένες κατηγορίες καθαρισμού δεν υποστηρίζονται σε αυτό το πλαίσιο.",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "Επιστροφή στην κριτική",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "Ματαίωση",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "Επιλέξτε κατηγορίες καθαρισμού",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "Επιλέξατε κατηγορίες που μπορούν να καταργήσουν περιόδους σύνδεσης ή να κλείσουν παράθυρα. Επιβεβαιώστε για να συνεχίσετε.",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "Επιβεβαιώστε τον καθαρισμό",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "Επιβεβαιώστε και καθαρίστε",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "Συνέχεια / Καθαρισμός",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "Τα δεδομένα ανώνυμης περιήγησης μπορούν να επηρεαστούν μόνο όταν αυτή η επέκταση είναι ενεργοποιημένη για ανώνυμη περιήγηση στο chrome://extensions.",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "Δεν έχουν επιλεγεί ακόμη κατηγορίες καθαρισμού.",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Το Klick Klean χρησιμοποιεί μόνο API εκκαθάρισης του Chrome για τις κατηγορίες που επιλέγετε. Η εκκαθάριση εκτελείται τοπικά στο πρόγραμμα περιήγησής σας και δεν αποστέλλονται δεδομένα περιήγησης σε εξωτερικούς διακομιστές.",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "Γιατί απαιτούνται αυτές οι άδειες",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "Αποθήκευση ως προεπιλογή",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "Η εκκαθάριση ακυρώθηκε. Δεν καταργήθηκαν δεδομένα.",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "Αναμονή για επιβεβαίωση.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "Ελέγξτε τις ενέργειες υψηλού κινδύνου και επιβεβαιώστε πριν από τον καθαρισμό.",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "Εκτέλεση καθαρισμού...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "Ελέγξτε τις επιλεγμένες κατηγορίες καθαρισμού και, στη συνέχεια, επιβεβαιώστε πριν διαγράψετε δεδομένα.",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "Προειδοποιήσεις για επιλεγμένα χαρακτηριστικά",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "Αλλαγή συντόμευσης πληκτρολογίου",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "Τρέχουσα συντόμευση: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "Εάν το πρόγραμμα επεξεργασίας συντομεύσεων δεν άνοιξε, χρησιμοποιήστε τη σελίδα Επεκτάσεις > Συντομεύσεις πληκτρολογίου για να το αλλάξετε.",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "Δεν έχει οριστεί",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "Τα παράθυρα και οι καρτέλες του προγράμματος περιήγησης έκλεισαν όπως ζητήθηκε.",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "Αυτό διαγράφει τα αποθηκευμένα αρχεία. Οι ιστότοποι ενδέχεται να φορτώνουν πιο αργά προσωρινά μετά την εκκαθάριση της προσωρινής μνήμης.",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "Αυτό καταργεί τα δεδομένα της προσωρινής μνήμης του ιστότοπου που χρησιμοποιούνται από εφαρμογές ιστού και εργαζόμενους σε υπηρεσίες. Η λειτουργία εκτός σύνδεσης ενδέχεται να σταματήσει να λειτουργεί έως ότου οι ιστότοποι φορτώσουν ξανά τα δεδομένα.",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "Αυτό αφαιρεί τα cookie και τα δεδομένα ιστότοπου. Ενδέχεται να έχετε αποσυνδεθεί από ιστότοπους και οι προτιμήσεις ή οι περίοδοι σύνδεσης ιστότοπου ενδέχεται να επαναφερθούν.",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "Αυτό διαγράφει τη λίστα/ιστορικό λήψεων. Δεν διαγράφει απαραίτητα αρχεία που έχετε λάβει από τον υπολογιστή σας.",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "Αυτό καταργεί τα δεδομένα συστήματος αρχείων ιστότοπου. Τα τοπικά αποθηκευμένα αρχεία ιστότοπου ή τα δεδομένα εφαρμογών εκτός σύνδεσης ενδέχεται να χαθούν.",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "Αυτό καταργεί τις αποθηκευμένες καταχωρίσεις αυτόματης συμπλήρωσης/φόρμας. Μπορεί να χάσετε τις αποθηκευμένες προτάσεις φόρμας.",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "Αυτό καταργεί τα αρχεία ιστορικού περιήγησης από το Chrome. Το διαγραμμένο ιστορικό ενδέχεται να μην είναι ανακτήσιμο από το πρόγραμμα περιήγησης. Η συμπεριφορά του συγχρονισμένου ιστορικού εξαρτάται από τις ρυθμίσεις συγχρονισμού του Chrome.",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "Αυτό καταργεί τις βάσεις δεδομένων IndexedDB που χρησιμοποιούνται από ιστότοπους και εφαρμογές ιστού. Μπορεί να χαθούν δεδομένα εκτός σύνδεσης, πρόχειρα ή τοπικά αποθηκευμένο περιεχόμενο εφαρμογής.",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "Αυτό καταργεί τα δεδομένα τοπικής αποθήκευσης που αποθηκεύονται από ιστότοπους. Οι προτιμήσεις, οι τοπικές περίοδοι σύνδεσης, τα πρόχειρα ή η κατάσταση εφαρμογής ενδέχεται να χαθούν.",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "Αυτό καταργεί τα δεδομένα του εργαζομένου σέρβις όπου υποστηρίζονται. Η συμπεριφορά εκτός σύνδεσης, η συμπεριφορά push και η συμπεριφορά της προσωρινής αποθήκευσης εφαρμογών ιστού ενδέχεται να επαναφερθούν έως ότου οι ιστότοποι εγγραφούν ξανά εργαζόμενοι.",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "Αυτό θα κλείσει τα ανοιχτά παράθυρα και καρτέλες του προγράμματος περιήγησης. Η μη αποθηκευμένη εργασία μπορεί να χαθεί. Τα παράθυρα και οι καρτέλες ανώνυμης περιήγησης μπορούν να επηρεαστούν μόνο εάν η επέκταση επιτρέπεται σε κατάσταση ανώνυμης περιήγησης. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί αυτόματα.",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "Αυτό αφαιρεί τα δεδομένα WebSQL που χρησιμοποιούνται από παλαιότερους ιστότοπους. Ορισμένες παλαιότερες εφαρμογές ιστού ενδέχεται να χάσουν τοπικά αποθηκευμένα δεδομένα.",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "Επαφή:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "Καλώς ήρθατε στο Klick Klean",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "Πώς να χρησιμοποιήσετε το Klick Klean:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "Σημείωση ανώνυμης περιήγησης: Οι επεκτάσεις του Chrome δεν μπορούν να επηρεάσουν τα δεδομένα ανώνυμης περιήγησης εκτός και αν ενεργοποιήσετε ρητά αυτήν την επέκταση για ανώνυμη περιήγηση στο chrome://extensions.",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Το Klick Klean σάς βοηθά να αφαιρέσετε γρήγορα επιλεγμένα δεδομένα περιήγησης από το Chrome.",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "Επόμενα βήματα",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "Ανοίξτε τις ρυθμίσεις επέκτασης",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "Ανοίξτε τη σελίδα επεκτάσεων",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "Προειδοποίηση: οι ενέργειες εκκαθάρισης ενδέχεται να διαγράψουν οριστικά τα δεδομένα του προγράμματος περιήγησης και ενδέχεται να μην είναι ανακτήσιμα.",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. Κάντε κλικ στο εικονίδιο επέκτασης Klick Klean.",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. Επιλέξτε τους τύπους δεδομένων που θέλετε να καθαρίσετε.",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. Ελέγξτε τις προειδοποιήσεις για επιλεγμένες λειτουργίες.",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. Επιβεβαιώστε την ενέργεια καθαρισμού.",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. Ορισμένα δεδομένα ενδέχεται να μην μπορούν να αφαιρεθούν ανάλογα με τα δικαιώματα του Chrome, τις ενεργές περιόδους σύνδεσης, τους περιορισμούς ανώνυμης περιήγησης και τις πολιτικές ιστότοπου/προγράμματος περιήγησης.",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "Καλώς ήρθατε στο Klick Klean",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "Εκδοχή:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "Καθαρίστηκε:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "Παράβλεψη:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "Δεν ισχύει:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "Αποτυχημένος:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "Σημείωση: Το Chrome δεν αναφέρει ακριβείς αριθμούς διαγραμμένων στοιχείων. Οι κατηγορίες που αναφέρονται ως καθαρισμένες επιλέχθηκαν για κατάργηση, αλλά η επέκταση δεν μπορεί να επαληθεύσει πόσα μεμονωμένα στοιχεία επηρεάστηκαν.",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "Περιορισμοί:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "Η λίστα επιτρεπόμενων δεν μπορεί να προστατεύσει αυτήν την κατηγορία από την καθολική εκκαθάριση, επειδή το Chrome δεν υποστηρίζει την εξαίρεση προέλευσης για αυτήν.",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "Η εκκαθάριση εύρους απαιτεί έγκυρη προέλευση τοποθεσίας. Δεν δόθηκε έγκυρη προέλευση.",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "Ορισμένες επιλεγμένες κατηγορίες είναι διαθέσιμες μόνο για καθολική εκκαθάριση και παραβλέφθηκαν για αυτόν τον ιστότοπο.",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "Απόρρητο & Άδειες",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "Γιατί αυτή η επέκταση χρειάζεται την άδεια browsingData;",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Το Klick Klean χρησιμοποιεί το Chrome browsingData API για να αφαιρέσει τους τύπους δεδομένων που επιλέγετε. Χωρίς αυτήν την άδεια, η επέκταση δεν μπορεί να διαγράψει δεδομένα περιήγησης. Η άδεια χρησιμοποιείται μόνο όταν ενεργοποιείτε ρητά μια ενέργεια εκκαθάρισης.",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "Όλη η επεξεργασία είναι τοπική",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "Όλες οι λειτουργίες καθαρισμού εκτελούνται εξ ολοκλήρου στο πρόγραμμα περιήγησής σας. Δεν αποστέλλονται ποτέ δεδομένα περιήγησης, cookies, ιστορικό ή οποιαδήποτε άλλη προσωπική πληροφορία σε εξωτερικούς διακομιστές. Η επέκταση δεν έχει backend, δεν έχει αναλυτικά στοιχεία και δεν έχει κλήσεις δικτύου.",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "Χωρίς τηλεμετρία ή παρακολούθηση",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Το Klick Klean δεν συλλέγει, μεταδίδει ή αποθηκεύει δεδομένα χρήστη σε εξωτερικούς διακομιστές. Δεν υπάρχουν αναλυτικά στοιχεία, δεν υπάρχουν pixel παρακολούθησης, δεν υπάρχουν σενάρια τρίτων και δεν υπάρχουν διαφημίσεις. Η επέκταση λειτουργεί εντελώς εκτός σύνδεσης μετά την εγκατάσταση.",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "Πώς αποθηκεύεται η λίστα επιτρεπόμενων",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "Η λίστα επιτρεπόμενων (προστατευμένοι ιστότοποι) αποθηκεύεται τοπικά στον χώρο αποθήκευσης επεκτάσεων του Chrome στη συσκευή σας. Δεν συγχρονίζεται ποτέ με εξωτερικούς διακομιστές. Εάν απεγκαταστήσετε την επέκταση, αυτά τα δεδομένα καταργούνται αυτόματα.",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "Γνωστοί περιορισμοί",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "Ορισμένες κατηγορίες καθαρισμού (όπως το ιστορικό περιήγησης και οι λήψεις) μπορούν να καταργηθούν μόνο παγκοσμίως, όχι για συγκεκριμένους ιστότοπους. Το Chrome δεν αναφέρει πόσα στοιχεία διαγράφηκαν πραγματικά. Τα δεδομένα ανώνυμης περιήγησης μπορούν να επηρεαστούν μόνο εάν η επέκταση είναι ενεργοποιημένη για κατάσταση ανώνυμης περιήγησης. Ορισμένοι τύποι δεδομένων που έχουν καταργηθεί (AppCache, WebSQL) δεν υποστηρίζονται πλέον από το Chrome.",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "Διαγράφει πρόσφατο ιστορικό, cookie, προσωρινή μνήμη, λήψεις και δεδομένα φόρμας από τις τελευταίες 24 ώρες. Μπορεί να έχετε αποσυνδεθεί από ορισμένους ιστότοπους.",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "Επαναφέρει την αποθήκευση και την προσωρινή μνήμη μόνο για την τρέχουσα τοποθεσία. Μπορεί να διορθώσει προβλήματα φόρτωσης ή συμπεριφοράς. Θα αποσυνδεθείτε από αυτόν τον ιστότοπο.",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "Καταργεί όλα τα cookies παγκοσμίως. Θα αποσυνδεθείτε από όλους τους ιστότοπους. Αυτό δεν καταργεί το ιστορικό περιήγησης ή τα αρχεία προσωρινής αποθήκευσης.",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "Καταργεί όλο τον χώρο αποθήκευσης ιστότοπου παγκοσμίως, συμπεριλαμβανομένης της προσωρινής μνήμης, του localStorage, του IndexedDB και των εργαζομένων σε υπηρεσίες. Οι εφαρμογές Ιστού ενδέχεται να χάσουν δεδομένα εκτός σύνδεσης και να χρειαστεί να φορτωθούν ξανά.",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "Επαναφορά με εστίαση στον προγραμματιστή για τον τρέχοντα ιστότοπο. Διαγράφει όλο τον αποθηκευτικό χώρο, την προσωρινή μνήμη, τους εργαζόμενους σε υπηρεσίες και τα cookie μόνο για τον ενεργό ιστότοπο. Χρήσιμο για τον εντοπισμό σφαλμάτων σε εφαρμογές web.",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "Καταργεί όλους τους υποστηριζόμενους τύπους δεδομένων περιήγησης παγκοσμίως. Αυτή είναι η πιο καταστροφική επιλογή. Μόνο ειδικός τρόπος. Θα αποσυνδεθείτε από όλους τους ιστότοπους και θα χάσετε όλα τα δεδομένα τοπικών εφαρμογών ιστού.",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "Το WebSQL έχει αφαιρεθεί από το Chrome. Η ενεργοποίηση αυτής της επιλογής δεν θα έχει κανένα αποτέλεσμα.",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "Δικαιώματα cookie ιστότοπου",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "Δικαιώματα εικόνας ιστότοπου",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "Δικαιώματα JavaScript ιστότοπου",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "Δικαιώματα τοποθεσίας ιστότοπου",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "Δικαιώματα προσθήκης ιστότοπου",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "Δικαιώματα αναδυόμενων παραθύρων ιστότοπου",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "Δικαιώματα ειδοποίησης ιστότοπου",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "Δικαιώματα πλήρους οθόνης ιστότοπου",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "Δικαιώματα κλειδώματος ποντικιού τοποθεσίας",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "Δικαιώματα μικροφώνου ιστότοπου",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "Δικαιώματα κάμερας ιστότοπου",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "Δικαιώματα προσθηκών χωρίς περιβάλλον δοκιμών ιστότοπου",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "Δικαιώματα αυτόματης λήψης ιστότοπου",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "Αυτό επαναφέρει όλα τα δικαιώματα cookie ιστότοπου στις προεπιλογές. Οι ιστότοποι ενδέχεται να ζητήσουν ξανά άδεια.",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "Αυτό επαναφέρει όλα τα δικαιώματα εικόνας ιστότοπου στις προεπιλογές. Οι ιστότοποι ενδέχεται να ζητήσουν ξανά άδεια.",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "Αυτό επαναφέρει όλα τα δικαιώματα JavaScript του ιστότοπου στις προεπιλογές. Ορισμένοι ιστότοποι ενδέχεται να μην λειτουργούν σωστά μέχρι να αποκατασταθούν τα δικαιώματα.",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "Αυτό επαναφέρει όλες τις άδειες τοποθεσίας τοποθεσίας στις προεπιλογές. Οι ιστότοποι ενδέχεται να ζητήσουν ξανά πρόσβαση στην τοποθεσία.",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "Αυτό επαναφέρει όλα τα δικαιώματα προσθήκης ιστότοπου στις προεπιλογές.",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "Αυτό επαναφέρει όλα τα δικαιώματα αναδυόμενων παραθύρων ιστότοπου στις προεπιλογές. Τα αναδυόμενα παράθυρα ενδέχεται να αποκλειστούν ή να επιτραπούν με βάση τις προεπιλεγμένες ρυθμίσεις.",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "Αυτό επαναφέρει όλες τις άδειες ειδοποιήσεων ιστότοπου στις προεπιλογές. Οι ιστότοποι ενδέχεται να ζητήσουν ξανά άδεια ειδοποίησης.",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "Αυτό επαναφέρει όλα τα δικαιώματα πλήρους οθόνης του ιστότοπου στις προεπιλογές.",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "Αυτό επαναφέρει όλα τα δικαιώματα κλειδώματος του ποντικιού τοποθεσίας στις προεπιλογές.",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "Αυτό επαναφέρει όλες τις άδειες μικροφώνου τοποθεσίας στις προεπιλογές. Οι ιστότοποι ενδέχεται να ζητήσουν ξανά πρόσβαση στο μικρόφωνο.",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "Αυτό επαναφέρει όλες τις άδειες κάμερας ιστότοπου στις προεπιλογές. Οι ιστότοποι ενδέχεται να ζητήσουν ξανά πρόσβαση στην κάμερα.",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "Αυτό επαναφέρει όλες τις άδειες προσθηκών χωρίς περιβάλλον δοκιμών του ιστότοπου στις προεπιλογές.",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "Αυτό επαναφέρει όλες τις άδειες αυτόματης λήψης του ιστότοπου στις προεπιλογές.",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "Προγραμματισμένη εκκαθάριση",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "Ενεργοποίηση αυτόματης προγραμματισμένης εκκαθάρισης",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "Διάστημα καθαρισμού",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "Κάθε ώρα",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "Κάθε μέρα",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "Κάθε εβδομάδα",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "Τύποι προέλευσης",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "Μη προστατευμένοι ιστότοποι (κανονική περιήγηση)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "Προστατευμένοι ιστότοποι (εγκατεστημένες εφαρμογές)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "Επεκτάσεις και συσκευασμένες εφαρμογές",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "Ρυθμίσεις περιεχομένου",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "Επαναφορά αδειών τοποθεσίας κατά την εκκαθάριση",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "Όταν είναι ενεργοποιημένα, τα δικαιώματα επιλεγμένων ιστοτόπων (cookies, εικόνες, JavaScript, ειδοποιήσεις κ.λπ.) θα επαναφέρονται στις προεπιλεγμένες τιμές κατά τη διάρκεια της εκκαθάρισης.",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "Επαναφορά συνεδρίας",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "Επαναφορά καρτελών που έκλεισαν πρόσφατα",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "Επαναφορά συνεδριών...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "Έγινε επαναφορά $1καρτελών/παραθύρων που έκλεισαν πρόσφατα.",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "Δεν ήταν δυνατή η επαναφορά των συνεδριών. Δεν βρέθηκαν πρόσφατα κλειστές συνεδρίες.",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "Επαναφορά κλειστών καρτελών",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "Συγχρονίστηκε με τις ρυθμίσεις του Chrome",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "Các nhiệm vụ dọn dẹp đã chọn đã hoàn thành.",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "Việc dọn dẹp không thể hoàn thành đầy đủ.",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "Quá trình dọn dẹp đang chạy. Vui lòng chờ.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "Không thể xử lý yêu cầu này.",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "Chọn ít nhất một danh mục dọn dẹp trước khi tiếp tục.",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "Hành động này không được hỗ trợ.",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "Nhanh chóng xóa dữ liệu duyệt web của bạn bao gồm các tab/cửa sổ, lịch sử, cookie, lịch sử tải xuống, dữ liệu biểu mẫu và bộ nhớ trang web được lưu trong bộ nhớ cache.",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "Bộ nhớ đệm ứng dụng của trang web",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "Tệp được lưu trong bộ nhớ đệm",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "bộ đệmDữ liệu lưu trữ",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "Cookie đã lưu",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "Lịch sử tải xuống",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "Hệ thống tập tin của trang web",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "Dữ liệu biểu mẫu",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "Lịch sử duyệt web",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "Dữ liệu IndexedDB của trang web",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "Dữ liệu lưu trữ cục bộ của trang web",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "Nhân viên dịch vụ của trang web",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "Đóng tất cả các cửa sổ và tab",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "Dữ liệu WebSQL của trang web",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "Nhấp để xem lại tùy chọn dọn dẹp của bạn.",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "Dọn dẹp Klick Klean đã hoàn tất",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "Vui lòng đợi trong khi quá trình dọn dẹp đang diễn ra.",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean đang dọn dẹp dữ liệu đã chọn",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "Danh mục dọn dẹp",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "Có phản hồi hoặc đề xuất? Gửi email cho chúng tôi tại contact@riteshrana.engineer",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "Klick Klean: Tùy chọn",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "Cài đặt trải nghiệm",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "Mẹo: Sử dụng lệnh bàn phím Ctrl + Shift + E (Cmd + Shift + E trên macOS) để mở Klick Klean nhanh chóng.",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "Đóng tất cả các cửa sổ và tab (cửa sổ ẩn danh chỉ có thể bị ảnh hưởng khi tiện ích mở rộng này được bật cho chế độ ẩn danh)",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "Hiển thị thông báo hệ thống về tiến trình dọn dẹp",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "Lưu ý: tính năng dọn dẹp có thể xóa dữ liệu vĩnh viễn và không thể phục hồi được.",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "Quyền riêng tư: không có dữ liệu duyệt web nào được lưu trữ trên thiết bị của bạn trong quá trình dọn dẹp.",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "Lưu cài đặt",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "Đã lưu cài đặt!",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "Cảm ơn bạn đã sử dụng Klick Klean. Chọn loại dữ liệu duyệt web mà tiện ích mở rộng này được phép xóa:",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "Một số danh mục dọn dẹp đã chọn không được hỗ trợ trong ngữ cảnh này.",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "Quay lại xem xét",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "Hủy bỏ",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "Chọn danh mục dọn dẹp",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "Bạn đã chọn các danh mục có thể xóa phiên hoặc đóng cửa sổ. Xác nhận để tiếp tục.",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "Xác nhận dọn dẹp",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "Xác nhận và làm sạch",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "Tiếp tục/Làm sạch",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "Dữ liệu ẩn danh chỉ có thể bị ảnh hưởng khi tiện ích này được bật cho chế độ ẩn danh trong chrome://extensions.",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "Chưa có danh mục dọn dẹp nào được chọn.",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean chỉ sử dụng API dọn dẹp Chrome cho các danh mục bạn chọn. Quá trình dọn dẹp chạy cục bộ trong trình duyệt của bạn và không có dữ liệu duyệt web nào được gửi đến máy chủ bên ngoài.",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "Tại sao cần có những quyền này",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "Lưu làm mặc định",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "Đã hủy dọn dẹp. Không có dữ liệu nào bị xóa.",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "Đang chờ xác nhận.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "Xem xét các hành động có nguy cơ cao và xác nhận trước khi vệ sinh.",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "Đang chạy dọn dẹp...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "Xem lại các danh mục dọn dẹp đã chọn, sau đó xác nhận trước khi xóa dữ liệu.",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "Cảnh báo cho các tính năng được chọn",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "Thay đổi phím tắt",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "Phím tắt hiện tại: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "Nếu trình chỉnh sửa phím tắt không mở, hãy sử dụng trang Tiện ích mở rộng > Phím tắt để thay đổi.",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "Chưa đặt",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "Các cửa sổ và tab trình duyệt đã được đóng theo yêu cầu.",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "Điều này sẽ xóa các tập tin được lưu trữ. Các trang web có thể tạm thời tải chậm hơn sau khi xóa bộ nhớ đệm.",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "Thao tác này sẽ xóa dữ liệu Bộ nhớ đệm của trang web được các ứng dụng web và nhân viên dịch vụ sử dụng. Chức năng ngoại tuyến có thể ngừng hoạt động cho đến khi các trang web tải lại dữ liệu.",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "Việc này sẽ xóa cookie và dữ liệu trang web. Bạn có thể bị đăng xuất khỏi các trang web và các tùy chọn hoặc phiên trang web có thể được đặt lại.",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "Việc này sẽ xóa danh sách/lịch sử tải xuống. Nó không nhất thiết phải xóa các tập tin đã tải xuống khỏi máy tính của bạn.",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "Điều này loại bỏ dữ liệu hệ thống tập tin trang web. Các tệp trang web được lưu trữ cục bộ hoặc dữ liệu ứng dụng ngoại tuyến có thể bị mất.",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "Thao tác này sẽ xóa các mục nhập biểu mẫu/tự động điền đã lưu. Bạn có thể mất các đề xuất biểu mẫu đã lưu.",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "Thao tác này sẽ xóa bản ghi lịch sử duyệt web khỏi Chrome. Lịch sử đã xóa có thể không thể phục hồi được từ trình duyệt. Hoạt động của lịch sử đã đồng bộ hóa tùy thuộc vào cài đặt đồng bộ hóa Chrome của bạn.",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "Thao tác này sẽ xóa cơ sở dữ liệu IndexedDB được các trang web và ứng dụng web sử dụng. Dữ liệu ngoại tuyến, bản nháp hoặc nội dung ứng dụng được lưu trữ cục bộ có thể bị mất.",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "Thao tác này sẽ xóa dữ liệu localStorage được lưu bởi các trang web. Tùy chọn, phiên cục bộ, bản nháp hoặc trạng thái ứng dụng có thể bị mất.",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "Thao tác này sẽ xóa dữ liệu của nhân viên dịch vụ nếu được hỗ trợ. Hành vi ngoại tuyến, hành vi đẩy và hành vi ứng dụng web được lưu trong bộ nhớ đệm có thể đặt lại cho đến khi các trang web đăng ký lại nhân viên.",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "Thao tác này sẽ đóng các cửa sổ và tab trình duyệt đang mở. Công việc chưa được lưu có thể bị mất. Cửa sổ và tab ẩn danh chỉ có thể bị ảnh hưởng nếu tiện ích mở rộng được cho phép ở chế độ ẩn danh. Hành động này không thể tự động hoàn tác.",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "Thao tác này sẽ xóa dữ liệu WebSQL được các trang web cũ sử dụng. Một số ứng dụng web cũ hơn có thể mất dữ liệu được lưu trữ cục bộ.",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "Liên hệ:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "Chào mừng đến với Klick Klean",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "Cách sử dụng Klick Klean:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "Lưu ý ẩn danh: Tiện ích mở rộng của Chrome không thể ảnh hưởng đến dữ liệu ẩn danh trừ khi bạn bật rõ ràng tiện ích này cho chế độ ẩn danh trong chrome://extensions.",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean giúp bạn xóa nhanh dữ liệu duyệt web đã chọn khỏi Chrome.",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "Các bước tiếp theo",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "Mở cài đặt tiện ích mở rộng",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "Mở trang tiện ích mở rộng",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "Cảnh báo: các thao tác dọn dẹp có thể xóa vĩnh viễn dữ liệu trình duyệt và không thể phục hồi được.",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. Nhấp vào biểu tượng tiện ích mở rộng Klick Klean.",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. Chọn loại dữ liệu cần xóa.",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. Xem lại cảnh báo cho các tính năng đã chọn.",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. Xác nhận hành động dọn dẹp.",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. Một số dữ liệu có thể không xóa được tùy thuộc vào quyền của Chrome, phiên hoạt động, hạn chế ẩn danh và chính sách trang web/trình duyệt.",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "Chào mừng đến với Klick Klean",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "Phiên bản:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "Làm sạch:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "Đã bỏ qua:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "Không áp dụng:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "Thất bại:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "Lưu ý: Chrome không báo cáo chính xác số lượng mục đã xóa. Các danh mục được liệt kê là đã làm sạch đã được chọn để xóa nhưng tiện ích mở rộng không thể xác minh có bao nhiêu mục riêng lẻ bị ảnh hưởng.",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "Hạn chế:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "Danh sách cho phép không thể bảo vệ danh mục này khỏi quá trình dọn dẹp toàn cầu vì Chrome không hỗ trợ loại trừ nguồn gốc của danh mục này.",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "Việc dọn dẹp theo phạm vi yêu cầu nguồn gốc trang web hợp lệ. Không có nguồn gốc hợp lệ được cung cấp.",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "Một số danh mục đã chọn chỉ có sẵn để dọn dẹp toàn cầu và đã bị bỏ qua đối với trang này.",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "Quyền riêng tư & Quyền",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "Tại sao tiện ích mở rộng này cần có quyền duyệtData?",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean sử dụng API dữ liệu duyệt web của Chrome để xóa các loại dữ liệu bạn chọn. Nếu không có quyền này, tiện ích mở rộng không thể xóa bất kỳ dữ liệu duyệt web nào. Quyền này chỉ được sử dụng khi bạn kích hoạt một hành động dọn dẹp một cách rõ ràng.",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "Tất cả quá trình xử lý là cục bộ",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "Tất cả các hoạt động dọn dẹp chạy hoàn toàn trong trình duyệt của bạn. Không có dữ liệu duyệt web, cookie, lịch sử hoặc bất kỳ thông tin cá nhân nào khác được gửi đến các máy chủ bên ngoài. Tiện ích mở rộng không có phụ trợ, không có phân tích và không có cuộc gọi mạng.",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "Không có phép đo từ xa hoặc theo dõi",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean không thu thập, truyền hoặc lưu trữ bất kỳ dữ liệu người dùng nào trên các máy chủ bên ngoài. Không có phân tích, không có pixel theo dõi, không có tập lệnh của bên thứ ba và không có quảng cáo. Tiện ích mở rộng hoạt động hoàn toàn ngoại tuyến sau khi cài đặt.",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "Cách danh sách cho phép được lưu trữ",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "Danh sách cho phép của bạn (các trang web được bảo vệ) được lưu trữ cục bộ trong bộ lưu trữ tiện ích mở rộng của Chrome trên thiết bị của bạn. Nó không bao giờ được đồng bộ hóa với các máy chủ bên ngoài. Nếu bạn gỡ cài đặt tiện ích mở rộng, dữ liệu này sẽ tự động bị xóa.",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "Những hạn chế đã biết",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "Một số danh mục dọn dẹp (như lịch sử duyệt web và nội dung tải xuống) chỉ có thể bị xóa trên toàn cầu chứ không phải đối với các trang web cụ thể. Chrome không báo cáo số lượng mục thực sự đã bị xóa. Dữ liệu ẩn danh chỉ có thể bị ảnh hưởng nếu tiện ích mở rộng được bật cho chế độ ẩn danh. Một số loại dữ liệu không được dùng nữa (AppCache, WebSQL) không còn được Chrome hỗ trợ nữa.",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "Xóa lịch sử, cookie, bộ nhớ đệm, nội dung tải xuống và dữ liệu biểu mẫu gần đây trong 24 giờ qua. Bạn có thể bị đăng xuất khỏi một số trang web.",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "Chỉ đặt lại bộ nhớ và bộ đệm cho trang hiện tại. Có thể khắc phục các vấn đề về tải hoặc hành vi. Bạn sẽ được đăng xuất khỏi trang web này.",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "Xóa tất cả cookie trên toàn cầu. Bạn sẽ bị đăng xuất khỏi tất cả các trang web. Thao tác này không xóa lịch sử duyệt web hoặc các tệp được lưu trong bộ nhớ đệm.",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "Xóa tất cả bộ nhớ trang web trên toàn cầu bao gồm bộ đệm, localStorage, IndexedDB và nhân viên dịch vụ. Ứng dụng web có thể mất dữ liệu ngoại tuyến và cần tải lại.",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "Đặt lại tập trung vào nhà phát triển cho trang web hiện tại. Xóa tất cả bộ nhớ, bộ đệm, nhân viên dịch vụ và cookie chỉ dành cho trang đang hoạt động. Hữu ích cho việc gỡ lỗi các ứng dụng web.",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "Xóa tất cả các loại dữ liệu duyệt web được hỗ trợ trên toàn cầu. Đây là lựa chọn có tính hủy diệt nhất. Chỉ chế độ chuyên gia. Bạn sẽ bị đăng xuất khỏi tất cả các trang web và mất tất cả dữ liệu ứng dụng web cục bộ.",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL đã bị xóa khỏi Chrome. Việc chọn tùy chọn này sẽ không có hiệu lực.",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "Quyền cookie của trang web",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "Quyền hình ảnh trang web",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "Quyền JavaScript của trang web",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "Quyền vị trí trang web",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "Quyền của plugin trang web",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "Quyền bật lên của trang web",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "Quyền thông báo trang web",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "Quyền toàn màn hình của trang web",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "Quyền khóa chuột của trang web",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "Quyền sử dụng micrô của trang web",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "Quyền của máy ảnh trang web",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "Quyền của plugin không được đóng hộp cát trên trang web",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "Quyền tải xuống tự động của trang web",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "Điều này đặt lại tất cả các quyền cookie của trang web về mặc định. Các trang web có thể yêu cầu sự cho phép một lần nữa.",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "Điều này đặt lại tất cả các quyền hình ảnh trang web về mặc định. Các trang web có thể yêu cầu sự cho phép một lần nữa.",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "Điều này đặt lại tất cả các quyền JavaScript của trang web về mặc định. Một số trang web có thể không hoạt động chính xác cho đến khi quyền được khôi phục.",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "Thao tác này sẽ đặt lại tất cả quyền truy cập vị trí trang web về mặc định. Các trang web có thể yêu cầu truy cập lại vị trí.",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "Điều này đặt lại tất cả các quyền của plugin trang web về mặc định.",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "Điều này đặt lại tất cả các quyền bật lên của trang web về mặc định. Cửa sổ bật lên có thể bị chặn hoặc cho phép dựa trên cài đặt mặc định.",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "Điều này đặt lại tất cả các quyền thông báo trang web về mặc định. Các trang web có thể yêu cầu lại quyền thông báo.",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "Điều này đặt lại tất cả các quyền toàn màn hình của trang web về mặc định.",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "Thao tác này sẽ đặt lại tất cả các quyền khóa chuột của trang web về mặc định.",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "Thao tác này sẽ đặt lại tất cả quyền truy cập micrô của trang web về mặc định. Các trang web có thể yêu cầu quyền truy cập lại vào micrô.",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "Thao tác này sẽ đặt lại tất cả quyền truy cập máy ảnh của trang web về mặc định. Các trang web có thể yêu cầu quyền truy cập lại vào máy ảnh.",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "Điều này đặt lại tất cả các quyền của plugin không được đóng hộp cát trên trang web về mặc định.",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "Điều này đặt lại tất cả các quyền tải xuống tự động của trang web về mặc định.",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "Dọn dẹp theo lịch trình",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "Bật tính năng dọn dẹp theo lịch trình tự động",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "Khoảng thời gian dọn dẹp",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "Mỗi giờ",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "Mỗi ngày",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "Hàng tuần",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "Các loại nguồn gốc",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "Các trang web không được bảo vệ (duyệt thông thường)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "Các trang web được bảo vệ (ứng dụng đã cài đặt)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "Tiện ích mở rộng và ứng dụng đóng gói",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "Cài đặt nội dung",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "Đặt lại quyền của trang web trong quá trình dọn dẹp",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "Khi được bật, các quyền đã chọn của trang web (cookie, hình ảnh, JavaScript, thông báo, v.v.) sẽ được đặt lại về giá trị mặc định trong quá trình dọn dẹp.",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "Khôi phục phiên",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "Khôi phục các tab đã đóng gần đây",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "Đang khôi phục phiên...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "Đã khôi phục $1cho các tab/cửa sổ đã đóng gần đây.",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "Không thể khôi phục phiên. Không tìm thấy phiên đóng gần đây.",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "Khôi phục các tab đã đóng",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "Đã đồng bộ hóa với cài đặt Chrome",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "Seçilen temizleme görevleri tamamlandı.",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "Temizleme tam olarak tamamlanamadı.",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "Temizleme zaten çalışıyor. Lütfen bekleyin.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "Bu istek işlenemedi.",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "Devam etmeden önce en az bir temizleme kategorisi seçin.",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "Bu eylem desteklenmiyor.",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "Sekmeler/pencereler, geçmiş, çerezler, indirme geçmişi, form verileri ve önbelleğe alınmış site depolama dahil tarama verilerinizi hızla silin.",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "Web Sitelerinin Uygulama Önbellekleri",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "Önbelleğe Alınmış Dosyalar",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "önbellekDepolama Verileri",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "Kayıtlı Çerezler",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "İndirme Geçmişi",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "Web sitelerinin dosya sistemleri",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "Form verileri",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "Tarama Geçmişi",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "Web sitelerinin IndexedDB verileri",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "Web sitelerinin localStorage verileri",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "Web Sitelerinin Hizmet Çalışanları",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "Tüm pencereleri ve sekmeleri kapatın",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "Web sitelerinin WebSQL verileri",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "Temizleme tercihlerinizi gözden geçirmek için tıklayın.",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "Klick Klean temizliği tamamlandı",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "Temizleme işlemi devam ederken lütfen bekleyin.",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean seçilen verileri temizliyor",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "Temizleme kategorileri",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "Geri bildiriminiz veya önerileriniz mi var? Contact@riteshrana.engineer adresinden bize e-posta gönderin",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "Klick Klean: Seçenekler",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "Deneyim ayarları",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "İpucu: Klick Klean'i hızlı bir şekilde açmak için Ctrl + Shift + E (macOS'ta Cmd + Shift + E) klavye komutunu kullanın.",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "Tüm pencereleri ve sekmeleri kapatın (gizli pencereler yalnızca bu uzantı gizli mod için etkinleştirildiğinde etkilenebilir)",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "Temizleme ilerlemesi için sistem bildirimlerini göster",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "Not: Temizleme özellikleri verileri kalıcı olarak kaldırabilir ve geri alınamayabilir.",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "Gizlilik: Temizleme sırasında hiçbir tarama verisi cihazınızdan ayrılmaz.",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "Ayarları Kaydet",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "Ayarlar kaydedildi!",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "Klick Klean'ı kullandığınız için teşekkür ederiz. Bu uzantının temizlemesine izin verilen tarama veri türlerini seçin:",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "Seçilen bazı temizleme kategorileri bu bağlamda desteklenmemektedir.",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "İncelemeye geri dön",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "İptal etmek",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "Temizleme kategorilerini seçin",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "Oturumları kaldırabilecek veya pencereleri kapatabilecek kategorileri seçtiniz. Devam etmek için onaylayın.",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "Temizlemeyi onayla",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "Onaylayın ve temizleyin",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "Devam Et / Temizle",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "Gizli veriler yalnızca bu uzantı chrome://extensions'ta gizli mod için etkinleştirildiğinde etkilenebilir.",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "Henüz hiçbir temizleme kategorisi seçilmedi.",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean, yalnızca seçtiğiniz kategoriler için Chrome temizleme API'lerini kullanır. Temizleme işlemi tarayıcınızda yerel olarak çalışır ve harici sunuculara hiçbir tarama verisi gönderilmez.",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "Bu izinler neden gerekli?",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "Varsayılan olarak kaydet",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "Temizleme iptal edildi. Hiçbir veri kaldırılmadı.",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "Onay bekleniyor.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "Yüksek riskli eylemleri gözden geçirin ve temizlemeden önce onaylayın.",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "Temizleme işlemi yürütülüyor...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "Seçilen temizleme kategorilerini inceleyin ve ardından verileri silmeden önce onaylayın.",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "Seçilen özellikler için uyarılar",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "Klavye kısayolunu değiştir",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "Mevcut kısayol: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "Kısayol düzenleyicisi açılmadıysa değiştirmek için Uzantılar sayfası > Klavye kısayollarını kullanın.",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "Ayarlanmadı",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "Tarayıcı pencereleri ve sekmeleri istendiği gibi kapatıldı.",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "Bu, önbelleğe alınmış dosyaları temizler. Önbellek temizlendikten sonra web siteleri geçici olarak daha yavaş yüklenebilir.",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "Bu, web uygulamaları ve hizmet çalışanları tarafından kullanılan web sitesi Önbellek Depolama verilerini kaldırır. Siteler verileri yeniden yükleyene kadar çevrimdışı işlevsellik çalışmayı durdurabilir.",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "Bu, çerezleri ve site verilerini kaldırır. Web sitelerindeki oturumunuz kapatılabilir ve web sitesi tercihleri ​​veya oturumları sıfırlanabilir.",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "Bu, indirilenler listesini/geçmişini temizler. İndirilen dosyaların bilgisayarınızdan mutlaka silinmesi gerekmez.",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "Bu, web sitesi dosya sistemi verilerini kaldırır. Yerel olarak depolanan web sitesi dosyaları veya çevrimdışı uygulama verileri kaybolabilir.",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "Bu, kayıtlı otomatik doldurma/form girişlerini kaldırır. Kaydedilmiş form önerilerini kaybedebilirsiniz.",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "Bu, tarama geçmişi kayıtlarını Chrome'dan kaldırır. Silinen geçmiş tarayıcıdan kurtarılamayabilir. Senkronize geçmiş davranışı Chrome senkronizasyon ayarlarınıza bağlıdır.",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "Bu, web siteleri ve web uygulamaları tarafından kullanılan IndexedDB veritabanlarını kaldırır. Çevrimdışı veriler, taslaklar veya yerel olarak depolanan uygulama içeriği kaybolabilir.",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "Bu, web siteleri tarafından kaydedilen localStorage verilerini kaldırır. Tercihler, yerel oturumlar, taslaklar veya uygulama durumu kaybolabilir.",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "Bu, desteklendiği durumlarda hizmet çalışanı verilerini kaldırır. Çevrimdışı davranış, push davranışı ve önbelleğe alınmış web uygulaması davranışı, web siteleri çalışanları yeniden kaydedene kadar sıfırlanabilir.",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "Bu, açık tarayıcı pencerelerini ve sekmelerini kapatacaktır. Kaydedilmemiş çalışmalar kaybolabilir. Gizli pencereler ve sekmeler yalnızca uzantıya gizli modda izin veriliyorsa etkilenebilir. Bu eylem otomatik olarak geri alınamaz.",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "Bu, eski web siteleri tarafından kullanılan WebSQL verilerini kaldırır. Bazı eski web uygulamaları yerel olarak depolanan verileri kaybedebilir.",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "Temas etmek:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "Klick Klean'a hoş geldiniz",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "Klick Klean nasıl kullanılır:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "Gizli not: Chrome://extensions'ta bu uzantıyı gizli mod için açıkça etkinleştirmediğiniz sürece, Chrome uzantıları gizli verileri etkileyemez.",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean, seçilen tarama verilerini Chrome'dan hızlı bir şekilde kaldırmanıza yardımcı olur.",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "Sonraki adımlar",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "Uzantı ayarlarını aç",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "Uzantılar sayfasını aç",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "Uyarı: Temizleme işlemleri tarayıcı verilerini kalıcı olarak silebilir ve kurtarılamayabilir.",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. Klick Klean uzantı simgesine tıklayın.",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. Temizlenecek veri türlerini seçin.",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. Seçilen özelliklere ilişkin uyarıları inceleyin.",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. Temizleme işlemini onaylayın.",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. Chrome izinlerine, etkin oturumlara, gizli kısıtlamalara ve site/tarayıcı politikalarına bağlı olarak bazı veriler kaldırılamayabilir.",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "Klick Klean'a hoş geldiniz",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "Sürüm:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "Temizlendi:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "Atlandı:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "Uygulanamaz:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "Arızalı:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "Not: Chrome, silinen öğe sayısını tam olarak bildirmez. Temizlendi olarak listelenen kategoriler kaldırılmak üzere seçildi ancak uzantı, kaç öğenin etkilendiğini doğrulayamıyor.",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "Sınırlamalar:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "İzin verilenler listesi bu kategoriyi genel temizlemeye karşı koruyamaz çünkü Chrome bu kategori için kaynakların hariç tutulmasını desteklemez.",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "Kapsamlı temizleme, geçerli bir site kaynağı gerektirir. Geçerli bir kaynak belirtilmedi.",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "Seçilen kategorilerden bazıları yalnızca genel temizlik için kullanılabilir ve bu sitede atlanmıştır.",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "Gizlilik ve İzinler",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "Bu uzantının neden taramaVerileri iznine ihtiyacı var?",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean, seçtiğiniz veri türlerini kaldırmak için Chrome taramaVeri API'sini kullanır. Bu izin olmadan uzantı hiçbir tarama verisini silemez. İzin yalnızca bir temizleme eylemini açıkça tetiklediğinizde kullanılır.",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "Tüm işlemler yereldir",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "Tüm temizleme işlemleri tamamen tarayıcınızın içinde gerçekleştirilir. Hiçbir tarama verisi, çerez, geçmiş veya başka herhangi bir kişisel bilgi hiçbir zaman harici sunuculara gönderilmez. Uzantının arka ucu, analizi ve ağ çağrısı yoktur.",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "Telemetri veya izleme yok",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean hiçbir kullanıcı verisini harici sunucularda toplamaz, iletmez veya saklamaz. Analitik yok, izleme pikseli yok, üçüncü taraf komut dosyaları yok ve reklam yok. Uzantı, kurulumdan sonra tamamen çevrimdışı çalışır.",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "İzin verilenler listesi nasıl depolanır?",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "İzin verilenler listeniz (korunan siteler), cihazınızdaki Chrome'un uzantı depolama alanında yerel olarak depolanır. Hiçbir zaman harici sunucularla senkronize edilmez. Uzantıyı kaldırırsanız bu veriler otomatik olarak kaldırılır.",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "Bilinen sınırlamalar",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "Bazı temizleme kategorileri (tarama geçmişi ve indirilenler gibi) yalnızca genel olarak kaldırılabilir, belirli siteler için kaldırılamaz. Chrome gerçekte kaç öğenin silindiğini bildirmiyor. Gizli veriler yalnızca uzantının gizli mod için etkinleştirilmesi durumunda etkilenebilir. Kullanımdan kaldırılan bazı veri türleri (AppCache, WebSQL) artık Chrome tarafından desteklenmemektedir.",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "Son 24 saate ait yakın geçmişi, çerezleri, önbelleği, indirmeleri ve form verilerini temizler. Bazı web sitelerindeki oturumunuz kapatılmış olabilir.",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "Yalnızca geçerli site için depolamayı ve önbelleği sıfırlar. Yükleme veya davranış sorunlarını çözebilir. Bu sitedeki oturumunuz kapatılacak.",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "Tüm çerezleri global olarak kaldırır. Tüm web sitelerindeki oturumunuz kapatılacak. Bu, tarama geçmişini veya önbelleğe alınmış dosyaları kaldırmaz.",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "Önbellek, localStorage, IndexedDB ve hizmet çalışanları dahil olmak üzere tüm web sitesi depolama alanını küresel olarak kaldırır. Web uygulamaları çevrimdışı verileri kaybedebilir ve yeniden yüklenmeleri gerekebilir.",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "Mevcut site için geliştirici odaklı sıfırlama. Yalnızca etkin site için tüm depolama alanını, önbelleği, hizmet çalışanlarını ve çerezleri temizler. Web uygulamalarında hata ayıklamak için kullanışlıdır.",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "Desteklenen tüm tarama veri türlerini genel olarak kaldırır. Bu en yıkıcı seçenektir. Yalnızca uzman modu. Tüm sitelerdeki oturumlarınız kapatılacak ve tüm yerel web uygulaması verilerini kaybedeceksiniz.",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL Chrome'dan kaldırıldı. Bu seçeneğin seçilmesinin hiçbir etkisi olmayacaktır.",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "Site çerez izinleri",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "Site resmi izinleri",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "Site JavaScript izinleri",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "Site konumu izinleri",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "Site eklentisi izinleri",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "Site açılır pencere izinleri",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "Site bildirim izinleri",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "Site tam ekran izinleri",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "Site fare kilidi izinleri",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "Site mikrofon izinleri",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "Site kamera izinleri",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "Sitenin korumalı alanda olmayan eklenti izinleri",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "Site otomatik indirme izinleri",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "Bu, tüm site çerez izinlerini varsayılana sıfırlar. Siteler tekrar izin isteyebilir.",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "Bu, tüm site görseli izinlerini varsayılana sıfırlar. Siteler tekrar izin isteyebilir.",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "Bu, tüm site JavaScript izinlerini varsayılana sıfırlar. İzinler geri yüklenene kadar bazı siteler düzgün çalışmayabilir.",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "Bu, tüm site konumu izinlerini varsayılana sıfırlar. Siteler tekrar konum erişimi isteyebilir.",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "Bu, tüm site eklentisi izinlerini varsayılana sıfırlar.",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "Bu, tüm site açılır pencere izinlerini varsayılana sıfırlar. Varsayılan ayarlara göre açılır pencereler engellenebilir veya bunlara izin verilebilir.",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "Bu, tüm site bildirim izinlerini varsayılana sıfırlar. Siteler tekrar bildirim izni isteyebilir.",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "Bu, tüm site tam ekran izinlerini varsayılana sıfırlar.",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "Bu, tüm site fare kilidi izinlerini varsayılana sıfırlar.",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "Bu, tüm site mikrofon izinlerini varsayılana sıfırlar. Siteler tekrar mikrofon erişimi isteyebilir.",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "Bu, tüm site kamera izinlerini varsayılana sıfırlar. Siteler tekrar kamera erişimi isteyebilir.",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "Bu, tüm sitenin korumalı alanda olmayan eklenti izinlerini varsayılana sıfırlar.",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "Bu, tüm sitenin otomatik indirme izinlerini varsayılana sıfırlar.",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "Planlanmış temizleme",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "Otomatik zamanlanmış temizlemeyi etkinleştir",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "Temizleme aralığı",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "Her saat",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "Her gün",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "Her hafta",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "Menşe türleri",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "Korumasız web siteleri (normal tarama)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "Korumalı web siteleri (yüklü uygulamalar)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "Uzantılar ve paket uygulamalar",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "İçerik ayarları",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "Temizleme sırasında site izinlerini sıfırlayın",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "Etkinleştirildiğinde, seçilen site izinleri (çerezler, resimler, JavaScript, bildirimler vb.) temizleme sırasında varsayılan değerlere sıfırlanacaktır.",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "Oturumu geri yükleme",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "Yakın zamanda kapatılan sekmeleri geri yükle",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "Oturumlar geri yükleniyor...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "Yakın zamanda kapatılan 1 $ sekme/pencere geri yüklendi.",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "Oturumlar geri yüklenemedi. Yakın zamanda kapatılmış oturum bulunamadı.",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "Kapalı sekmeleri geri yükle",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "Chrome ayarlarıyla senkronize edildi",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

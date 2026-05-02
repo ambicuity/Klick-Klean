@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "选定的清理任务已完成。",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "清理工作无法完全完成。",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "清理工作已在运行。请稍等。",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "无法处理此请求。",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "在继续之前至少选择一种清理类别。",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "不支持此操作。",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "快速删除您的浏览数据，包括选项卡/窗口、历史记录、cookie、下载历史记录、表单数据和缓存的站点存储。",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "网站的应用程序缓存",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "缓存文件",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "缓存存储数据",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "已保存的 Cookie",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "下载历史记录",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "网站的文件系统",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "表格数据",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "浏览历史记录",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "网站的 IndexedDB 数据",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "网站的本地存储数据",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "网站服务人员",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "关闭所有窗口和选项卡",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "网站的 WebSQL 数据",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "单击以查看您的清理首选项。",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "Klick Klean 清理完成",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "清理正在进行中，请稍候。",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean 正在清理选定的数据",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "清理类别",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "有反馈或建议吗？给我们发电子邮件 contact@riteshrana.engineer",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "Klick Klean：选项",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "体验设置",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "提示：使用键盘命令 Ctrl + Shift + E（macOS 上为 Cmd + Shift + E）快速打开 Klick Klean。",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "关闭所有窗口和选项卡（仅当为隐身启用此扩展时，隐身窗口才会受到影响）",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "显示清理进度的系统通知",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "注意：清理功能可能会永久删除数据并且可能不可逆。",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "隐私：在清理过程中，不会有任何浏览数据离开您的设备。",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "保存设置",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "设置已保存！",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "感谢您使用 Klick Klean。选择允许此扩展程序清理的浏览数据类型：",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "在此上下文中不支持某些选定的清理类别。",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "返回评论",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "取消",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "选择清理类别",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "您选择的类别可以删除会话或关闭窗口。确认继续。",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "确认清理",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "确认并清洁",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "继续/清理",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "仅当在 chrome://extensions 中为隐身启用此扩展程序时，隐身数据才会受到影响。",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "尚未选择清理类别。",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean 仅针对您选择的类别使用 Chrome 清理 API。清理在您的浏览器本地运行，并且不会将浏览数据发送到外部服务器。",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "为什么需要这些权限",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "保存为默认值",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "清理工作已取消。没有数据被删除。",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "等待确认。",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "清洁前检查高风险操作并确认。",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "正在运行清理...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "查看选定的清理类别，然后在删除数据之前进行确认。",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "针对所选功能的警告",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "更改键盘快捷键",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "当前快捷方式：$1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "如果快捷方式编辑器未打开，请使用扩展页面 > 键盘快捷方式进行更改。",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "未设置",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "浏览器窗口和选项卡已按要求关闭。",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "这会清除缓存的文件。清除缓存后，网站加载速度可能会暂时变慢。",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "这会删除 Web 应用程序和 Service Worker 使用的网站缓存存储数据。离线功能可能会停止工作，直到站点重新加载数据。",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "这会删除 cookie 和站点数据。您可能会退出网站，并且网站首选项或会话可能会重置。",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "这将清除下载列表/历史记录。它不一定会从您的计算机中删除下载的文件。",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "这将删除网站文件系统数据。本地存储的网站文件或离线应用程序数据可能会丢失。",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "这将删除保存的自动填充/表单条目。您可能会丢失已保存的表单建议。",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "这将从 Chrome 中删除浏览历史记录。删除的历史记录可能无法从浏览器恢复。同步历史记录行为取决于您的 Chrome 同步设置。",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "这会删除网站和 Web 应用程序使用的 IndexedDB 数据库。离线数据、草稿或本地存储的应用内容可能会丢失。",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "这会删除网站保存的 localStorage 数据。首选项、本地会话、草稿或应用程序状态可能会丢失。",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "这会删除支持的 Service Worker 数据。离线行为、推送行为和缓存的 Web 应用程序行为可能会重置，直到网站重新注册工作人员。",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "这将关闭打开的浏览器窗口和选项卡。未保存的工作可能会丢失。仅当在隐身模式下允许扩展时，隐身窗口和选项卡才会受到影响。此操作无法自动撤消。",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "这会删除旧网站使用的 WebSQL 数据。一些较旧的网络应用程序可能会丢失本地存储的数据。",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "接触：",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "欢迎来到克里克克莱恩",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "如何使用 Klick Klean：",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "隐身说明：Chrome 扩展程序无法影响隐身数据，除非您在 chrome://extensions 中明确启用此扩展程序以实现隐身模式。",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean 可帮助您快速从 Chrome 中删除选定的浏览数据。",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "后续步骤",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "打开扩展设置",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "打开扩展页面",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "警告：清理操作可能会永久删除浏览器数据并且可能无法恢复。",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. 单击 Klick Klean 扩展图标。",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. 选择要清理的数据类型。",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. 查看所选功能的警告。",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. 确认清理操作。",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. 某些数据可能无法删除，具体取决于 Chrome 权限、活动会话、隐身限制和网站/浏览器策略。",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "欢迎来到克里克克莱恩",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "版本：",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "已清洁：",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "跳过：",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "不适用：",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "失败的：",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "注意：Chrome 不会报告确切的已删除项目数。列为已清理的类别已选择删除，但扩展程序无法验证有多少单个项目受到影响。",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "限制：",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "允许列表无法保护此类别免遭全局清理，因为 Chrome 不支持排除其来源。",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "范围清理需要有效的站点来源。未提供有效来源。",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "某些选定的类别仅可用于全局清理，并且已被本网站跳过。",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "隐私和权限",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "为什么此扩展程序需要浏览数据权限？",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean 使用 Chrome浏览数据 API 删除您选择的数据类型。如果没有此权限，扩展程序无法删除任何浏览数据。仅当您显式触发清理操作时才会使用该权限。",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "所有处理均在本地进行",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "所有清理操作完全在您的浏览器中运行。任何浏览数据、cookie、历史记录或任何其他个人信息都不会发送到外部服务器。该扩展没有后端，没有分析，也没有网络调用。",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "没有遥测或跟踪",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean 不会在外部服务器上收集、传输或存储任何用户数据。没有分析，没有跟踪像素，没有第三方脚本，也没有广告。该扩展安装后完全离线运行。",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "允许名单的存储方式",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "您的许可名单（受保护的网站）本地存储在您设备上的 Chrome 扩展程序存储中。它永远不会同步到外部服务器。如果您卸载扩展程序，该数据将自动删除。",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "已知的限制",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "某些清理类别（例如浏览历史记录和下载）只能全局删除，不能针对特定站点。 Chrome 不会报告实际删除了多少项目。仅当扩展程序启用隐身模式时，隐身数据才会受到影响。 Chrome 不再支持某些已弃用的数据类型（AppCache、WebSQL）。",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "清除过去 24 小时内的最近历史记录、cookie、缓存、下载和表单数据。您可能已退出某些网站。",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "仅重置当前站点的存储和缓存。可能会修复加载或行为问题。您将退出该网站。",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "全局删除所有 cookie。您将退出所有网站。这不会删除浏览历史记录或缓存文件。",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "全局删除所有网站存储，包括缓存、localStorage、IndexedDB 和 Service Worker。 Web 应用程序可能会丢失离线数据并需要重新加载。",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "当前站点以开发人员为中心的重置。仅清除活动站点的所有存储、缓存、服务工作人员和 cookie。对于调试 Web 应用程序很有用。",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "全局删除所有支持的浏览数据类型。这是最具破坏性的选择。仅限专家模式。您将从所有网站注销并丢失所有本地 Web 应用程序数据。",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL 已从 Chrome 中删除。选择此选项将不会产生任何效果。",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "站点 cookie 权限",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "网站图片权限",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "网站 JavaScript 权限",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "站点位置权限",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "网站插件权限",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "网站弹出权限",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "站点通知权限",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "网站全屏权限",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "站点鼠标锁定权限",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "站点麦克风权限",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "站点摄像头权限",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "网站未沙盒插件权限",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "站点自动下载权限",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "这会将所有站点 cookie 权限重置为默认值。网站可能会再次请求许可。",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "这会将所有站点图像权限重置为默认值。网站可能会再次请求许可。",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "这会将所有站点 JavaScript 权限重置为默认值。在恢复权限之前，某些网站可能无法正常工作。",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "这会将所有站点位置权限重置为默认值。网站可能会再次要求位置访问。",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "这会将所有站点插件权限重置为默认值。",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "这会将所有站点弹出权限重置为默认值。根据默认设置，可能会阻止或允许弹出窗口。",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "这会将所有站点通知权限重置为默认值。网站可能会再次请求通知许可。",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "这会将所有站点全屏权限重置为默认值。",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "这会将所有站点鼠标锁定权限重置为默认值。",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "这会将所有站点麦克风权限重置为默认值。站点可能会再次要求访问麦克风。",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "这会将所有站点摄像头权限重置为默认值。网站可能会再次要求访问摄像头。",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "这会将所有站点未沙盒插件权限重置为默认值。",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "这会将所有站点自动下载权限重置为默认值。",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "定期清理",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "启用自动计划清理",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "清理间隔",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "每小时",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "每天",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "每周",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "产地类型",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "不受保护的网站（正常浏览）",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "受保护的网站（已安装的应用程序）",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "扩展和打包应用程序",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "内容设置",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "在清理期间重置站点权限",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "启用后，选定的站点权限（cookie、图像、JavaScript、通知等）将在清理期间重置为默认值。",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "会话恢复",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "恢复最近关闭的标签页",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "正在恢复会话...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "恢复了 $1最近关闭的选项卡/窗口。",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "无法恢复会话。未找到最近关闭的会话。",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "恢复关闭的标签页",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "与 Chrome 设置同步",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

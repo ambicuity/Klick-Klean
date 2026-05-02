@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "งานล้างข้อมูลที่เลือกเสร็จสมบูรณ์",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "การล้างข้อมูลไม่สามารถเสร็จสมบูรณ์ได้",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "การล้างข้อมูลกำลังทำงานอยู่ โปรดรอ.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "ไม่สามารถดำเนินการตามคำขอนี้ได้",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "เลือกหมวดหมู่การล้างข้อมูลอย่างน้อยหนึ่งหมวดหมู่ก่อนดำเนินการต่อ",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "ไม่สนับสนุนการดำเนินการนี้",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "ลบข้อมูลการท่องเว็บของคุณอย่างรวดเร็ว รวมถึงแท็บ/หน้าต่าง ประวัติ คุกกี้ ประวัติการดาวน์โหลด ข้อมูลแบบฟอร์ม และพื้นที่เก็บข้อมูลแคชของไซต์",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "แคชแอปพลิเคชันของเว็บไซต์",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "ไฟล์แคช",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "ข้อมูลการจัดเก็บข้อมูลแคช",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "คุกกี้ที่บันทึกไว้",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "ประวัติการดาวน์โหลด",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "ระบบไฟล์ของเว็บไซต์",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "ข้อมูลแบบฟอร์ม",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "ประวัติการเรียกดู",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "ข้อมูล IndexedDB ของเว็บไซต์",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "ข้อมูล localStorage ของเว็บไซต์",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "พนักงานบริการเว็บไซต์",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "ปิดหน้าต่างและแท็บทั้งหมด",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "ข้อมูล WebSQL ของเว็บไซต์",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "คลิกเพื่อตรวจสอบการตั้งค่าการล้างข้อมูลของคุณ",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "การทำความสะอาด Klick Klean เสร็จสิ้น",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "กรุณารอสักครู่ในขณะที่กำลังดำเนินการล้างข้อมูล",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean กำลังล้างข้อมูลที่เลือก",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "หมวดหมู่การล้างข้อมูล",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "มีข้อเสนอแนะหรือข้อเสนอแนะ? ส่งอีเมล์ถึงเราที่ contact@riteshrana.engineer",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "คลิกคลีน : ตัวเลือก",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "การตั้งค่าประสบการณ์",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "เคล็ดลับ: ใช้คำสั่งแป้นพิมพ์ Ctrl + Shift + E (Cmd + Shift + E บน macOS) เพื่อเปิด Klick Klean อย่างรวดเร็ว",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "ปิดหน้าต่างและแท็บทั้งหมด (หน้าต่างที่ไม่ระบุตัวตนจะได้รับผลกระทบเมื่อเปิดใช้งานส่วนขยายนี้ในโหมดไม่ระบุตัวตนเท่านั้น)",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "แสดงการแจ้งเตือนของระบบสำหรับความคืบหน้าในการล้างข้อมูล",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "หมายเหตุ: คุณลักษณะการล้างข้อมูลอาจลบข้อมูลอย่างถาวรและอาจไม่สามารถย้อนกลับได้",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "ความเป็นส่วนตัว: ไม่มีข้อมูลการท่องเว็บออกจากอุปกรณ์ของคุณในระหว่างการล้างข้อมูล",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "บันทึกการตั้งค่า",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "บันทึกการตั้งค่าแล้ว!",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "ขอขอบคุณที่ใช้ Klick Klean เลือกประเภทข้อมูลการท่องเว็บที่ส่วนขยายนี้ได้รับอนุญาตให้ล้าง:",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "หมวดหมู่การล้างข้อมูลที่เลือกบางประเภทไม่ได้รับการสนับสนุนในบริบทนี้",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "กลับไปทบทวน",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "ยกเลิก",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "เลือกหมวดหมู่การล้างข้อมูล",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "คุณเลือกหมวดหมู่ที่สามารถลบเซสชันหรือปิดหน้าต่างได้ ยืนยันเพื่อดำเนินการต่อ",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "ยืนยันการล้างข้อมูล",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "ยืนยันและทำความสะอาด",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "ดำเนินการต่อ / ทำความสะอาด",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "ข้อมูลที่ไม่ระบุตัวตนจะได้รับผลกระทบเมื่อมีการเปิดใช้ส่วนขยายนี้ในโหมดไม่ระบุตัวตนใน chrome://extensions เท่านั้น",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "ยังไม่ได้เลือกหมวดหมู่การล้างข้อมูล",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean ใช้ API การล้างข้อมูล Chrome สำหรับหมวดหมู่ที่คุณเลือกเท่านั้น การล้างข้อมูลทำงานภายในเบราว์เซอร์ของคุณ และไม่มีการส่งข้อมูลการท่องเว็บไปยังเซิร์ฟเวอร์ภายนอก",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "เหตุใดจึงต้องมีการอนุญาตเหล่านี้",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "บันทึกเป็นค่าเริ่มต้น",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "การล้างข้อมูลถูกยกเลิก ไม่มีการลบข้อมูล",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "รอการยืนยัน.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "ตรวจสอบการดำเนินการที่มีความเสี่ยงสูงและยืนยันก่อนทำความสะอาด",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "กำลังดำเนินการล้างข้อมูล...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "ตรวจสอบหมวดหมู่การล้างข้อมูลที่เลือก จากนั้นยืนยันก่อนที่จะลบข้อมูล",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "คำเตือนสำหรับคุณสมบัติที่เลือก",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "เปลี่ยนแป้นพิมพ์ลัด",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "ทางลัดปัจจุบัน: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "หากตัวแก้ไขทางลัดไม่เปิดขึ้น ให้ใช้หน้าส่วนขยาย > แป้นพิมพ์ลัดเพื่อเปลี่ยน",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "ไม่ได้ตั้งค่า",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "หน้าต่างและแท็บเบราว์เซอร์ถูกปิดตามคำขอ",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "วิธีนี้จะล้างไฟล์แคช เว็บไซต์อาจโหลดช้าลงชั่วคราวหลังจากล้างแคชแล้ว",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "การดำเนินการนี้จะลบข้อมูลพื้นที่เก็บข้อมูลแคชของเว็บไซต์ที่ใช้โดยเว็บแอปและพนักงานบริการ ฟังก์ชันการทำงานแบบออฟไลน์อาจหยุดทำงานจนกว่าไซต์จะโหลดข้อมูลซ้ำ",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "การดำเนินการนี้จะลบคุกกี้และข้อมูลไซต์ คุณอาจออกจากระบบเว็บไซต์ และการตั้งค่าเว็บไซต์หรือเซสชันอาจถูกรีเซ็ต",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "เพื่อล้างรายการดาวน์โหลด/ประวัติ ไม่จำเป็นต้องลบไฟล์ที่ดาวน์โหลดออกจากคอมพิวเตอร์ของคุณ",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "การดำเนินการนี้จะลบข้อมูลระบบไฟล์ของเว็บไซต์ ไฟล์เว็บไซต์ที่จัดเก็บไว้ในเครื่องหรือข้อมูลแอปออฟไลน์อาจสูญหาย",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "วิธีนี้จะลบรายการป้อนอัตโนมัติ/แบบฟอร์มที่บันทึกไว้ คุณอาจสูญเสียคำแนะนำแบบฟอร์มที่บันทึกไว้",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "การดำเนินการนี้จะลบบันทึกประวัติการเรียกดูออกจาก Chrome ประวัติที่ถูกลบอาจไม่สามารถกู้คืนได้จากเบราว์เซอร์ ลักษณะการทำงานของประวัติที่ซิงค์จะขึ้นอยู่กับการตั้งค่าการซิงค์ของ Chrome",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "วิธีนี้จะลบฐานข้อมูล IndexedDB ที่ใช้โดยเว็บไซต์และเว็บแอป ข้อมูลออฟไลน์ ฉบับร่าง หรือเนื้อหาแอปที่จัดเก็บไว้ในเครื่องอาจสูญหาย",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "การดำเนินการนี้จะลบข้อมูล localStorage ที่เว็บไซต์บันทึกไว้ การตั้งค่า เซสชันในเครื่อง ฉบับร่าง หรือสถานะแอปอาจสูญหาย",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "การดำเนินการนี้จะลบข้อมูลพนักงานบริการหากได้รับการสนับสนุน พฤติกรรมออฟไลน์ พฤติกรรมการพุช และพฤติกรรมของเว็บแอปที่แคชไว้อาจถูกรีเซ็ตจนกว่าเว็บไซต์จะลงทะเบียนผู้ปฏิบัติงานอีกครั้ง",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "การดำเนินการนี้จะปิดหน้าต่างและแท็บเบราว์เซอร์ที่เปิดอยู่ งานที่ยังไม่ได้บันทึกอาจสูญหาย หน้าต่างและแท็บที่ไม่ระบุตัวตนจะได้รับผลกระทบหากอนุญาตให้ส่วนขยายอยู่ในโหมดไม่ระบุตัวตนเท่านั้น การดำเนินการนี้ไม่สามารถยกเลิกได้โดยอัตโนมัติ",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "การดำเนินการนี้จะลบข้อมูล WebSQL ที่เว็บไซต์เก่าใช้ เว็บแอปรุ่นเก่าบางแอปอาจสูญเสียข้อมูลที่จัดเก็บไว้ในเครื่อง",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "ติดต่อ:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "ยินดีต้อนรับสู่คลิ้กคลีน",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "วิธีใช้คลิกคลีน:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "หมายเหตุที่ไม่ระบุตัวตน: ส่วนขยายของ Chrome ไม่สามารถส่งผลกระทบต่อข้อมูลที่ไม่ระบุตัวตน เว้นแต่คุณจะเปิดใช้งานส่วนขยายนี้อย่างชัดเจนในโหมดไม่ระบุตัวตนใน chrome://extensions",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean ช่วยให้คุณลบข้อมูลการท่องเว็บที่เลือกออกจาก Chrome ได้อย่างรวดเร็ว",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "ขั้นตอนต่อไป",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "เปิดการตั้งค่าส่วนขยาย",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "เปิดหน้าส่วนขยาย",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "คำเตือน: การดำเนินการล้างข้อมูลอาจลบข้อมูลเบราว์เซอร์อย่างถาวรและอาจไม่สามารถกู้คืนได้",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. คลิกไอคอนส่วนขยาย Klick Klean",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. เลือกประเภทข้อมูลที่จะล้าง",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. ตรวจสอบคำเตือนสำหรับคุณสมบัติที่เลือก",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. ยืนยันการดำเนินการล้างข้อมูล",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. ข้อมูลบางอย่างอาจไม่ถูกลบออกขึ้นอยู่กับการอนุญาตของ Chrome เซสชันที่ใช้งานอยู่ ข้อจำกัดในการไม่ระบุตัวตน และนโยบายไซต์/เบราว์เซอร์",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "ยินดีต้อนรับสู่คลิ้กคลีน",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "เวอร์ชัน:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "ทำความสะอาดแล้ว:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "ข้าม:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "ไม่สามารถใช้ได้:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "ล้มเหลว:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "หมายเหตุ: Chrome จะไม่รายงานจำนวนรายการที่ถูกลบอย่างแน่นอน หมวดหมู่ที่ระบุว่าล้างแล้วถูกเลือกเพื่อนำออก แต่ส่วนขยายไม่สามารถตรวจสอบได้ว่ามีกี่รายการที่ได้รับผลกระทบ",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "ข้อจำกัด:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "รายการที่อนุญาตไม่สามารถปกป้องหมวดหมู่นี้จากการล้างข้อมูลทั่วโลกได้เนื่องจาก Chrome ไม่รองรับการยกเว้นต้นทาง",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "การล้างข้อมูลแบบกำหนดขอบเขตจำเป็นต้องมีแหล่งที่มาของไซต์ที่ถูกต้อง ไม่มีการระบุแหล่งที่มาที่ถูกต้อง",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "หมวดหมู่ที่เลือกบางหมวดหมู่ใช้ได้สำหรับการล้างข้อมูลทั่วโลกเท่านั้นและถูกข้ามไปสำหรับไซต์นี้",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "ความเป็นส่วนตัวและการอนุญาต",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "เหตุใดส่วนขยายนี้จึงต้องมีสิทธิ์การเรียกดูข้อมูล",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean ใช้ Chrome BrowserData API เพื่อลบประเภทข้อมูลที่คุณเลือก หากไม่ได้รับอนุญาตนี้ ส่วนขยายจะไม่สามารถลบข้อมูลการท่องเว็บใดๆ ได้ การอนุญาตจะใช้เฉพาะเมื่อคุณทริกเกอร์การดำเนินการล้างข้อมูลอย่างชัดเจน",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "การประมวลผลทั้งหมดเป็นแบบท้องถิ่น",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "การดำเนินการล้างข้อมูลทั้งหมดทำงานภายในเบราว์เซอร์ของคุณทั้งหมด ไม่มีการส่งข้อมูลการท่องเว็บ คุกกี้ ประวัติ หรือข้อมูลส่วนบุคคลอื่นใดถูกส่งไปยังเซิร์ฟเวอร์ภายนอก ส่วนขยายไม่มีแบ็กเอนด์ ไม่มีการวิเคราะห์ และไม่มีการโทรผ่านเครือข่าย",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "ไม่มีการวัดและติดตามทางไกล",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean จะไม่รวบรวม ส่ง หรือจัดเก็บข้อมูลผู้ใช้ใดๆ บนเซิร์ฟเวอร์ภายนอก ไม่มีการวิเคราะห์ ไม่มีพิกเซลการติดตาม ไม่มีสคริปต์ของบุคคลที่สาม และไม่มีโฆษณา ส่วนขยายทำงานแบบออฟไลน์ทั้งหมดหลังการติดตั้ง",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "วิธีจัดเก็บรายการที่อนุญาต",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "รายการที่อนุญาตของคุณ (ไซต์ที่มีการป้องกัน) จะถูกจัดเก็บไว้ในที่เก็บข้อมูลส่วนขยายของ Chrome บนอุปกรณ์ของคุณ ไม่เคยซิงค์กับเซิร์ฟเวอร์ภายนอก หากคุณถอนการติดตั้งส่วนขยาย ข้อมูลนี้จะถูกลบโดยอัตโนมัติ",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "ข้อจำกัดที่ทราบ",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "หมวดหมู่การล้างข้อมูลบางหมวดหมู่ (เช่น ประวัติการเข้าชมและการดาวน์โหลด) สามารถลบออกได้ทั่วโลกเท่านั้น ไม่ใช่สำหรับบางไซต์ Chrome ไม่รายงานว่ามีกี่รายการที่ถูกลบจริง ข้อมูลที่ไม่ระบุตัวตนจะได้รับผลกระทบหากเปิดใช้งานส่วนขยายสำหรับโหมดไม่ระบุตัวตนเท่านั้น Chrome ไม่รองรับข้อมูลบางประเภทที่เลิกใช้แล้ว (AppCache, WebSQL) อีกต่อไป",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "ล้างประวัติ คุกกี้ แคช การดาวน์โหลด และข้อมูลแบบฟอร์มล่าสุดในช่วง 24 ชั่วโมงที่ผ่านมา คุณอาจออกจากระบบบางเว็บไซต์",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "รีเซ็ตที่เก็บข้อมูลและแคชสำหรับไซต์ปัจจุบันเท่านั้น อาจแก้ไขปัญหาการโหลดหรือพฤติกรรม คุณจะออกจากระบบไซต์นี้",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "ลบคุกกี้ทั้งหมดทั่วโลก คุณจะออกจากระบบเว็บไซต์ทั้งหมด การดำเนินการนี้จะไม่ลบประวัติการเรียกดูหรือไฟล์แคช",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "ลบที่เก็บข้อมูลเว็บไซต์ทั้งหมดทั่วโลก รวมถึงแคช localStorage IndexedDB และพนักงานบริการ เว็บแอปอาจสูญเสียข้อมูลออฟไลน์และจำเป็นต้องโหลดซ้ำ",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "การรีเซ็ตที่เน้นนักพัฒนาสำหรับไซต์ปัจจุบัน ล้างพื้นที่เก็บข้อมูล แคช พนักงานบริการ และคุกกี้ทั้งหมดสำหรับไซต์ที่ใช้งานอยู่เท่านั้น มีประโยชน์สำหรับการดีบักแอปพลิเคชันเว็บ",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "ลบประเภทข้อมูลการท่องเว็บที่รองรับทั้งหมดทั่วโลก นี่คือตัวเลือกที่ทำลายล้างที่สุด โหมดผู้เชี่ยวชาญเท่านั้น คุณจะออกจากระบบทุกไซต์และสูญเสียข้อมูลแอปพลิเคชันเว็บในเครื่องทั้งหมด",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL ถูกลบออกจาก Chrome แล้ว การเลือกตัวเลือกนี้จะไม่มีผลใดๆ",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "สิทธิ์คุกกี้ของไซต์",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "การอนุญาตรูปภาพของไซต์",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "สิทธิ์ของไซต์ JavaScript",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "การอนุญาตตำแหน่งของไซต์",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "สิทธิ์ปลั๊กอินของไซต์",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "สิทธิ์ป๊อปอัปของไซต์",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "สิทธิ์การแจ้งเตือนไซต์",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "สิทธิ์แบบเต็มหน้าจอของไซต์",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "สิทธิ์การล็อคเมาส์ของไซต์",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "การอนุญาตไมโครโฟนของไซต์",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "การอนุญาตกล้องไซต์",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "สิทธิ์ของปลั๊กอินที่ไม่ได้อยู่ในแซนด์บ็อกซ์ของไซต์",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "สิทธิ์การดาวน์โหลดอัตโนมัติของไซต์",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "การดำเนินการนี้จะรีเซ็ตสิทธิ์คุกกี้ของไซต์ทั้งหมดเป็นค่าเริ่มต้น เว็บไซต์อาจขออนุญาตอีกครั้ง",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "การดำเนินการนี้จะรีเซ็ตการอนุญาตรูปภาพไซต์ทั้งหมดเป็นค่าเริ่มต้น เว็บไซต์อาจขออนุญาตอีกครั้ง",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "สิ่งนี้จะรีเซ็ตการอนุญาต JavaScript ของไซต์ทั้งหมดเป็นค่าเริ่มต้น บางไซต์อาจทำงานไม่ถูกต้องจนกว่าจะคืนสิทธิ์อนุญาต",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "การดำเนินการนี้จะรีเซ็ตการอนุญาตตำแหน่งไซต์ทั้งหมดเป็นค่าเริ่มต้น ไซต์อาจขอการเข้าถึงตำแหน่งอีกครั้ง",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "การดำเนินการนี้จะรีเซ็ตการอนุญาตปลั๊กอินของไซต์ทั้งหมดเป็นค่าเริ่มต้น",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "การดำเนินการนี้จะรีเซ็ตสิทธิ์ป๊อปอัปของไซต์ทั้งหมดเป็นค่าเริ่มต้น ป๊อปอัปอาจถูกบล็อกหรืออนุญาตตามการตั้งค่าเริ่มต้น",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "การดำเนินการนี้จะรีเซ็ตสิทธิ์การแจ้งเตือนไซต์ทั้งหมดเป็นค่าเริ่มต้น เว็บไซต์อาจขออนุญาตแจ้งเตือนอีกครั้ง",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "การดำเนินการนี้จะรีเซ็ตสิทธิ์อนุญาตแบบเต็มหน้าจอของไซต์ทั้งหมดเป็นค่าเริ่มต้น",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "การดำเนินการนี้จะรีเซ็ตสิทธิ์การล็อกเมาส์ของไซต์ทั้งหมดเป็นค่าเริ่มต้น",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "การดำเนินการนี้จะรีเซ็ตการอนุญาตไมโครโฟนของไซต์ทั้งหมดเป็นค่าเริ่มต้น ไซต์อาจขอเข้าถึงไมโครโฟนอีกครั้ง",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "การดำเนินการนี้จะรีเซ็ตการอนุญาตกล้องไซต์ทั้งหมดเป็นค่าเริ่มต้น ไซต์อาจขอเข้าถึงกล้องอีกครั้ง",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "การดำเนินการนี้จะรีเซ็ตการอนุญาตปลั๊กอินนอกแซนด์บ็อกซ์ของไซต์ทั้งหมดเป็นค่าเริ่มต้น",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "การดำเนินการนี้จะรีเซ็ตสิทธิ์การดาวน์โหลดอัตโนมัติของไซต์ทั้งหมดเป็นค่าเริ่มต้น",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "การล้างข้อมูลตามกำหนดเวลา",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "เปิดใช้งานการล้างข้อมูลตามกำหนดเวลาอัตโนมัติ",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "ช่วงเวลาการล้างข้อมูล",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "ทุกชั่วโมง",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "ทุกวัน",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "ทุกสัปดาห์",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "ประเภทแหล่งกำเนิดสินค้า",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "เว็บไซต์ที่ไม่มีการป้องกัน (การเรียกดูปกติ)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "เว็บไซต์ที่ได้รับการป้องกัน (แอพที่ติดตั้ง)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "ส่วนขยายและแอปแพ็กเกจ",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "การตั้งค่าเนื้อหา",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "รีเซ็ตการอนุญาตไซต์ระหว่างการล้างข้อมูล",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "เมื่อเปิดใช้งาน การอนุญาตไซต์ที่เลือก (คุกกี้ รูปภาพ JavaScript การแจ้งเตือน ฯลฯ) จะถูกรีเซ็ตเป็นค่าเริ่มต้นในระหว่างการล้างข้อมูล",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "การกู้คืนเซสชัน",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "คืนค่าแท็บที่เพิ่งปิดไป",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "กำลังกู้คืนเซสชัน...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "คืนค่า $1แท็บ/หน้าต่างที่เพิ่งปิดไป",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "ไม่สามารถกู้คืนเซสชันได้ ไม่พบเซสชั่นที่ปิดล่าสุด",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "คืนค่าแท็บที่ปิด",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "ซิงค์กับการตั้งค่า Chrome",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

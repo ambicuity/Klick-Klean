@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "Tugas pembersihan yang dipilih selesai.",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "Pembersihan tidak dapat diselesaikan sepenuhnya.",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "Pembersihan sudah berjalan. Harap tunggu.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "Tidak dapat memproses permintaan ini.",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "Pilih setidaknya satu kategori pembersihan sebelum melanjutkan.",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "Tindakan ini tidak didukung.",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "Hapus data penjelajahan Anda dengan cepat termasuk tab/jendela, riwayat, cookie, riwayat unduhan, data formulir, dan penyimpanan situs cache.",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "Cache Aplikasi Situs Web",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "File yang di-cache",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "Data Penyimpanan cache",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "Cookie Tersimpan",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "Riwayat Unduhan",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "Sistem file situs web",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "Formulir data",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "Riwayat Penjelajahan",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "Data IndexedDB situs web",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "Data Penyimpanan lokal situs web",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "Pekerja Layanan Situs Web",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "Tutup semua jendela dan tab",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "Data WebSQL situs web",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "Klik untuk meninjau preferensi pembersihan Anda.",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "Pembersihan Klick Klean selesai",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "Harap tunggu sementara pembersihan sedang berlangsung.",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean sedang membersihkan data yang dipilih",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "Kategori pembersihan",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "Punya masukan atau saran? Email kami di contact@riteshrana.engineer",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "Klik Klean : Opsi",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "Pengaturan pengalaman",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "Tip: Gunakan perintah keyboard Ctrl + Shift + E (Cmd + Shift + E di macOS) untuk membuka Klick Klean dengan cepat.",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "Tutup semua jendela dan tab (jendela penyamaran hanya dapat terpengaruh jika ekstensi ini diaktifkan untuk penyamaran)",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "Tampilkan pemberitahuan sistem untuk kemajuan pembersihan",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "Catatan: fitur pembersihan mungkin menghapus data secara permanen dan mungkin tidak dapat dibatalkan.",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "Privasi: tidak ada data penelusuran yang meninggalkan perangkat Anda selama pembersihan.",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "Simpan Pengaturan",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "Pengaturan disimpan!",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "Terima kasih telah menggunakan Klick Klean. Pilih jenis data penjelajahan yang boleh dibersihkan oleh ekstensi ini:",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "Beberapa kategori pembersihan yang dipilih tidak didukung dalam konteks ini.",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "Kembali ke ulasan",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "Membatalkan",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "Pilih kategori pembersihan",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "Anda memilih kategori yang dapat menghapus sesi atau menutup jendela. Konfirmasikan untuk melanjutkan.",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "Konfirmasikan pembersihan",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "Konfirmasikan dan bersihkan",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "Lanjutkan / Bersihkan",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "Data penyamaran hanya dapat terpengaruh jika ekstensi ini diaktifkan untuk penyamaran di chrome://extensions.",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "Belum ada kategori pembersihan yang dipilih.",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean hanya menggunakan API pembersihan Chrome untuk kategori yang Anda pilih. Pembersihan berjalan secara lokal di browser Anda dan tidak ada data penjelajahan yang dikirim ke server eksternal.",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "Mengapa izin ini diperlukan",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "Simpan sebagai default",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "Pembersihan dibatalkan. Tidak ada data yang dihapus.",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "Menunggu kepastian.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "Tinjau tindakan berisiko tinggi dan konfirmasi sebelum membersihkan.",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "Menjalankan pembersihan...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "Tinjau kategori pembersihan yang dipilih, lalu konfirmasi sebelum menghapus data.",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "Peringatan untuk fitur yang dipilih",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "Ubah pintasan keyboard",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "Pintasan saat ini: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "Jika editor pintasan tidak terbuka, gunakan halaman Ekstensi > Pintasan keyboard untuk mengubahnya.",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "Tidak disetel",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "Jendela dan tab browser ditutup seperti yang diminta.",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "Ini menghapus file cache. Situs web mungkin memuat lebih lambat untuk sementara waktu setelah cache dibersihkan.",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "Tindakan ini menghapus data Penyimpanan Cache situs web yang digunakan oleh aplikasi web dan pekerja layanan. Fungsionalitas offline mungkin berhenti berfungsi hingga situs memuat ulang data.",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "Ini menghapus cookie dan data situs. Anda mungkin keluar dari situs web, dan preferensi atau sesi situs web dapat diatur ulang.",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "Ini menghapus daftar/riwayat unduhan. Itu tidak serta merta menghapus file yang diunduh dari komputer Anda.",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "Ini menghapus data sistem file situs web. File situs web yang disimpan secara lokal atau data aplikasi offline mungkin hilang.",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "Ini menghapus entri isi-otomatis/formulir yang disimpan. Anda mungkin kehilangan saran formulir yang disimpan.",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "Ini menghapus catatan riwayat penjelajahan dari Chrome. Riwayat yang dihapus mungkin tidak dapat dipulihkan dari browser. Perilaku riwayat yang disinkronkan bergantung pada setelan sinkronisasi Chrome Anda.",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "Ini menghapus database IndexedDB yang digunakan oleh situs web dan aplikasi web. Data offline, draf, atau konten aplikasi yang disimpan secara lokal mungkin hilang.",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "Ini menghapus data Penyimpanan lokal yang disimpan oleh situs web. Preferensi, sesi lokal, draf, atau status aplikasi mungkin hilang.",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "Tindakan ini akan menghapus data pekerja layanan jika didukung. Perilaku offline, perilaku push, dan perilaku aplikasi web yang di-cache dapat diatur ulang hingga situs web mendaftarkan ulang pekerja.",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "Ini akan menutup jendela dan tab browser yang terbuka. Pekerjaan yang belum disimpan mungkin hilang. Jendela dan tab penyamaran hanya dapat terpengaruh jika ekstensi diizinkan dalam mode penyamaran. Tindakan ini tidak dapat dibatalkan secara otomatis.",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "Tindakan ini menghapus data WebSQL yang digunakan oleh situs web lama. Beberapa aplikasi web lama mungkin kehilangan data yang disimpan secara lokal.",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "Kontak:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "Selamat datang di Klick Klean",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "Cara menggunakan Klick Klean:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "Catatan penyamaran: Ekstensi Chrome tidak dapat memengaruhi data penyamaran kecuali Anda secara eksplisit mengaktifkan ekstensi ini untuk penyamaran di chrome://extensions.",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean membantu Anda dengan cepat menghapus data penjelajahan yang dipilih dari Chrome.",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "Langkah selanjutnya",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "Buka pengaturan ekstensi",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "Buka halaman ekstensi",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "Peringatan: tindakan pembersihan dapat menghapus data browser secara permanen dan mungkin tidak dapat dipulihkan.",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. Klik ikon ekstensi Klick Klean.",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. Pilih tipe data yang akan dibersihkan.",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. Tinjau peringatan untuk fitur yang dipilih.",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. Konfirmasikan tindakan pembersihan.",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. Beberapa data mungkin tidak dapat dihapus bergantung pada izin Chrome, sesi aktif, pembatasan penyamaran, dan kebijakan situs/browser.",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "Selamat datang di Klick Klean",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "Versi:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "Dibersihkan:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "Dilewati:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "Tidak berlaku:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "Gagal:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "Catatan: Chrome tidak melaporkan jumlah pasti item yang dihapus. Kategori yang terdaftar sebagai dibersihkan dipilih untuk dihapus, namun ekstensi tidak dapat memverifikasi berapa banyak item individual yang terpengaruh.",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "Keterbatasan:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "Daftar yang diizinkan tidak dapat melindungi kategori ini dari pembersihan global karena Chrome tidak mendukung pengecualian asal untuk kategori tersebut.",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "Pembersihan tercakup memerlukan asal situs yang valid. Tidak ada asal yang valid yang diberikan.",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "Beberapa kategori terpilih hanya tersedia untuk pembersihan global dan dilewati untuk situs ini.",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "Privasi & Izin",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "Mengapa ekstensi ini memerlukan izin browsingData?",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean menggunakan Chrome browsingData API untuk menghapus tipe data yang Anda pilih. Tanpa izin ini, ekstensi tidak dapat menghapus data penjelajahan apa pun. Izin ini hanya digunakan ketika Anda secara eksplisit memicu tindakan pembersihan.",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "Semua pemrosesan bersifat lokal",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "Semua operasi pembersihan dijalankan sepenuhnya di dalam browser Anda. Tidak ada data penjelajahan, cookie, riwayat, atau informasi pribadi lainnya yang pernah dikirim ke server eksternal. Ekstensi tidak memiliki backend, tidak ada analitik, dan tidak ada panggilan jaringan.",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "Tidak ada telemetri atau pelacakan",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean tidak mengumpulkan, mengirimkan, atau menyimpan data pengguna apa pun di server eksternal. Tidak ada analitik, tidak ada piksel pelacakan, tidak ada skrip pihak ketiga, dan tidak ada iklan. Ekstensi ini beroperasi sepenuhnya offline setelah instalasi.",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "Cara daftar yang diizinkan disimpan",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "Daftar yang diizinkan (situs yang dilindungi) disimpan secara lokal di penyimpanan ekstensi Chrome di perangkat Anda. Itu tidak pernah disinkronkan ke server eksternal. Jika Anda mencopot pemasangan ekstensi, data ini akan dihapus secara otomatis.",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "Keterbatasan yang diketahui",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "Beberapa kategori pembersihan (seperti riwayat penelusuran dan unduhan) hanya dapat dihapus secara global, bukan untuk situs tertentu. Chrome tidak melaporkan berapa banyak item yang sebenarnya dihapus. Data penyamaran hanya dapat terpengaruh jika ekstensi diaktifkan untuk mode penyamaran. Beberapa tipe data yang tidak digunakan lagi (AppCache, WebSQL) tidak lagi didukung oleh Chrome.",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "Menghapus riwayat terkini, cookie, cache, unduhan, dan data formulir dari 24 jam terakhir. Anda mungkin keluar dari beberapa situs web.",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "Menyetel ulang penyimpanan dan cache untuk situs saat ini saja. Dapat memperbaiki masalah pemuatan atau perilaku. Anda akan keluar dari situs ini.",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "Menghapus semua cookie secara global. Anda akan keluar dari semua situs web. Ini tidak menghapus riwayat penelusuran atau file cache.",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "Menghapus semua penyimpanan situs web secara global termasuk cache, Penyimpanan lokal, IndexedDB, dan pekerja layanan. Aplikasi web mungkin kehilangan data offline dan perlu dimuat ulang.",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "Penyetelan ulang yang berfokus pada pengembang untuk situs saat ini. Menghapus semua penyimpanan, cache, pekerja layanan, dan cookie hanya untuk situs aktif. Berguna untuk men-debug aplikasi web.",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "Menghapus semua tipe data penjelajahan yang didukung secara global. Ini adalah pilihan yang paling merusak. Hanya mode ahli. Anda akan keluar dari semua situs dan kehilangan semua data aplikasi web lokal.",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL telah dihapus dari Chrome. Memilih opsi ini tidak akan berpengaruh.",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "Izin cookie situs",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "Izin gambar situs",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "Izin JavaScript situs",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "Izin lokasi situs",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "Izin plugin situs",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "Izin munculan situs",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "Izin pemberitahuan situs",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "Izin layar penuh situs",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "Izin kunci mouse situs",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "Izin mikrofon situs",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "Izin kamera situs",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "Izin plugin situs tidak dimasukkan kotak pasir",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "Izin pengunduhan otomatis situs",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "Ini mengatur ulang semua izin cookie situs ke default. Situs mungkin meminta izin lagi.",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "Ini mengatur ulang semua izin gambar situs ke default. Situs mungkin meminta izin lagi.",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "Ini menyetel ulang semua izin JavaScript situs ke default. Beberapa situs mungkin tidak berfungsi dengan benar hingga izin dipulihkan.",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "Ini mengatur ulang semua izin lokasi situs ke default. Situs mungkin meminta akses lokasi lagi.",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "Ini mengatur ulang semua izin plugin situs ke default.",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "Ini mengatur ulang semua izin popup situs ke default. Popup mungkin diblokir atau diizinkan berdasarkan pengaturan default.",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "Ini mengatur ulang semua izin pemberitahuan situs ke default. Situs mungkin meminta izin pemberitahuan lagi.",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "Ini menyetel ulang semua izin layar penuh situs ke default.",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "Ini mengatur ulang semua izin kunci mouse situs ke default.",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "Tindakan ini akan menyetel ulang semua izin mikrofon situs ke default. Situs mungkin meminta akses mikrofon lagi.",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "Ini mengatur ulang semua izin kamera situs ke default. Situs mungkin meminta akses kamera lagi.",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "Tindakan ini akan menyetel ulang semua izin plugin situs yang tidak dimasukkan kotak pasir ke default.",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "Ini mengatur ulang semua izin pengunduhan otomatis situs ke default.",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "Pembersihan terjadwal",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "Aktifkan pembersihan terjadwal otomatis",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "Interval pembersihan",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "Setiap jam",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "Setiap hari",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "Setiap minggu",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "Jenis asal",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "Situs web yang tidak dilindungi (penjelajahan normal)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "Situs web yang dilindungi (aplikasi terpasang)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "Ekstensi dan aplikasi yang dikemas",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "Pengaturan konten",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "Setel ulang izin situs selama pembersihan",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "Jika diaktifkan, izin situs yang dipilih (cookie, gambar, JavaScript, notifikasi, dll.) akan disetel ulang ke nilai default selama pembersihan.",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "Pemulihan sesi",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "Pulihkan tab yang baru saja ditutup",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "Memulihkan sesi...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "Memulihkan $1tab/jendela yang baru saja ditutup.",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "Tidak dapat memulihkan sesi. Tidak ditemukan sesi yang baru saja ditutup.",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "Pulihkan tab yang tertutup",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "Disinkronkan dengan pengaturan Chrome",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

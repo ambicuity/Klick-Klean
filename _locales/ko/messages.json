@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "선택한 정리 작업이 완료되었습니다.",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "정리를 완전히 완료할 수 없습니다.",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "정리가 이미 실행 중입니다. 기다리세요.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "이 요청을 처리할 수 없습니다.",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "계속하기 전에 하나 이상의 정리 카테고리를 선택하십시오.",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "이 작업은 지원되지 않습니다.",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "탭/창, 기록, 쿠키, 다운로드 기록, 양식 데이터, 캐시된 사이트 저장소를 포함한 검색 데이터를 빠르게 삭제하세요.",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "웹사이트의 애플리케이션 캐시",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "캐시된 파일",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "캐시스토리지 데이터",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "저장된 쿠키",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "다운로드 기록",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "웹사이트의 파일 시스템",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "양식 데이터",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "검색 기록",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "웹사이트의 IndexedDB 데이터",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "웹사이트의 localStorage 데이터",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "웹사이트의 서비스 워커",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "모든 창과 탭을 닫습니다.",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "웹사이트의 WebSQL 데이터",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "정리 기본 설정을 검토하려면 클릭하세요.",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "클릭클린 정리 완료",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "정리가 진행되는 동안 잠시 기다려 주십시오.",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean이 선택한 데이터를 정리 중입니다.",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "정리 카테고리",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "피드백이나 제안이 있으십니까? contact@riteshrana.engineer로 이메일을 보내주세요.",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "클릭클린 : 옵션",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "경험 설정",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "팁: Klick Klean을 빠르게 열려면 키보드 명령 Ctrl + Shift + E(macOS에서는 Cmd + Shift + E)를 사용하세요.",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "모든 창과 탭을 닫습니다(시크릿 창은 이 확장 프로그램이 시크릿 모드로 활성화된 경우에만 영향을 받을 수 있습니다).",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "정리 진행 상황에 대한 시스템 알림 표시",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "참고: 정리 기능은 데이터를 영구적으로 제거할 수 있으며 되돌릴 수 없습니다.",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "개인정보 보호: 정리 중에는 검색 데이터가 기기 외부로 유출되지 않습니다.",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "설정 저장",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "설정이 저장되었습니다.",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "클릭클린을 이용해 주셔서 감사합니다. 이 확장 프로그램이 정리할 수 있는 검색 데이터 유형을 선택하세요.",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "선택한 정리 카테고리 중 일부는 이 컨텍스트에서 지원되지 않습니다.",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "리뷰로 돌아가기",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "취소",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "정리 카테고리 선택",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "세션을 제거하거나 창을 닫을 수 있는 카테고리를 선택했습니다. 계속하려면 확인하세요.",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "정리 확인",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "확인하고 청소하세요",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "계속/청소",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "시크릿 데이터는 chrome://extensions에서 이 확장 프로그램이 시크릿 모드로 활성화된 경우에만 영향을 받을 수 있습니다.",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "아직 선택된 정리 카테고리가 없습니다.",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean은 귀하가 선택한 카테고리에 대해서만 Chrome 정리 API를 사용합니다. 정리는 브라우저에서 로컬로 실행되며 검색 데이터는 외부 서버로 전송되지 않습니다.",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "이러한 권한이 필요한 이유",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "기본값으로 저장",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "정리가 취소되었습니다. 데이터가 제거되지 않았습니다.",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "확인을 기다리고 있습니다.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "위험도가 높은 조치를 검토하고 청소하기 전에 확인하세요.",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "정리 실행 중...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "선택한 정리 카테고리를 검토한 후 데이터를 삭제하기 전에 확인하세요.",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "선택한 기능에 대한 경고",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "키보드 단축키 변경",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "현재 단축키: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "단축키 편집기가 열리지 않으면 확장 프로그램 페이지 > 키보드 단축키를 사용하여 변경하세요.",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "설정되지 않음",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "요청에 따라 브라우저 창과 탭이 닫혔습니다.",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "이렇게 하면 캐시된 파일이 지워집니다. 캐시가 삭제된 후 웹사이트가 일시적으로 더 느리게 로드될 수 있습니다.",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "이렇게 하면 웹 앱 및 서비스 작업자가 사용하는 웹사이트 캐시 저장소 데이터가 제거됩니다. 사이트에서 데이터를 다시 로드할 때까지 오프라인 기능이 작동하지 않을 수 있습니다.",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "이렇게 하면 쿠키와 사이트 데이터가 제거됩니다. 웹사이트에서 로그아웃될 수 있으며 웹사이트 기본 설정이나 세션이 재설정될 수 있습니다.",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "다운로드 목록/기록이 삭제됩니다. 다운로드한 파일이 반드시 컴퓨터에서 삭제되는 것은 아닙니다.",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "이렇게 하면 웹사이트 파일 시스템 데이터가 제거됩니다. 로컬에 저장된 웹사이트 파일이나 오프라인 앱 데이터가 손실될 수 있습니다.",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "저장된 자동 채우기/양식 항목이 제거됩니다. 저장된 양식 제안이 손실될 수 있습니다.",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "이렇게 하면 Chrome에서 인터넷 사용 기록 기록이 제거됩니다. 삭제된 기록은 브라우저에서 복구되지 않을 수 있습니다. 동기화된 기록 동작은 Chrome 동기화 설정에 따라 다릅니다.",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "이렇게 하면 웹사이트와 웹 앱에서 사용하는 IndexedDB 데이터베이스가 제거됩니다. 오프라인 데이터, 초안 또는 로컬에 저장된 앱 콘텐츠가 손실될 수 있습니다.",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "이렇게 하면 웹사이트에 저장된 localStorage 데이터가 제거됩니다. 기본 설정, 로컬 세션, 초안 또는 앱 상태가 손실될 수 있습니다.",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "지원되는 경우 서비스 워커 데이터가 제거됩니다. 오프라인 동작, 푸시 동작, 캐시된 웹 앱 동작은 웹사이트에서 작업자를 다시 등록할 때까지 재설정될 수 있습니다.",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "열려 있는 브라우저 창과 탭이 닫힙니다. 저장하지 않은 작업은 손실될 수 있습니다. 시크릿 창과 탭은 확장 프로그램이 시크릿 모드에서 허용되는 경우에만 영향을 받을 수 있습니다. 이 작업은 자동으로 취소할 수 없습니다.",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "이렇게 하면 이전 웹사이트에서 사용되는 WebSQL 데이터가 제거됩니다. 일부 오래된 웹 앱은 로컬에 저장된 데이터를 잃을 수 있습니다.",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "연락하다:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "클릭클린에 오신 것을 환영합니다",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "클릭클린 사용법:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "시크릿 참고사항: Chrome 확장 프로그램은 chrome://extensions에서 이 확장 프로그램을 시크릿 모드로 명시적으로 활성화하지 않는 한 시크릿 데이터에 영향을 줄 수 없습니다.",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean을 사용하면 Chrome에서 선택한 검색 데이터를 신속하게 제거할 수 있습니다.",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "다음 단계",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "확장 프로그램 설정 열기",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "확장 프로그램 페이지 열기",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "경고: 정리 작업으로 인해 브라우저 데이터가 영구적으로 삭제될 수 있으며 복구가 불가능할 수 있습니다.",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. Klick Klean 확장 프로그램 아이콘을 클릭하세요.",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. 정리할 데이터 유형을 선택합니다.",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. 선택한 기능에 대한 경고를 검토합니다.",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. 정리 작업을 확인합니다.",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. Chrome 권한, 활성 세션, 시크릿 제한, 사이트/브라우저 정책에 따라 일부 데이터는 제거되지 않을 수 있습니다.",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "클릭클린에 오신 것을 환영합니다",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "버전:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "청소됨:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "건너뛴 항목:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "해당 사항 없음:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "실패한:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "참고: Chrome은 삭제된 항목 수를 정확하게 보고하지 않습니다. 정리된 것으로 나열된 카테고리를 제거하도록 선택했지만 확장 프로그램에서는 영향을 받은 개별 항목 수를 확인할 수 없습니다.",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "제한사항:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "Chrome은 출처 제외를 지원하지 않으므로 허용 목록은 이 카테고리를 전역 정리로부터 보호할 수 없습니다.",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "범위가 지정된 정리에는 유효한 사이트 원본이 필요합니다. 유효한 출처가 제공되지 않았습니다.",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "일부 선택된 카테고리는 전역 정리에만 사용할 수 있으며 이 사이트에서는 건너뛰었습니다.",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "개인정보 보호 및 권한",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "이 확장 프로그램에 browserData 권한이 필요한 이유는 무엇입니까?",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean은 Chrome browserData API를 사용하여 선택한 데이터 유형을 제거합니다. 이 권한이 없으면 확장 프로그램은 인터넷 사용 기록을 삭제할 수 없습니다. 이 권한은 정리 작업을 명시적으로 트리거하는 경우에만 사용됩니다.",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "모든 처리는 로컬입니다.",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "모든 정리 작업은 전적으로 브라우저 내에서 실행됩니다. 검색 데이터, 쿠키, 기록 또는 기타 개인 정보는 외부 서버로 전송되지 않습니다. 확장 프로그램에는 백엔드, 분석 및 네트워크 호출이 없습니다.",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "원격 측정 또는 추적 없음",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean은 외부 서버에서 사용자 데이터를 수집, 전송 또는 저장하지 않습니다. 분석, 추적 픽셀, 제3자 스크립트, 광고가 없습니다. 확장 프로그램은 설치 후 완전히 오프라인으로 작동합니다.",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "허용 목록이 저장되는 방법",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "허용 목록(보호된 사이트)은 기기의 Chrome 확장 저장소에 로컬로 저장됩니다. 외부 서버와 동기화되지 않습니다. 확장 프로그램을 제거하면 이 데이터가 자동으로 제거됩니다.",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "알려진 제한사항",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "검색 기록 및 다운로드와 같은 일부 정리 카테고리는 특정 사이트가 아닌 전역적으로만 제거할 수 있습니다. Chrome은 실제로 삭제된 항목 수를 보고하지 않습니다. 시크릿 데이터는 확장 프로그램이 시크릿 모드로 활성화된 경우에만 영향을 받을 수 있습니다. 더 이상 사용되지 않는 일부 데이터 유형(AppCache, WebSQL)은 Chrome에서 더 이상 지원되지 않습니다.",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "지난 24시간 동안의 최근 기록, 쿠키, 캐시, 다운로드 및 양식 데이터를 삭제합니다. 일부 웹사이트에서 로그아웃될 수 있습니다.",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "현재 사이트에 대해서만 저장 공간과 캐시를 재설정합니다. 로딩 또는 동작 문제를 해결할 수 있습니다. 이 사이트에서 로그아웃됩니다.",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "전역적으로 모든 쿠키를 제거합니다. 모든 웹사이트에서 로그아웃됩니다. 검색 기록이나 캐시된 파일은 제거되지 않습니다.",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "캐시, localStorage, IndexedDB 및 서비스 작업자를 포함하여 전 세계적으로 모든 웹 사이트 저장소를 제거합니다. 웹 앱에서는 오프라인 데이터가 손실되어 다시 로드해야 할 수 있습니다.",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "현재 사이트에 대한 개발자 중심 재설정입니다. 활성 사이트에 대해서만 모든 저장소, 캐시, 서비스 작업자 및 쿠키를 지웁니다. 웹 애플리케이션 디버깅에 유용합니다.",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "지원되는 모든 검색 데이터 유형을 전역적으로 제거합니다. 이것은 가장 파괴적인 옵션입니다. 전문가 모드에만 해당됩니다. 모든 사이트에서 로그아웃되고 모든 로컬 웹 앱 데이터가 손실됩니다.",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL이 Chrome에서 제거되었습니다. 이 옵션을 선택해도 아무런 효과가 없습니다.",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "사이트 쿠키 권한",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "사이트 이미지 권한",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "사이트 JavaScript 권한",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "사이트 위치 권한",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "사이트 플러그인 권한",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "사이트 팝업 권한",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "사이트 알림 권한",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "사이트 전체 화면 권한",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "사이트 마우스 잠금 권한",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "사이트 마이크 권한",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "사이트 카메라 권한",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "샌드박스 처리되지 않은 사이트 플러그인 권한",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "사이트 자동 다운로드 권한",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "이렇게 하면 모든 사이트 쿠키 권한이 기본값으로 재설정됩니다. 사이트에서 다시 권한을 요청할 수 있습니다.",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "그러면 모든 사이트 이미지 권한이 기본값으로 재설정됩니다. 사이트에서 다시 권한을 요청할 수 있습니다.",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "이렇게 하면 모든 사이트 JavaScript 권한이 기본값으로 재설정됩니다. 일부 사이트는 권한이 복원될 때까지 제대로 작동하지 않을 수 있습니다.",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "그러면 모든 사이트 위치 권한이 기본값으로 재설정됩니다. 사이트에서 위치 액세스를 다시 요청할 수 있습니다.",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "그러면 모든 사이트 플러그인 권한이 기본값으로 재설정됩니다.",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "그러면 모든 사이트 팝업 권한이 기본값으로 재설정됩니다. 기본 설정에 따라 팝업이 차단되거나 허용될 수 있습니다.",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "그러면 모든 사이트 알림 권한이 기본값으로 재설정됩니다. 사이트에서 알림 권한을 다시 요청할 수 있습니다.",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "이렇게 하면 모든 사이트 전체 화면 권한이 기본값으로 재설정됩니다.",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "그러면 모든 사이트 마우스 잠금 권한이 기본값으로 재설정됩니다.",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "그러면 모든 사이트 마이크 권한이 기본값으로 재설정됩니다. 사이트에서 마이크 액세스를 다시 요청할 수 있습니다.",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "그러면 모든 사이트 카메라 권한이 기본값으로 재설정됩니다. 사이트에서 카메라 액세스를 다시 요청할 수 있습니다.",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "이렇게 하면 샌드박스 처리되지 않은 모든 사이트 플러그인 권한이 기본값으로 재설정됩니다.",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "그러면 모든 사이트의 자동 다운로드 권한이 기본값으로 재설정됩니다.",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "예정된 정리",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "자동 예약 정리 활성화",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "정리 간격",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "매시간",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "매일",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "매주",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "원산지 유형",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "보호되지 않은 웹사이트(일반 탐색)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "보호된 웹사이트(설치된 앱)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "확장 프로그램 및 패키지된 앱",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "콘텐츠 설정",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "정리 중 사이트 권한 재설정",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "활성화하면 선택한 사이트 권한(쿠키, 이미지, JavaScript, 알림 등)이 정리 중에 기본값으로 재설정됩니다.",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "세션 복원",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "최근 닫은 탭 복원",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "세션 복원 중...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "최근에 닫은 탭/창 $1개를 복원했습니다.",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "세션을 복원할 수 없습니다. 최근에 종료된 세션이 없습니다.",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "닫힌 탭 복원",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "Chrome 설정과 동기화됨",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

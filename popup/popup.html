@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>__MSG_popupDocumentTitle__</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <a href="#title" class="skip-link">__MSG_skipToContent__</a>
+  <main class="popup">
+    <header class="zone zone--hero popup__header">
+      <p class="eyebrow">__MSG_popupEyebrow__</p>
+      <h1 id="title"></h1>
+      <p id="subtitle" class="lede"></p>
+      <p class="shortcut-hint">__MSG_popupShortcutHint__</p>
+    </header>
+
+    <p id="currentOrigin" class="note" aria-label="Active site origin"></p>
+
+    <section class="zone zone--categories" aria-labelledby="cleanupCategoriesHeading" role="group">
+      <div class="zone__head">
+        <h2 id="cleanupCategoriesHeading">__MSG_popupCategoriesHeading__</h2>
+      </div>
+      <div id="items" class="checks" aria-live="polite" role="list"></div>
+    </section>
+
+    <section class="zone zone--warnings" aria-labelledby="warningHeader" role="alert">
+      <div class="zone__head">
+        <h2 id="warningHeader"></h2>
+      </div>
+      <ul id="warningList" class="warning-list" role="list"></ul>
+      <p id="preview" class="note"></p>
+      <details class="trust-note">
+        <summary id="permissionSummary"></summary>
+        <p id="permissionBody"></p>
+      </details>
+      <p id="incognitoNote" class="note"></p>
+    </section>
+
+    <section id="confirmPanel" class="zone zone--confirm" hidden aria-labelledby="confirmHeading">
+      <h2 id="confirmHeading"></h2>
+      <p id="confirmBody"></p>
+      <label class="check-row" for="confirmRisk">
+        <input type="checkbox" id="confirmRisk" aria-describedby="confirmBody" />
+        <span>__MSG_popupConfirmRiskLabel__</span>
+      </label>
+      <div class="confirm-actions">
+        <button id="backToReview" type="button" class="ghost"></button>
+        <button id="confirmRun" type="button" class="danger" disabled></button>
+      </div>
+    </section>
+
+    <section class="zone zone--actions">
+      <div class="actions">
+        <button id="cancel" type="button" class="ghost"></button>
+        <button id="savePrefs" type="button" class="brand"></button>
+        <button id="clean" type="button" class="danger"></button>
+      </div>
+    </section>
+
+    <p id="status" class="status status--idle" role="status" aria-live="polite"></p>
+
+    <section id="reportSection" class="zone zone--report" hidden aria-labelledby="reportHeading">
+      <h2 id="reportHeading">__MSG_popupReportHeading__</h2>
+      <ul id="reportList" class="warning-list"></ul>
+      <p id="reportNote" class="note" hidden></p>
+      <div id="reportLimitations" class="report-limitations" hidden></div>
+    </section>
+
+    <footer class="zone zone--support">
+      <p class="footer-meta">__MSG_welcomeVersionLabel__ __MSG_version__</p>
+      <p class="footer-meta">__MSG_welcomeContactLabel__ <a href="mailto:__MSG_contactEmail__">__MSG_contactEmail__</a></p>
+      <p class="footer-meta"><a href="../privacy.html" target="_blank">Privacy Policy</a></p>
+      <p>
+        <a class="support-link" href="https://buymeacoffee.com/ritesh.rana" target="_blank" rel="noopener noreferrer">
+          <svg class="support-link__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 6h14v8a4 4 0 0 1-4 4H9a6 6 0 0 1-6-6V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M17 8h1a3 3 0 0 1 0 6h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>__MSG_buyMeACoffee__</span>
+        </a>
+      </p>
+      <p class="footer-meta">__MSG_byline__</p>
+    </footer>
+  </main>
+
+  <script src="../i18n.js"></script>
+  <script src="../shared/utils.js"></script>
+  <script src="../shared/preferences.js"></script>
+  <script src="../shared/settings-store.js"></script>
+  <script src="../cleanup/capability-matrix.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

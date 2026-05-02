@@ -1,0 +1,11 @@
+{
+  "name": "klick-klean-extension",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "i18n:validate": "node scripts/validate-i18n.js",
+    "test:unit": "node tests/unit/time-range.test.js && node tests/unit/request-builder.test.js && node tests/unit/preset-engine.test.js && node tests/unit/risk-engine.test.js && node tests/unit/settings-store.test.js && node tests/unit/popup-ui-logic.test.js",
+    "test:integration": "node tests/integration/sw-request-assembly.test.js",
+    "test": "npm run test:unit && npm run test:integration"
+  }
+}

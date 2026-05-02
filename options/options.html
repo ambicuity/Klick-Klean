@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>__MSG_optionsDocumentTitle__</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">__MSG_skipToContent__</a>
+  <main class="options-shell" id="main-content">
+    <header class="hero zone">
+      <p class="eyebrow">__MSG_optionsEyebrow__</p>
+      <h1><img src="/static/icon-48.png" alt="__MSG_optionsIconAlt__" id="icon"> __MSG_extensionName__</h1>
+      <p id="intro">__MSG_optionsThanks__</p>
+    </header>
+
+    <form id="settingsForm" novalidate>
+      <section class="zone">
+        <fieldset class="card">
+          <legend>__MSG_optionsCleanupLegend__</legend>
+          <ul id="preferenceList" class="preference-list"></ul>
+        </fieldset>
+      </section>
+
+      <section class="zone">
+        <fieldset class="card">
+          <legend>__MSG_optionsAdvancedLegend__</legend>
+
+          <div class="field">
+            <label class="field__label" for="defaultPreset">__MSG_optionsDefaultPreset__</label>
+            <select id="defaultPreset" class="field__control"></select>
+            <p id="presetDescription" class="field__hint" hidden></p>
+            <p id="presetRisk" class="preset-risk" hidden></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="defaultScope">__MSG_optionsDefaultScope__</label>
+            <select id="defaultScope" class="field__control"></select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="defaultOrigins">__MSG_optionsDefaultOrigins__</label>
+            <p class="field__hint">__MSG_optionsOriginsHint__</p>
+            <textarea id="defaultOrigins" class="field__control field__control--textarea" rows="3" placeholder="https://example.com"></textarea>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="defaultTimeRange">__MSG_optionsDefaultTimeRange__</label>
+            <select id="defaultTimeRange" class="field__control"></select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="allowlistOrigins">__MSG_optionsAllowlistOrigins__</label>
+            <p class="field__hint">__MSG_optionsAllowlistHint__</p>
+            <textarea id="allowlistOrigins" class="field__control field__control--textarea" rows="4" placeholder="https://mail.google.com"></textarea>
+          </div>
+
+          <label class="row row--checkbox" for="expertMode">
+            <input type="checkbox" id="expertMode" />
+            <span>__MSG_optionsExpertMode__</span>
+          </label>
+        </fieldset>
+      </section>
+
+      <section class="zone">
+        <fieldset class="card">
+          <legend>__MSG_optionsExperienceLegend__</legend>
+          <label class="row row--checkbox" for="notificationsEnabled">
+            <input type="checkbox" id="notificationsEnabled" />
+            <span>__MSG_optionsNotificationsEnabled__</span>
+          </label>
+        </fieldset>
+      </section>
+
+      <section class="zone">
+        <fieldset class="card">
+          <legend>__MSG_privacyLegend__</legend>
+          <div class="privacy-section">
+            <h3>__MSG_privacyWhyTitle__</h3>
+            <p>__MSG_privacyWhyBody__</p>
+            <h3>__MSG_privacyLocalTitle__</h3>
+            <p>__MSG_privacyLocalBody__</p>
+            <h3>__MSG_privacyNoTrackTitle__</h3>
+            <p>__MSG_privacyNoTrackBody__</p>
+            <h3>__MSG_privacyAllowlistTitle__</h3>
+            <p>__MSG_privacyAllowlistBody__</p>
+            <h3>__MSG_privacyLimitationsTitle__</h3>
+            <p>__MSG_privacyLimitationsBody__</p>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="zone">
+        <div class="actions">
+          <button id="save" type="submit">__MSG_optionsSave__</button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+    </form>
+
+    <footer class="zone zone--support">
+      <p class="footer-meta">__MSG_welcomeVersionLabel__ __MSG_version__</p>
+      <p class="footer-meta">__MSG_welcomeContactLabel__ <a href="mailto:__MSG_contactEmail__">__MSG_contactEmail__</a></p>
+      <p class="footer-meta"><a href="../privacy.html" target="_blank">Privacy Policy</a></p>
+      <p>
+        <a class="support-link" href="https://buymeacoffee.com/ritesh.rana" target="_blank" rel="noopener noreferrer">
+          <svg class="support-link__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 6h14v8a4 4 0 0 1-4 4H9a6 6 0 0 1-6-6V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M17 8h1a3 3 0 0 1 0 6h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>__MSG_buyMeACoffee__</span>
+        </a>
+      </p>
+      <p class="footer-meta">__MSG_byline__</p>
+    </footer>
+  </main>
+
+  <script src="../i18n.js"></script>
+  <script src="../shared/utils.js"></script>
+  <script src="../shared/preferences.js"></script>
+  <script src="../shared/settings-store.js"></script>
+  <script src="../cleanup/time-range.js"></script>
+  <script src="../cleanup/capability-matrix.js"></script>
+  <script src="../cleanup/presets.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

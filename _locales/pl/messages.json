@@ -1,0 +1,838 @@
+{
+  "buyMeACoffee": {
+    "message": "Buy me a coffee",
+    "description": "Link text for the support/donation link shown in footer."
+  },
+  "byline": {
+    "message": "Extension by Ritesh Rana",
+    "description": "Attribution line shown in options and onboarding pages."
+  },
+  "cleanupComplete": {
+    "message": "Wybrane zadania czyszczenia zostały ukończone.",
+    "description": "Status message shown when selected cleanup tasks succeed."
+  },
+  "cleanupFailed": {
+    "message": "Nie udało się w pełni ukończyć czyszczenia.",
+    "description": "Status message prefix shown when cleanup fails."
+  },
+  "contactEmail": {
+    "message": "contact@riteshrana.engineer",
+    "description": "Support contact email address for the extension."
+  },
+  "currentSiteLabel": {
+    "message": "Current site:",
+    "description": "Label prefix before the current site origin URL."
+  },
+  "currentSiteUnavailable": {
+    "message": "Current site unavailable",
+    "description": "Message shown when current site origin cannot be determined."
+  },
+  "deprecatedCategory": {
+    "message": "This data type is no longer supported by Chrome and will be skipped.",
+    "description": "Status message shown when a selected cleanup category is deprecated in Chrome."
+  },
+  "errorAlreadyRunning": {
+    "message": "Czyszczenie już trwa. Proszę czekać.",
+    "description": "Error shown when another cleanup operation is already running."
+  },
+  "errorInvalidRequest": {
+    "message": "Nie można przetworzyć tego żądania.",
+    "description": "Error shown when extension receives malformed request."
+  },
+  "errorNoSelection": {
+    "message": "Przed kontynuowaniem wybierz co najmniej jedną kategorię czyszczenia.",
+    "description": "Error shown when user attempts cleanup with no selected categories."
+  },
+  "errorRuntimeFailed": {
+    "message": "Extension resources failed to load. Please reopen this page.",
+    "description": "Error shown when extension runtime dependencies fail to load."
+  },
+  "errorUnknownMessage": {
+    "message": "Ta akcja nie jest obsługiwana.",
+    "description": "Error shown for unknown message type."
+  },
+  "extensionDescription": {
+    "message": "Szybko usuwaj dane przeglądania, w tym karty/okna, historię, pliki cookie, historię pobierania, dane formularzy i pamięć podręczną witryny.",
+    "description": "Short extension description shown in Chrome extension management UI."
+  },
+  "extensionName": {
+    "message": "Klick Klean",
+    "description": "The extension product name shown in Chrome surfaces and UI headers."
+  },
+  "labelAppcache": {
+    "message": "Pamięci podręczne aplikacji stron internetowych",
+    "description": "Label for application cache cleanup category."
+  },
+  "labelCache": {
+    "message": "Pliki buforowane",
+    "description": "Label for cache cleanup category."
+  },
+  "labelCacheStorage": {
+    "message": "Dane pamięci podręcznej",
+    "description": "Label for Cache Storage cleanup category."
+  },
+  "labelCookies": {
+    "message": "Zapisane pliki cookie",
+    "description": "Label for cookies cleanup category."
+  },
+  "labelDownloads": {
+    "message": "Historia pobierania",
+    "description": "Label for downloads history cleanup category."
+  },
+  "labelFileSystems": {
+    "message": "Systemy plików stron internetowych",
+    "description": "Label for file systems cleanup category."
+  },
+  "labelFormData": {
+    "message": "Dane formularzy",
+    "description": "Label for form/autofill data cleanup category."
+  },
+  "labelHistory": {
+    "message": "Historia przeglądania",
+    "description": "Label for browsing history cleanup category."
+  },
+  "labelIndexedDB": {
+    "message": "Dane IndexedDB witryn internetowych",
+    "description": "Label for IndexedDB cleanup category."
+  },
+  "labelLocalStorage": {
+    "message": "Dane localStorage witryn internetowych",
+    "description": "Label for localStorage cleanup category."
+  },
+  "labelServiceWorkers": {
+    "message": "Pracownicy serwisu stron internetowych",
+    "description": "Label for service workers cleanup category."
+  },
+  "labelTabs": {
+    "message": "Zamknij wszystkie okna i karty",
+    "description": "Short label for tabs/windows cleanup option in popup."
+  },
+  "labelWebSQL": {
+    "message": "Dane WebSQL stron internetowych",
+    "description": "Label for WebSQL cleanup category."
+  },
+  "notifyCompleteBody": {
+    "message": "Kliknij, aby sprawdzić swoje preferencje dotyczące czyszczenia.",
+    "description": "Notification body shown when cleanup finishes."
+  },
+  "notifyCompleteTitle": {
+    "message": "Zakończono czyszczenie Klick Klean",
+    "description": "Notification title shown when cleanup finishes."
+  },
+  "originsDroppedWarning": {
+    "message": "$DROPPED$ of $TOTAL$ origin(s) were invalid and have been removed. Only full URLs starting with https:// are accepted.",
+    "description": "Warning shown when some origins are dropped during normalization.",
+    "placeholders": {
+      "dropped": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "notifyStartBody": {
+    "message": "Proszę poczekać, trwa czyszczenie.",
+    "description": "Notification body shown when cleanup starts."
+  },
+  "notifyStartTitle": {
+    "message": "Klick Klean czyści wybrane dane",
+    "description": "Notification title shown when cleanup starts."
+  },
+  "optionsAdvancedLegend": {
+    "message": "Advanced defaults",
+    "description": "Legend for advanced settings fieldset in options page."
+  },
+  "optionsAllowlistHint": {
+    "message": "Allowlisted sites are excluded from global cleanup. Enter full URLs including https://.",
+    "description": "Helper text for allowlist textarea in options page."
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Allowlist not saved. Use valid http(s) origins only.",
+    "description": "Error shown when allowlist contains no valid origins."
+  },
+  "optionsAllowlistOrigins": {
+    "message": "Allowlist origins (one per line)",
+    "description": "Label for allowlist textarea in options page."
+  },
+  "optionsCleanupLegend": {
+    "message": "Kategorie sprzątania",
+    "description": "Legend for cleanup settings fieldset in options."
+  },
+  "optionsContact": {
+    "message": "Masz uwagi lub sugestie? Napisz do nas na adres contact@riteshrana.engineer",
+    "description": "Support/contact line on options page footer."
+  },
+  "optionsDefaultOrigins": {
+    "message": "Selected origins (one per line)",
+    "description": "Label for origins textarea in options page."
+  },
+  "optionsDefaultPreset": {
+    "message": "Default preset",
+    "description": "Label for default preset dropdown in options page."
+  },
+  "optionsDefaultScope": {
+    "message": "Default scope",
+    "description": "Label for default scope dropdown in options page."
+  },
+  "optionsDefaultTimeRange": {
+    "message": "Default time range",
+    "description": "Label for default time range dropdown in options page."
+  },
+  "optionsDocumentTitle": {
+    "message": "Kliknij Klean: Opcje",
+    "description": "Document title for the options page."
+  },
+  "optionsExperienceLegend": {
+    "message": "Ustawienia doświadczenia",
+    "description": "Legend for experience settings fieldset in options."
+  },
+  "optionsExpertMode": {
+    "message": "Enable expert mode for destructive presets",
+    "description": "Label for expert mode checkbox in options page."
+  },
+  "optionsIconAlt": {
+    "message": "Klick Klean",
+    "description": "Alt text for the extension icon in options page header."
+  },
+  "optionsKeyboardTip": {
+    "message": "Wskazówka: użyj polecenia klawiaturowego Ctrl + Shift + E (Cmd + Shift + E w systemie macOS), aby szybko otworzyć Klick Klean.",
+    "description": "Keyboard shortcut help text on options page."
+  },
+  "optionsLabelTabsWithIncognito": {
+    "message": "Zamknij wszystkie okna i karty (na okna incognito można wpłynąć tylko wtedy, gdy to rozszerzenie jest włączone dla trybu incognito)",
+    "description": "Longer tabs/windows cleanup label for options page with incognito caveat."
+  },
+  "optionsManualSelection": {
+    "message": "Manual selection",
+    "description": "Option text for no preset selected in options page."
+  },
+  "optionsNotificationsEnabled": {
+    "message": "Pokaż powiadomienia systemowe o postępie czyszczenia",
+    "description": "Label for notifications toggle in options."
+  },
+  "optionsOriginsHint": {
+    "message": "Enter full URLs including https://, one per line.",
+    "description": "Helper text for origins textarea in options page."
+  },
+  "optionsPermanentNote": {
+    "message": "Uwaga: funkcje czyszczenia mogą trwale usunąć dane i mogą być nieodwracalne.",
+    "description": "Safety warning note on options page footer."
+  },
+  "optionsPrivacyLine": {
+    "message": "Prywatność: podczas czyszczenia żadne dane przeglądania nie opuszczają Twojego urządzenia.",
+    "description": "Privacy reassurance line in options and onboarding."
+  },
+  "optionsSave": {
+    "message": "Zapisz ustawienia",
+    "description": "Label for options page save button."
+  },
+  "optionsSaved": {
+    "message": "Ustawienia zapisane!",
+    "description": "Transient status message after saving options."
+  },
+  "optionsThanks": {
+    "message": "Dziękujemy za korzystanie z Klick Klean. Wybierz typy danych przeglądania, które to rozszerzenie może czyścić:",
+    "description": "Intro paragraph on options page."
+  },
+  "optionsTitle": {
+    "message": "Klick Klean : Options",
+    "description": "Legacy options title string retained for compatibility."
+  },
+  "partialUnsupported": {
+    "message": "Niektóre wybrane kategorie czyszczenia nie są obsługiwane w tym kontekście.",
+    "description": "Status message shown when part of requested cleanup is unsupported."
+  },
+  "popupBackToReview": {
+    "message": "Powrót do recenzji",
+    "description": "Button label to return from confirmation to review state."
+  },
+  "popupCancel": {
+    "message": "Anulować",
+    "description": "Label for popup cancel button."
+  },
+  "popupCategoriesHeading": {
+    "message": "Wybierz kategorie czyszczenia",
+    "description": "Heading for category checklist in popup."
+  },
+  "popupConfirmBody": {
+    "message": "Wybrałeś kategorie, które mogą usuwać sesje lub zamykać okna. Potwierdź, aby kontynuować.",
+    "description": "Body text in destructive cleanup confirmation section."
+  },
+  "popupConfirmHeading": {
+    "message": "Potwierdź czyszczenie",
+    "description": "Heading for destructive cleanup confirmation section in popup."
+  },
+  "popupConfirmRiskLabel": {
+    "message": "I understand this may log me out or reset web app data.",
+    "description": "Label for the high-risk confirmation checkbox in popup."
+  },
+  "popupConfirmRun": {
+    "message": "Potwierdź i wyczyść",
+    "description": "Button label to run cleanup after confirmation."
+  },
+  "popupContinue": {
+    "message": "Kontynuuj / Wyczyść",
+    "description": "Label for popup cleanup confirmation button."
+  },
+  "popupDocumentTitle": {
+    "message": "Klick Klean",
+    "description": "Document title for the popup page tab/window."
+  },
+  "popupIncognitoNote": {
+    "message": "Na dane incognito można wpłynąć tylko wtedy, gdy to rozszerzenie jest włączone dla trybu incognito w chrome://extensions.",
+    "description": "Popup note explaining incognito permission limitations."
+  },
+  "popupNoWarning": {
+    "message": "Nie wybrano jeszcze żadnych kategorii czyszczenia.",
+    "description": "Fallback warning list item when no category is selected in popup."
+  },
+  "popupPermissionBody": {
+    "message": "Klick Klean używa interfejsów API czyszczenia Chrome tylko dla wybranych przez Ciebie kategorii. Oczyszczanie odbywa się lokalnie w przeglądarce i żadne dane przeglądania nie są wysyłane na serwery zewnętrzne.",
+    "description": "Detailed permission and privacy rationale in popup."
+  },
+  "popupPermissionSummary": {
+    "message": "Dlaczego te uprawnienia są wymagane",
+    "description": "Summary text for permission rationale disclosure in popup."
+  },
+  "popupReportHeading": {
+    "message": "Post-cleanup report",
+    "description": "Heading for the cleanup results report section in popup."
+  },
+  "popupSavePrefs": {
+    "message": "Zapisz jako domyślny",
+    "description": "Label for popup button that saves current preferences."
+  },
+  "popupShortcutHint": {
+    "message": "Shortcut: Ctrl+Shift+E (Cmd+Shift+E on macOS)",
+    "description": "Keyboard shortcut hint shown in popup header."
+  },
+  "popupStatusCancelled": {
+    "message": "Sprzątanie anulowane. Żadne dane nie zostały usunięte.",
+    "description": "Popup status text when user cancels cleanup."
+  },
+  "popupStatusIdle": {
+    "message": "Czekam na potwierdzenie.",
+    "description": "Initial popup status text before user action."
+  },
+  "popupStatusNeedsConfirm": {
+    "message": "Przed czyszczeniem przejrzyj działania obarczone wysokim ryzykiem i potwierdź je.",
+    "description": "Status shown before user confirms destructive cleanup."
+  },
+  "popupStatusRunning": {
+    "message": "Trwa sprzątanie...",
+    "description": "Popup status text while cleanup is in progress."
+  },
+  "popupSubtitle": {
+    "message": "Przejrzyj wybrane kategorie czyszczenia, a następnie potwierdź przed usunięciem danych.",
+    "description": "Instructional subtitle shown in the popup."
+  },
+  "popupTitle": {
+    "message": "Klick Klean",
+    "description": "Main heading in the popup UI."
+  },
+  "popupWarningHeader": {
+    "message": "Ostrzeżenia dotyczące wybranych funkcji",
+    "description": "Header above popup warnings list."
+  },
+  "scopeCurrentSite": {
+    "message": "Current site",
+    "description": "Label for current-site cleanup scope."
+  },
+  "scopeGlobal": {
+    "message": "Global",
+    "description": "Label for global cleanup scope."
+  },
+  "scopeSelectedSites": {
+    "message": "Selected sites",
+    "description": "Label for selected-sites cleanup scope."
+  },
+  "shortcutChangeCta": {
+    "message": "Zmień skrót klawiaturowy",
+    "description": "CTA button label to open Chrome keyboard shortcut settings."
+  },
+  "shortcutCurrentLabel": {
+    "message": "Obecny skrót: $1",
+    "description": "Shows the currently assigned command shortcut. $1 is the shortcut value."
+  },
+  "shortcutFallbackInstruction": {
+    "message": "Jeśli edytor skrótów nie został otwarty, użyj strony Rozszerzenia > Skróty klawiaturowe, aby to zmienić.",
+    "description": "Shown when direct shortcut editor navigation is unavailable."
+  },
+  "shortcutNotSet": {
+    "message": "Nie ustawiono",
+    "description": "Shown when no shortcut is assigned."
+  },
+  "skipToContent": {
+    "message": "Skip to main content",
+    "description": "Skip link text for keyboard users to jump to main content."
+  },
+  "tabsClosedResult": {
+    "message": "Okna i karty przeglądarki zostały zamknięte zgodnie z żądaniem.",
+    "description": "Result detail shown when the tabs/windows cleanup option succeeds."
+  },
+  "timeRangeAllTime": {
+    "message": "All time",
+    "description": "Label for all time range option."
+  },
+  "timeRangeCustom": {
+    "message": "Custom range",
+    "description": "Label for custom time range option."
+  },
+  "timeRangeLast24Hours": {
+    "message": "Last 24 hours",
+    "description": "Label for last 24 hours time range option."
+  },
+  "timeRangeLast4Weeks": {
+    "message": "Last 4 weeks",
+    "description": "Label for last 4 weeks time range option."
+  },
+  "timeRangeLast7Days": {
+    "message": "Last 7 days",
+    "description": "Label for last 7 days time range option."
+  },
+  "timeRangeLastHour": {
+    "message": "Last hour",
+    "description": "Label for last hour time range option."
+  },
+  "version": {
+    "message": "1.0.0",
+    "description": "Displayed extension version on onboarding page."
+  },
+  "warnAppcache": {
+    "message": "Application Cache (AppCache) has been removed from Chrome. Selecting this option will have no effect.",
+    "description": "Warning shown when appcache cleanup option is selected, noting it is deprecated."
+  },
+  "warnCache": {
+    "message": "Spowoduje to wyczyszczenie plików w pamięci podręcznej. Po wyczyszczeniu pamięci podręcznej witryny internetowe mogą chwilowo ładować się wolniej.",
+    "description": "Warning shown when cache cleanup option is selected."
+  },
+  "warnCacheStorage": {
+    "message": "Spowoduje to usunięcie danych z pamięci podręcznej witryny internetowej używanych przez aplikacje internetowe i pracowników usług. Funkcja offline może przestać działać, dopóki witryny nie załadują ponownie danych.",
+    "description": "Warning shown when Cache Storage cleanup option is selected."
+  },
+  "warnCookies": {
+    "message": "Spowoduje to usunięcie plików cookie i danych witryn. Możesz zostać wylogowany ze stron internetowych, a preferencje lub sesje witryn mogą zostać zresetowane.",
+    "description": "Warning shown when cookies cleanup option is selected."
+  },
+  "warnDownloads": {
+    "message": "Spowoduje to wyczyszczenie listy/historii pobrań. Niekoniecznie powoduje to usunięcie pobranych plików z komputera.",
+    "description": "Warning shown when downloads history cleanup option is selected."
+  },
+  "warnFileSystems": {
+    "message": "Spowoduje to usunięcie danych systemu plików witryny internetowej. Lokalnie przechowywane pliki witryn internetowych lub dane aplikacji offline mogą zostać utracone.",
+    "description": "Warning shown when file systems cleanup option is selected."
+  },
+  "warnFormData": {
+    "message": "Spowoduje to usunięcie zapisanych wpisów autouzupełniania/formularza. Możesz utracić zapisane sugestie formularzy.",
+    "description": "Warning shown when form data cleanup option is selected."
+  },
+  "warnHistory": {
+    "message": "Spowoduje to usunięcie zapisów historii przeglądania z przeglądarki Chrome. Usuniętej historii może nie być możliwe odzyskanie w przeglądarce. Zachowanie synchronizowanej historii zależy od ustawień synchronizacji Chrome.",
+    "description": "Warning shown when browsing history cleanup option is selected."
+  },
+  "warnIndexedDB": {
+    "message": "Spowoduje to usunięcie baz danych IndexedDB używanych przez witryny internetowe i aplikacje internetowe. Dane offline, wersje robocze i zawartość aplikacji przechowywana lokalnie mogą zostać utracone.",
+    "description": "Warning shown when IndexedDB cleanup option is selected."
+  },
+  "warnLocalStorage": {
+    "message": "Spowoduje to usunięcie danych localStorage zapisanych przez strony internetowe. Preferencje, sesje lokalne, wersje robocze lub stan aplikacji mogą zostać utracone.",
+    "description": "Warning shown when localStorage cleanup option is selected."
+  },
+  "warnServiceWorkers": {
+    "message": "Spowoduje to usunięcie danych procesu roboczego usługi, jeśli jest to obsługiwane. Zachowanie w trybie offline, zachowanie wypychania i zachowanie aplikacji internetowych w pamięci podręcznej może zostać zresetowane do czasu, gdy witryny internetowe ponownie zarejestrują pracowników.",
+    "description": "Warning shown when service workers cleanup option is selected."
+  },
+  "warnTabs": {
+    "message": "Spowoduje to zamknięcie otwartych okien i kart przeglądarki. Niezapisana praca może zostać utracona. Na okna i karty incognito można wpływać tylko wtedy, gdy rozszerzenie jest dozwolone w trybie incognito. Tej akcji nie można automatycznie cofnąć.",
+    "description": "Warning shown when tabs/windows cleanup option is selected."
+  },
+  "warnWebSQL": {
+    "message": "Spowoduje to usunięcie danych WebSQL używanych przez starsze witryny internetowe. Niektóre starsze aplikacje internetowe mogą utracić dane przechowywane lokalnie.",
+    "description": "Warning shown when WebSQL cleanup option is selected."
+  },
+  "welcomeContactLabel": {
+    "message": "Kontakt:",
+    "description": "Label prefix before support contact email on onboarding page."
+  },
+  "welcomeDocumentTitle": {
+    "message": "Witamy w Klick Klean",
+    "description": "Document title for the onboarding page shown on install."
+  },
+  "welcomeHowTo": {
+    "message": "Jak korzystać z Klick Klean:",
+    "description": "Section heading for onboarding usage steps."
+  },
+  "welcomeIncognito": {
+    "message": "Uwaga incognito: rozszerzenia Chrome nie mogą wpływać na dane incognito, chyba że wyraźnie włączysz to rozszerzenie dla incognito w chrome://extensions.",
+    "description": "Onboarding incognito limitation note."
+  },
+  "welcomeIntro": {
+    "message": "Klick Klean pomaga szybko usunąć wybrane dane przeglądania z Chrome.",
+    "description": "Introductory paragraph on onboarding page."
+  },
+  "welcomeNextSteps": {
+    "message": "Kolejne kroki",
+    "description": "Heading for onboarding next actions section."
+  },
+  "welcomeOpenSettings": {
+    "message": "Otwórz ustawienia rozszerzenia",
+    "description": "CTA label to open options from onboarding."
+  },
+  "welcomeOpenShortcuts": {
+    "message": "Otwórz stronę rozszerzeń",
+    "description": "CTA label to open chrome://extensions from onboarding."
+  },
+  "welcomePermanent": {
+    "message": "Ostrzeżenie: działania czyszczące mogą trwale usunąć dane przeglądarki i mogą nie być możliwe do odzyskania.",
+    "description": "Safety warning on onboarding page."
+  },
+  "welcomeStep1": {
+    "message": "1. Kliknij ikonę rozszerzenia Klick Klean.",
+    "description": "Onboarding step 1."
+  },
+  "welcomeStep2": {
+    "message": "2. Wybierz typy danych do wyczyszczenia.",
+    "description": "Onboarding step 2."
+  },
+  "welcomeStep3": {
+    "message": "3. Przejrzyj ostrzeżenia dotyczące wybranych funkcji.",
+    "description": "Onboarding step 3."
+  },
+  "welcomeStep4": {
+    "message": "4. Potwierdź czynność czyszczenia.",
+    "description": "Onboarding step 4."
+  },
+  "welcomeStep5": {
+    "message": "5. Niektórych danych może nie być możliwe usunięcie w zależności od uprawnień Chrome, aktywnych sesji, ograniczeń incognito i zasad witryny/przeglądarki.",
+    "description": "Onboarding step 5 covering possible cleanup limits."
+  },
+  "welcomeTitle": {
+    "message": "Witamy w Klick Klean",
+    "description": "Main heading on onboarding page."
+  },
+  "welcomeVersionLabel": {
+    "message": "Wersja:",
+    "description": "Label prefix before version value on onboarding page."
+  },
+  "reportCleaned": {
+    "message": "Wyczyszczony:",
+    "description": "Report section heading for successfully cleaned categories."
+  },
+  "reportSkipped": {
+    "message": "Pominięte:",
+    "description": "Report section heading for categories skipped due to unsupported scope."
+  },
+  "reportNotApplicable": {
+    "message": "Nie dotyczy:",
+    "description": "Report section heading for categories that were skipped or deprecated."
+  },
+  "reportFailed": {
+    "message": "Przegrany:",
+    "description": "Report section heading for categories that failed to clean."
+  },
+  "reportHonestyNote": {
+    "message": "Uwaga: Chrome nie podaje dokładnej liczby usuniętych elementów. Kategorie oznaczone jako oczyszczone zostały wybrane do usunięcia, ale rozszerzenie nie może sprawdzić, ilu pojedynczych elementów dotyczyło to problemu.",
+    "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."
+  },
+  "reportLimitationsHeading": {
+    "message": "Ograniczenia:",
+    "description": "Heading for the limitations section in the post-cleanup report."
+  },
+  "limitationExcludeUnsupported": {
+    "message": "Lista dozwolonych nie może chronić tej kategorii przed globalnym czyszczeniem, ponieważ Chrome nie obsługuje wykluczania jej źródeł.",
+    "description": "Limitation note shown when a selected category does not support excludeOrigins."
+  },
+  "limitationScopeNeedsOrigin": {
+    "message": "Oczyszczanie o określonym zakresie wymaga prawidłowego źródła witryny. Nie podano prawidłowego pochodzenia.",
+    "description": "Error message when scoped cleanup is requested without a valid origin."
+  },
+  "warningScopedUnsupported": {
+    "message": "Niektóre wybrane kategorie są dostępne tylko do globalnego czyszczenia i zostały pominięte w tej witrynie.",
+    "description": "Warning shown when scoped cleanup is attempted for global-only categories."
+  },
+  "privacyLegend": {
+    "message": "Prywatność i uprawnienia",
+    "description": "Legend for privacy and permissions section in options page."
+  },
+  "privacyWhyTitle": {
+    "message": "Dlaczego to rozszerzenie potrzebuje pozwolenia przeglądaniaData?",
+    "description": "Heading explaining why the browsingData permission is required."
+  },
+  "privacyWhyBody": {
+    "message": "Klick Klean korzysta z interfejsu API przeglądaniaData przeglądarki Chrome, aby usunąć wybrane typy danych. Bez tego pozwolenia rozszerzenie nie może usunąć żadnych danych przeglądania. Uprawnienie jest używane tylko wtedy, gdy jawnie uruchomisz akcję czyszczenia.",
+    "description": "Explanation of why the browsingData permission is needed."
+  },
+  "privacyLocalTitle": {
+    "message": "Całe przetwarzanie ma charakter lokalny",
+    "description": "Heading for local-only processing explanation."
+  },
+  "privacyLocalBody": {
+    "message": "Wszystkie operacje czyszczenia działają całkowicie w przeglądarce. Żadne dane przeglądania, pliki cookie, historia ani żadne inne dane osobowe nie są nigdy wysyłane na serwery zewnętrzne. Rozszerzenie nie ma zaplecza, analiz ani połączeń sieciowych.",
+    "description": "Explanation that all processing happens locally with no external communication."
+  },
+  "privacyNoTrackTitle": {
+    "message": "Brak telemetrii i śledzenia",
+    "description": "Heading for no-tracking explanation."
+  },
+  "privacyNoTrackBody": {
+    "message": "Klick Klean nie gromadzi, nie przesyła ani nie przechowuje żadnych danych użytkowników na serwerach zewnętrznych. Nie ma żadnych analiz, pikseli śledzących, żadnych skryptów stron trzecich ani reklam. Po instalacji rozszerzenie działa całkowicie offline.",
+    "description": "Explanation that no telemetry or tracking is used."
+  },
+  "privacyAllowlistTitle": {
+    "message": "Sposób przechowywania listy dozwolonych",
+    "description": "Heading for allowlist storage explanation."
+  },
+  "privacyAllowlistBody": {
+    "message": "Twoja lista dozwolonych (chronione witryny) jest przechowywana lokalnie w pamięci rozszerzeń Chrome na Twoim urządzeniu. Nigdy nie jest synchronizowany z serwerami zewnętrznymi. Jeśli odinstalujesz rozszerzenie, dane te zostaną automatycznie usunięte.",
+    "description": "Explanation of how allowlist data is stored locally."
+  },
+  "privacyLimitationsTitle": {
+    "message": "Znane ograniczenia",
+    "description": "Heading for known limitations explanation."
+  },
+  "privacyLimitationsBody": {
+    "message": "Niektóre kategorie czyszczenia (takie jak historia przeglądania i pliki do pobrania) można usunąć tylko globalnie, a nie w przypadku określonych witryn. Chrome nie raportuje, ile elementów faktycznie zostało usuniętych. Na dane incognito można mieć wpływ tylko wtedy, gdy rozszerzenie ma włączony tryb incognito. Niektóre przestarzałe typy danych (AppCache, WebSQL) nie są już obsługiwane przez przeglądarkę Chrome.",
+    "description": "Explanation of known Chrome API limitations."
+  },
+  "presetDescQuickPrivacy": {
+    "message": "Usuwa najnowszą historię, pliki cookie, pamięć podręczną, pliki do pobrania i dane formularzy z ostatnich 24 godzin. Możliwe, że nastąpiło wylogowanie z niektórych witryn internetowych.",
+    "description": "Description for the Quick privacy clean preset."
+  },
+  "presetDescFixBrokenSite": {
+    "message": "Resetuje pamięć i pamięć podręczną tylko dla bieżącej witryny. Może rozwiązać problemy z ładowaniem lub zachowaniem. Nastąpi wylogowanie z tej witryny.",
+    "description": "Description for the Fix broken website preset."
+  },
+  "presetDescLogoutEverywhere": {
+    "message": "Usuwa wszystkie pliki cookie na całym świecie. Nastąpi wylogowanie ze wszystkich witryn internetowych. Nie powoduje to usunięcia historii przeglądania ani plików zapisanych w pamięci podręcznej.",
+    "description": "Description for the Log out everywhere preset."
+  },
+  "presetDescStorageReset": {
+    "message": "Usuwa całą pamięć witryn internetowych na całym świecie, w tym pamięć podręczną, lokalną pamięć masową, IndexedDB i procesy robocze. Aplikacje internetowe mogą utracić dane offline i wymagać ponownego załadowania.",
+    "description": "Description for the Storage reset preset."
+  },
+  "presetDescDevReset": {
+    "message": "Reset skupiony na programistach dla bieżącej witryny. Czyści całą pamięć masową, pamięć podręczną, procesy robocze usług i pliki cookie tylko dla aktywnej witryny. Przydatne do debugowania aplikacji internetowych.",
+    "description": "Description for the Developer reset for current site preset."
+  },
+  "presetDescFullWipe": {
+    "message": "Usuwa wszystkie obsługiwane typy danych przeglądania na całym świecie. To najbardziej destrukcyjna opcja. Tylko tryb ekspercki. Nastąpi wylogowanie ze wszystkich witryn i utrata wszystkich danych lokalnych aplikacji internetowych.",
+    "description": "Description for the Full wipe preset."
+  },
+  "warnWebSQLDeprecated": {
+    "message": "WebSQL został usunięty z Chrome. Wybranie tej opcji nie będzie miało żadnego efektu.",
+    "description": "Warning shown when WebSQL cleanup option is selected, noting it is deprecated."
+  },
+  "presetRiskLow": {
+    "message": "Low risk",
+    "description": "Label for low-risk preset."
+  },
+  "presetRiskMedium": {
+    "message": "Medium risk",
+    "description": "Label for medium-risk preset."
+  },
+  "presetRiskHigh": {
+    "message": "High risk",
+    "description": "Label for high-risk preset."
+  },
+  "optionsEyebrow": {
+    "message": "Extension Settings",
+    "description": "Small eyebrow label above the main heading on the options page."
+  },
+  "popupEyebrow": {
+    "message": "Browser Cleaner",
+    "description": "Small eyebrow label above the main heading in the popup."
+  },
+  "labelContentSettingsCookies": {
+    "message": "Uprawnienia dotyczące plików cookie witryny",
+    "description": "Label for content settings cookies category."
+  },
+  "labelContentSettingsImages": {
+    "message": "Uprawnienia do obrazu witryny",
+    "description": "Label for content settings images category."
+  },
+  "labelContentSettingsJavaScript": {
+    "message": "Uprawnienia JavaScript witryny",
+    "description": "Label for content settings JavaScript category."
+  },
+  "labelContentSettingsLocation": {
+    "message": "Uprawnienia dotyczące lokalizacji witryny",
+    "description": "Label for content settings location category."
+  },
+  "labelContentSettingsPlugins": {
+    "message": "Uprawnienia wtyczki witryny",
+    "description": "Label for content settings plugins category."
+  },
+  "labelContentSettingsPopups": {
+    "message": "Uprawnienia wyskakujących okienek witryny",
+    "description": "Label for content settings popups category."
+  },
+  "labelContentSettingsNotifications": {
+    "message": "Uprawnienia do powiadamiania o witrynie",
+    "description": "Label for content settings notifications category."
+  },
+  "labelContentSettingsFullscreen": {
+    "message": "Uprawnienia pełnoekranowe witryny",
+    "description": "Label for content settings fullscreen category."
+  },
+  "labelContentSettingsMouselock": {
+    "message": "Uprawnienia do blokowania myszy witryny",
+    "description": "Label for content settings mouselock category."
+  },
+  "labelContentSettingsMicrophone": {
+    "message": "Uprawnienia dotyczące mikrofonu witryny",
+    "description": "Label for content settings microphone category."
+  },
+  "labelContentSettingsCamera": {
+    "message": "Uprawnienia kamery w witrynie",
+    "description": "Label for content settings camera category."
+  },
+  "labelContentSettingsUnsandboxedPlugins": {
+    "message": "Uprawnienia wtyczki witryny poza piaskownicą",
+    "description": "Label for content settings unsandboxed plugins category."
+  },
+  "labelContentSettingsAutomaticDownloads": {
+    "message": "Automatyczne uprawnienia do pobierania witryny",
+    "description": "Label for content settings automatic downloads category."
+  },
+  "warnContentSettingsCookies": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich plików cookie witryny. Witryny mogą ponownie poprosić o pozwolenie.",
+    "description": "Warning for content settings cookies."
+  },
+  "warnContentSettingsImages": {
+    "message": "Spowoduje to przywrócenie domyślnych wszystkich uprawnień dotyczących obrazu witryny. Witryny mogą ponownie poprosić o pozwolenie.",
+    "description": "Warning for content settings images."
+  },
+  "warnContentSettingsJavaScript": {
+    "message": "Spowoduje to przywrócenie domyślnych wszystkich uprawnień JavaScript witryny. Niektóre witryny mogą nie działać poprawnie, dopóki uprawnienia nie zostaną przywrócone.",
+    "description": "Warning for content settings JavaScript."
+  },
+  "warnContentSettingsLocation": {
+    "message": "Spowoduje to przywrócenie domyślnych wszystkich uprawnień dotyczących lokalizacji witryny. Witryny mogą ponownie poprosić o dostęp do lokalizacji.",
+    "description": "Warning for content settings location."
+  },
+  "warnContentSettingsPlugins": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich wtyczek witryny.",
+    "description": "Warning for content settings plugins."
+  },
+  "warnContentSettingsPopups": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich wyskakujących okienek witryny. Wyskakujące okienka mogą być blokowane lub dozwolone w oparciu o ustawienia domyślne.",
+    "description": "Warning for content settings popups."
+  },
+  "warnContentSettingsNotifications": {
+    "message": "Spowoduje to zresetowanie wszystkich uprawnień do powiadomień w witrynie do domyślnych. Witryny mogą ponownie poprosić o pozwolenie na powiadomienie.",
+    "description": "Warning for content settings notifications."
+  },
+  "warnContentSettingsFullscreen": {
+    "message": "Spowoduje to zresetowanie wszystkich uprawnień pełnoekranowych witryny do ustawień domyślnych.",
+    "description": "Warning for content settings fullscreen."
+  },
+  "warnContentSettingsMouselock": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich blokad myszy w witrynie.",
+    "description": "Warning for content settings mouselock."
+  },
+  "warnContentSettingsMicrophone": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich mikrofonów witryny. Witryny mogą ponownie poprosić o dostęp do mikrofonu.",
+    "description": "Warning for content settings microphone."
+  },
+  "warnContentSettingsCamera": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich kamer w witrynie. Witryny mogą ponownie poprosić o dostęp do kamery.",
+    "description": "Warning for content settings camera."
+  },
+  "warnContentSettingsUnsandboxedPlugins": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich wtyczek witryny poza piaskownicą.",
+    "description": "Warning for content settings unsandboxed plugins."
+  },
+  "warnContentSettingsAutomaticDownloads": {
+    "message": "Spowoduje to przywrócenie domyślnych uprawnień wszystkich witryn do automatycznego pobierania.",
+    "description": "Warning for content settings automatic downloads."
+  },
+  "optionsScheduleLegend": {
+    "message": "Zaplanowane sprzątanie",
+    "description": "Legend for scheduled cleanup section."
+  },
+  "optionsAlarmEnabled": {
+    "message": "Włącz automatyczne zaplanowane czyszczenie",
+    "description": "Label for alarm enabled checkbox."
+  },
+  "optionsAlarmInterval": {
+    "message": "Interwał czyszczenia",
+    "description": "Label for alarm interval dropdown."
+  },
+  "alarmIntervalHourly": {
+    "message": "Co godzinę",
+    "description": "Label for hourly alarm interval."
+  },
+  "alarmIntervalDaily": {
+    "message": "Codziennie",
+    "description": "Label for daily alarm interval."
+  },
+  "alarmIntervalWeekly": {
+    "message": "Tygodniowo",
+    "description": "Label for weekly alarm interval."
+  },
+  "optionsOriginTypesLegend": {
+    "message": "Rodzaje pochodzenia",
+    "description": "Legend for origin types section."
+  },
+  "optionsOriginTypeUnprotected": {
+    "message": "Niezabezpieczone strony internetowe (normalne przeglądanie)",
+    "description": "Label for unprotected web origin type."
+  },
+  "optionsOriginTypeProtected": {
+    "message": "Chronione strony internetowe (zainstalowane aplikacje)",
+    "description": "Label for protected web origin type."
+  },
+  "optionsOriginTypeExtension": {
+    "message": "Rozszerzenia i aplikacje w pakietach",
+    "description": "Label for extension origin type."
+  },
+  "optionsContentSettingsLegend": {
+    "message": "Ustawienia treści",
+    "description": "Legend for content settings section."
+  },
+  "optionsContentSettingsEnabled": {
+    "message": "Zresetuj uprawnienia witryny podczas czyszczenia",
+    "description": "Label for content settings enabled checkbox."
+  },
+  "optionsContentSettingsHint": {
+    "message": "Po włączeniu wybrane uprawnienia witryny (pliki cookie, obrazy, JavaScript, powiadomienia itp.) zostaną zresetowane do wartości domyślnych podczas czyszczenia.",
+    "description": "Hint for content settings enabled."
+  },
+  "optionsSessionLegend": {
+    "message": "Przywrócenie sesji",
+    "description": "Legend for session restore section."
+  },
+  "optionsRestoreSessions": {
+    "message": "Przywróć ostatnio zamknięte karty",
+    "description": "Label for restore sessions button."
+  },
+  "restoreSessionsInProgress": {
+    "message": "Przywracam sesje...",
+    "description": "Status shown while restoring sessions."
+  },
+  "restoreSessionsSuccess": {
+    "message": "Przywrócono 1 USD ostatnio zamkniętych kart/okien.",
+    "description": "Status shown after restoring sessions.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "restoreSessionsFailed": {
+    "message": "Nie udało się przywrócić sesji. Nie znaleziono ostatnio zamkniętych sesji.",
+    "description": "Status shown when session restore fails."
+  },
+  "popupRestoreSessions": {
+    "message": "Przywróć zamknięte karty",
+    "description": "Label for restore sessions button in popup."
+  },
+  "syncedWithChromeSettings": {
+    "message": "Zsynchronizowano z ustawieniami Chrome",
+    "description": "Status shown when category is synced with Chrome native settings."
+  }
+}

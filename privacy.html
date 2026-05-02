@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klick Klean — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f1f0eb;
+      --surface: #fffcf4;
+      --ink: #141414;
+      --muted: #343434;
+      --line: #141414;
+      --accent: #0f6bff;
+      --accent-ink: #ffffff;
+      --r: 8px;
+      --shadow: 6px 6px 0 #141414;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Arial Black", "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+    }
+    .shell {
+      max-width: 720px;
+      margin: 20px auto;
+      padding: 0 14px 30px;
+    }
+    .zone {
+      border: 2px solid var(--line);
+      border-radius: var(--r);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+    h2 {
+      margin: 18px 0 8px;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    p, li {
+      font-size: 15px;
+      color: var(--muted);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    a {
+      color: var(--accent);
+      font-weight: 900;
+    }
+    .updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="zone">
+      <h1>Klick Klean Privacy Policy</h1>
+      <p class="updated">Last updated: May 1, 2026</p>
+    </div>
+
+    <div class="zone">
+      <h2>Overview</h2>
+      <p>Klick Klean is a browser extension that helps you delete selected browsing data from Chrome. This privacy policy explains what data we collect, how we use it, and your rights.</p>
+
+      <h2>Data We Do Not Collect</h2>
+      <p>Klick Klean operates entirely within your browser. We do <strong>not</strong> collect, transmit, or store any of the following on external servers:</p>
+      <ul>
+        <li>Browsing history</li>
+        <li>Cookies or site data</li>
+        <li>Download history</li>
+        <li>Form data or autofill entries</li>
+        <li>Cache or storage data</li>
+        <li>Personal identifiers</li>
+        <li>Usage analytics or telemetry</li>
+      </ul>
+
+      <h2>Data Stored Locally</h2>
+      <p>The only data stored by Klick Klean is kept locally on your device using Chrome's extension storage API:</p>
+      <ul>
+        <li><strong>Your settings</strong> — selected cleanup categories, default scope, time range, and preset preferences</li>
+        <li><strong>Allowlist</strong> — sites you choose to exclude from global cleanup (stored as origin URLs)</li>
+      </ul>
+      <p>This data never leaves your device. If you uninstall the extension, this data is automatically removed.</p>
+
+      <h2>Permissions</h2>
+      <p>Klick Klean requests the following Chrome permissions:</p>
+      <ul>
+        <li><strong>browsingData</strong> — Required to delete the browsing data types you select</li>
+        <li><strong>notifications</strong> — Optional, used only to show cleanup progress notifications (can be disabled in settings)</li>
+        <li><strong>storage</strong> — Required to save your settings and allowlist locally</li>
+        <li><strong>tabs</strong> — Required to detect the current site origin for current-site cleanup scope</li>
+      </ul>
+
+      <h2>Third Parties</h2>
+      <p>Klick Klean does not integrate with any third-party services, analytics platforms, advertising networks, or tracking pixels. There are no external API calls.</p>
+
+      <h2>Open Source</h2>
+      <p>Klick Klean is open source. You can inspect the full source code to verify these privacy claims.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, contact us at <a href="mailto:contact@riteshrana.engineer">contact@riteshrana.engineer</a>.</p>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Ritesh Rana. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
