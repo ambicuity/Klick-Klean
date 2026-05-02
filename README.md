@@ -83,4 +83,4 @@ This repository currently reflects a **runtime-focused package**.
 
 ## License
 
-No license file is currently included in this package. Add a `LICENSE` file to define reuse terms explicitly.
+This project is distributed under a custom restrictive license. See [`LICENSE`](LICENSE).
