@@ -32,7 +32,7 @@ Klick Klean is a Chrome extension that helps you quickly clean selected browsing
 2. Enable **Developer mode**.
 3. Click **Load unpacked**.
 4. Select this project folder:
-   - `.../Klick Klean/0.2.0_0`
+   - `.../Klick Klean/`
 5. Pin and open **Klick Klean** from the extensions toolbar.
 
 Useful entry points after loading:
