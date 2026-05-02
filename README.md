@@ -79,7 +79,7 @@ This repository currently reflects a **runtime-focused package**.
 
 - Contact: `contact@riteshrana.engineer`
 - Homepage: `https://riteshrana.engineer`
-- Support link in extension UI: Buy Me a Coffee
+- Buy Me a Coffee: `https://buymeacoffee.com/ritesh.rana`
 
 ## License
 

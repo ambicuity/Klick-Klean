@@ -48,6 +48,8 @@ Klick Klean is open source. You can inspect the full source code to verify these
 
 If you have questions about this privacy policy, contact us at [contact@riteshrana.engineer](mailto:contact@riteshrana.engineer).
 
+You can also support the project at [https://buymeacoffee.com/ritesh.rana](https://buymeacoffee.com/ritesh.rana).
+
 ---
 
 © 2026 Ritesh Rana. All rights reserved.
