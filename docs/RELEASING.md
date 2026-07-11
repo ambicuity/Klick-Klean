@@ -11,36 +11,55 @@ Add these under **Settings → Secrets and variables → Actions**:
 
 | Secret | What it is |
 |--------|------------|
-| `CWS_EXTENSION_ID` | The extension ID from the Web Store dashboard URL |
+| `CWS_EXTENSION_ID` | This extension's Web Store ID — `gaeddipmgpkeanmjbcenmcnjckhfjbkd` |
 | `CWS_CLIENT_ID` | OAuth2 client ID |
 | `CWS_CLIENT_SECRET` | OAuth2 client secret |
 | `CWS_REFRESH_TOKEN` | OAuth2 refresh token |
 
-### Obtaining the OAuth credentials
+### The OAuth credentials are account-wide and reusable
+
+`CWS_CLIENT_ID`, `CWS_CLIENT_SECRET`, and `CWS_REFRESH_TOKEN` authenticate the
+**Google developer account**, not a single extension. One set of tokens can
+publish **every extension owned by that account**. If you already publish another
+extension of yours from GitHub, reuse the exact same three values here — only
+`CWS_EXTENSION_ID` differs per extension (for Klick Klean it is
+`gaeddipmgpkeanmjbcenmcnjckhfjbkd`).
+
+GitHub repository secrets do not carry across repos, so copy the three OAuth
+values into *this* repo's secrets (or, if both repos live under a GitHub org, use
+an org-level secret shared to both).
+
+The account behind the tokens must have **publisher access** to the Klick Klean
+listing (returns HTTP 403 otherwise).
+
+### Obtaining the OAuth credentials (if you don't already have them)
+
+Easiest — the helper tool from the author of `chrome-webstore-upload-cli` walks
+through the Google Cloud setup, creates a Desktop OAuth client, opens the browser
+to authorize, and prints all three values:
+
+```
+npx chrome-webstore-upload-keys
+```
+
+Manual alternative:
 
 1. In **Google Cloud Console**, create (or reuse) a project and enable the
    **Chrome Web Store API**.
-2. Configure the OAuth consent screen (external, testing is fine) and add your
-   Google account as a test user.
-3. Create an **OAuth client ID** of type **Desktop app**. Note the client ID and
-   client secret.
-4. Generate a refresh token (one time). A common way:
-   ```
-   # Visit this URL in a browser (replace CLIENT_ID), approve, copy the code:
-   https://accounts.google.com/o/oauth2/auth?response_type=code&scope=https://www.googleapis.com/auth/chromewebstore&access_type=offline&approval_prompt=force&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=CLIENT_ID
+2. Configure the **OAuth consent screen** and add your Google account.
+3. Create an **OAuth client ID** of type **Desktop app** → gives the client ID
+   and client secret.
+4. Run the OAuth flow with that client to obtain a refresh token (the helper tool
+   above automates exactly this step).
 
-   # Exchange the code for a refresh token:
-   curl -s "https://oauth2.googleapis.com/token" \
-     -d "client_id=CLIENT_ID" \
-     -d "client_secret=CLIENT_SECRET" \
-     -d "code=THE_CODE" \
-     -d "grant_type=authorization_code" \
-     -d "redirect_uri=urn:ietf:wg:oauth:2.0:oob"
-   ```
-   Copy the `refresh_token` from the response.
+> ⚠️ **Set the OAuth consent screen to "In production," not "Testing."** In
+> Testing mode Google expires the refresh token after **7 days**, and the workflow
+> will start failing a week later with an auth error. Publishing the consent
+> screen makes the token long-lived.
 
-The Google account must have **publisher access** to the extension's Web Store
-listing.
+> Note: Google's old out-of-band (`urn:ietf:wg:oauth:2.0:oob`) copy-paste-code
+> flow is deprecated for new clients — use the helper tool or a Desktop-app
+> loopback flow instead.
 
 ## Cutting a release
 
