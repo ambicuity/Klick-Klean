@@ -10,6 +10,7 @@ cd "$ROOT"
 VERSION="$(node -e "process.stdout.write(require('./manifest.json').version)")"
 STAGE="dist/klick-klean-${VERSION}"
 ZIP="dist/klick-klean-${VERSION}.zip"
+ZIP_ABS="${ROOT}/${ZIP}"
 
 # Runtime files/directories referenced by the manifest and HTML surfaces.
 RUNTIME=(
@@ -42,7 +43,9 @@ done
 find "$STAGE" -name ".DS_Store" -delete
 find "$STAGE" -name "*.map" -delete
 
-( cd "$(dirname "$STAGE")" && zip -rqX "klick-klean-${VERSION}.zip" "klick-klean-${VERSION}" -x "*.DS_Store" )
+# Zip the CONTENTS of the staging dir so manifest.json sits at the archive root
+# (the Chrome Web Store rejects packages where the manifest is nested in a folder).
+( cd "$STAGE" && zip -rqX "$ZIP_ABS" . -x "*.DS_Store" )
 
 echo "Built ${ZIP} (version ${VERSION})"
 ls -l "$ZIP"
