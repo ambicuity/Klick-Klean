@@ -1,0 +1,85 @@
+name: Publish to Chrome Web Store
+
+# Publishes the extension to the Chrome Web Store directly from GitHub.
+#
+# Triggers:
+#   - Pushing a tag like v1.0.1
+#   - Manually via the Actions tab (workflow_dispatch)
+#
+# Required repository secrets (Settings -> Secrets and variables -> Actions):
+#   CWS_EXTENSION_ID  - the extension's Web Store ID
+#   CWS_CLIENT_ID     - OAuth2 client id
+#   CWS_CLIENT_SECRET - OAuth2 client secret
+#   CWS_REFRESH_TOKEN - OAuth2 refresh token
+#
+# See docs/RELEASING.md for how to obtain these credentials.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      publish_target:
+        description: "Publish target (default: trusted testers off = public)"
+        required: false
+        default: "default"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cws-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify (tests must pass before publishing)
+        run: npm test
+
+      - name: Guard - manifest version must match tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          MANIFEST_VERSION="$(node -e "process.stdout.write(require('./manifest.json').version)")"
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          if [ "$MANIFEST_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::manifest version ($MANIFEST_VERSION) does not match tag ($TAG_VERSION)"
+            exit 1
+          fi
+          echo "Version check OK: $MANIFEST_VERSION"
+
+      - name: Build package
+        run: bash scripts/build-zip.sh
+
+      - name: Resolve zip path
+        id: zip
+        run: |
+          VERSION="$(node -e "process.stdout.write(require('./manifest.json').version)")"
+          echo "path=dist/klick-klean-${VERSION}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: klick-klean-package
+          path: ${{ steps.zip.outputs.path }}
+
+      - name: Upload & publish to Chrome Web Store
+        env:
+          EXTENSION_ID: ${{ secrets.CWS_EXTENSION_ID }}
+          CLIENT_ID: ${{ secrets.CWS_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CWS_CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.CWS_REFRESH_TOKEN }}
+        run: |
+          npx --yes chrome-webstore-upload-cli@3 upload \
+            --source "${{ steps.zip.outputs.path }}" \
+            --auto-publish
