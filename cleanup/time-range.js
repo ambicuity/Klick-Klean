@@ -37,6 +37,23 @@
     return { start, end };
   }
 
+  // Chrome's browsingData API only accepts a lower time bound ("since"), so an
+  // upper bound can never be enforced. Detect it so the planner can say so
+  // out loud instead of silently removing data past the requested end (#3).
+  function hasUnenforceableEnd(customRange) {
+    if (!customRange || typeof customRange !== "object") {
+      return false;
+    }
+
+    const endRaw = customRange.end != null ? customRange.end : customRange.endMs;
+    if (endRaw == null) {
+      return false;
+    }
+
+    const end = Number(endRaw);
+    return Number.isFinite(end) && end > 0;
+  }
+
   function toSinceTimestamp(range, nowMs, customRange) {
     const safeNow = Number.isFinite(Number(nowMs)) ? Number(nowMs) : Date.now();
     const normalizedRange = normalizeTimeRange(range);
@@ -78,6 +95,7 @@
     TIME_RANGES,
     normalizeTimeRange,
     normalizeCustomRange,
+    hasUnenforceableEnd,
     toSinceTimestamp,
     buildRemovalWindow
   };

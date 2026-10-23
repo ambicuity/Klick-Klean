@@ -349,6 +349,10 @@
     "message": "Limitations:",
     "description": "Heading for the limitations section in the post-cleanup report."
   },
+  "limitationCustomRangeEndUnsupported": {
+    "message": "This custom range had an end date, but Chrome's cleanup API cannot limit a range to an end. Everything recorded after the start date was removed.",
+    "description": "Limitation note shown when a custom range specifies an end date that Chrome cannot enforce."
+  },
   "limitationExcludeUnsupported": {
     "message": "Allowlist cannot protect this category from global cleanup because Chrome does not support excluding origins for it.",
     "description": "Limitation note shown when a selected category does not support excludeOrigins."
