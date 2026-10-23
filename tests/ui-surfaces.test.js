@@ -429,6 +429,61 @@ async function main() {
     );
   }
 
+  console.log("\n[13] The popup hands the confirmed origin to the worker (#6)");
+  {
+    const sandbox = loadPopup({
+      tabsQuery: () => [{ id: 1, url: "https://confirmed.example/page" }]
+    });
+    const doc = sandbox.document;
+    await tick();
+
+    ok(
+      "the banner shows the resolved origin",
+      textOf(doc.getElementById("currentOrigin")).indexOf("https://confirmed.example") !== -1,
+      JSON.stringify(textOf(doc.getElementById("currentOrigin")))
+    );
+
+    doc.getElementById("opt-cookies").checked = true;
+    doc.getElementById("clean").dispatch("click");
+    doc.getElementById("confirmRisk").checked = true;
+    doc.getElementById("confirmRisk").dispatch("change");
+    doc.getElementById("confirmRun").dispatch("click");
+
+    const sent = sandbox.chrome.sentMessages[0];
+    ok(
+      "the request carried the confirmed origin",
+      Boolean(sent) && sent.activeOrigin === "https://confirmed.example",
+      sent && sent.activeOrigin
+    );
+  }
+
+  console.log("\n[14] The report states the origin that was actually cleaned (#6)");
+  {
+    const sandbox = loadPopup({
+      tabsQuery: () => [{ id: 1, url: "https://confirmed.example/page" }],
+      messageResponse: {
+        ok: true,
+        code: "CLEANUP_COMPLETE",
+        categories: [{ name: "cookies", status: "succeeded", reasonKey: "cleanupComplete", detail: "" }],
+        activeOrigin: "https://confirmed.example"
+      }
+    });
+    const doc = sandbox.document;
+    await tick();
+
+    doc.getElementById("opt-cookies").checked = true;
+    doc.getElementById("clean").dispatch("click");
+    doc.getElementById("confirmRisk").checked = true;
+    doc.getElementById("confirmRisk").dispatch("change");
+    doc.getElementById("confirmRun").dispatch("click");
+
+    ok(
+      "the report names the cleaned origin",
+      textOf(doc.getElementById("reportOrigin")).indexOf("https://confirmed.example") !== -1,
+      JSON.stringify(textOf(doc.getElementById("reportOrigin")))
+    );
+  }
+
   console.log("\n================ RESULT ================");
   console.log("PASS: " + pass + "  FAIL: " + fail);
   process.exit(fail === 0 ? 0 : 1);

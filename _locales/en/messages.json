@@ -349,6 +349,10 @@
     "message": "Failed:",
     "description": "Report section heading for categories that failed to clean."
   },
+  "reportOriginLabel": {
+    "message": "Cleaned origin:",
+    "description": "Label for the origin that was actually targeted by a scoped cleanup."
+  },
   "reportHonestyNote": {
     "message": "Note: Chrome does not report exact deleted item counts. Categories listed as cleaned were selected for removal, but the extension cannot verify how many individual items were affected.",
     "description": "Honesty disclaimer in the post-cleanup report explaining Chrome API limitations."

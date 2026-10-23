@@ -12,6 +12,7 @@ const { normalizeSettings } = KlickKleanPrefs;
 const { readSettings, readAllowlist } = KlickKleanSettingsStore;
 const { buildCleanupPlan } = KlickKleanRequestBuilder;
 const { getChromeKey, isCleanable } = KlickKleanCapabilities;
+const { normalizeOrigin } = KlickKleanUtils;
 
 const OPERATION_LOCK_MS = 60000;
 let cleanupLockAt = null;
@@ -157,6 +158,23 @@ function getActiveOrigin() {
   });
 }
 
+// Resolves the origin that scoped cleanup should target.
+//
+// The popup resolves it from the window the user actually interacted with and
+// passes it along. A service worker has no "current window", so its own
+// tabs.query can resolve to a different window's active tab -- which would
+// mean deleting a different site than the one the user confirmed (#6).
+// The supplied origin therefore wins; the lookup is only a fallback.
+function resolveActiveOrigin(message) {
+  const supplied = normalizeOrigin(
+    message && typeof message.activeOrigin === "string" ? message.activeOrigin : ""
+  );
+  if (supplied) {
+    return Promise.resolve(supplied);
+  }
+  return getActiveOrigin();
+}
+
 async function executeRemoval(options, dataToRemove, resultArray) {
   const keys = Object.keys(dataToRemove || {});
   if (keys.length === 0) {
@@ -214,7 +232,8 @@ function validatePayload(message) {
     { key: "scope", type: "string" },
     { key: "origins", type: "array" },
     { key: "allowlistOrigins", type: "array" },
-    { key: "expertMode", type: "boolean" }
+    { key: "expertMode", type: "boolean" },
+    { key: "activeOrigin", type: "string" }
   ];
 
   for (const rule of rules) {
@@ -288,8 +307,10 @@ async function handleCleanup(message) {
   cleanupLockAt = Date.now();
   activeRunId = runId();
 
+  let effectiveOrigin = "";
+
   try {
-    const activeOrigin = await getActiveOrigin();
+    effectiveOrigin = await resolveActiveOrigin(message);
     const fallbackSettings = await new Promise((resolve) => readSettings(resolve));
     const allowlistOrigins = await new Promise((resolve) => readAllowlist(resolve));
 
@@ -309,7 +330,7 @@ async function handleCleanup(message) {
         origins: parsed.settings.origins,
         allowlistOrigins: parsed.allowlistOrigins
       },
-      { activeOrigin }
+      { activeOrigin: effectiveOrigin }
     );
 
     if (plan.errors.length > 0) {
@@ -321,7 +342,8 @@ async function handleCleanup(message) {
         summary: { attempted: 0, succeeded: 0, failed: 0, skipped: 0, unsupported: 0 },
         categories: [],
         warnings: plan.warnings,
-        limitations: plan.limitations
+        limitations: plan.limitations,
+        activeOrigin: effectiveOrigin
       };
     }
 
@@ -369,7 +391,8 @@ async function handleCleanup(message) {
       summary,
       categories: categoryResults,
       warnings,
-      limitations
+      limitations,
+      activeOrigin: effectiveOrigin
     };
   } catch (error) {
     return {
@@ -381,7 +404,8 @@ async function handleCleanup(message) {
       summary: { attempted: 0, succeeded: 0, failed: 1, skipped: 0, unsupported: 0 },
       categories: [],
       warnings: [],
-      limitations: []
+      limitations: [],
+      activeOrigin: effectiveOrigin
     };
   } finally {
     cleanupLockAt = null;
