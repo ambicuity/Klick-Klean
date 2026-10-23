@@ -484,6 +484,74 @@ async function main() {
     );
   }
 
+  console.log("\n[15] The report shows why a category failed (#9)");
+  {
+    const sandbox = loadPopup({
+      tabsQuery: () => [{ id: 1, url: "https://example.com/" }],
+      messageResponse: {
+        ok: false,
+        code: "CLEANUP_FAILED",
+        messageKey: "cleanupFailed",
+        summary: { attempted: 1, succeeded: 0, failed: 1, skipped: 0, unsupported: 0 },
+        categories: [
+          {
+            name: "cookies",
+            status: "failed",
+            reasonKey: "cleanupFailed",
+            detail: "Invalid value for argument 2. Property 'origins': Invalid value for argument 1."
+          }
+        ],
+        warnings: [],
+        limitations: []
+      }
+    });
+    const doc = sandbox.document;
+    await tick();
+
+    doc.getElementById("opt-cookies").checked = true;
+    doc.getElementById("clean").dispatch("click");
+    doc.getElementById("confirmRisk").checked = true;
+    doc.getElementById("confirmRisk").dispatch("change");
+    doc.getElementById("confirmRun").dispatch("click");
+
+    const reportText = textOf(doc.getElementById("reportList"));
+    ok(
+      "the failure reason from the worker is shown",
+      reportText.indexOf("Invalid value for argument 1") !== -1,
+      JSON.stringify(reportText)
+    );
+    ok(
+      "the category is still listed",
+      reportText.indexOf("Cookies") !== -1 || reportText.indexOf("cookies") !== -1,
+      JSON.stringify(reportText)
+    );
+  }
+
+  console.log("\n[16] A successful category shows no failure detail (#9)");
+  {
+    const sandbox = loadPopup({
+      tabsQuery: () => [{ id: 1, url: "https://example.com/" }],
+      messageResponse: {
+        ok: true,
+        code: "CLEANUP_COMPLETE",
+        categories: [{ name: "cookies", status: "succeeded", reasonKey: "cleanupComplete", detail: "" }],
+        warnings: [],
+        limitations: []
+      }
+    });
+    const doc = sandbox.document;
+    await tick();
+
+    doc.getElementById("opt-cookies").checked = true;
+    doc.getElementById("clean").dispatch("click");
+    doc.getElementById("confirmRisk").checked = true;
+    doc.getElementById("confirmRisk").dispatch("change");
+    doc.getElementById("confirmRun").dispatch("click");
+
+    const reportText = textOf(doc.getElementById("reportList"));
+    ok("no empty detail element was added", reportText.indexOf("report-item__detail") === -1, JSON.stringify(reportText));
+  }
+
   console.log("\n================ RESULT ================");
   console.log("PASS: " + pass + "  FAIL: " + fail);
   process.exit(fail === 0 ? 0 : 1);
