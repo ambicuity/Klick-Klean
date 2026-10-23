@@ -237,6 +237,10 @@
     "message": "Save Settings",
     "description": "Label for options page save button."
   },
+  "optionsSaveFailed": {
+    "message": "Settings could not be saved. Your browser rejected the storage write, so the previous settings are still in effect.",
+    "description": "Error status message shown when saving options fails."
+  },
   "optionsSaved": {
     "message": "Settings saved!",
     "description": "Transient status message after saving options."
