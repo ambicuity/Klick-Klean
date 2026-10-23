@@ -3,16 +3,19 @@ name: Publish to Chrome Web Store
 # Publishes the extension to the Chrome Web Store directly from GitHub.
 #
 # Triggers:
-#   - Pushing a tag like v1.0.1
+#   - Pushing a tag like v1.1.0
 #   - Manually via the Actions tab (workflow_dispatch)
 #
-# Required repository secrets (Settings -> Secrets and variables -> Actions):
-#   CWS_EXTENSION_ID  - the extension's Web Store ID
-#   CWS_CLIENT_ID     - OAuth2 client id
-#   CWS_CLIENT_SECRET - OAuth2 client secret
-#   CWS_REFRESH_TOKEN - OAuth2 refresh token
+# Authentication uses a Google Cloud service account, not an OAuth refresh
+# token. The service account must be registered as a publisher on the Chrome
+# Web Store developer account that owns this listing.
 #
-# See docs/RELEASING.md for how to obtain these credentials.
+# Required repository secrets (Settings -> Secrets and variables -> Actions):
+#   CWS_EXTENSION_ID          - this extension's Web Store item id
+#   CWS_SERVICE_ACCOUNT_JSON  - service-account key file contents
+#
+# The publisher id is a public identifier from the dashboard's Account page,
+# so it lives in the workflow rather than in a secret.
 
 on:
   push:
@@ -20,10 +23,11 @@ on:
       - "v*"
   workflow_dispatch:
     inputs:
-      publish_target:
-        description: "Publish target (default: trusted testers off = public)"
+      publish:
+        description: "Submit the uploaded package for review"
         required: false
-        default: "default"
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -35,6 +39,8 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      CWS_PUBLISHER_ID: 8b00f945-9ad2-4149-a831-8f017da3a783
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,10 +56,12 @@ jobs:
       - name: Guard - manifest version must match tag
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          MANIFEST_VERSION="$(node -e "process.stdout.write(require('./manifest.json').version)")"
+          set -euo pipefail
+          MANIFEST_VERSION="$(node -p "require('./manifest.json').version")"
+          PACKAGE_VERSION="$(node -p "require('./package.json').version")"
           TAG_VERSION="${GITHUB_REF_NAME#v}"
-          if [ "$MANIFEST_VERSION" != "$TAG_VERSION" ]; then
-            echo "::error::manifest version ($MANIFEST_VERSION) does not match tag ($TAG_VERSION)"
+          if [ "$MANIFEST_VERSION" != "$TAG_VERSION" ] || [ "$PACKAGE_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::version mismatch: manifest=$MANIFEST_VERSION package=$PACKAGE_VERSION tag=$TAG_VERSION"
             exit 1
           fi
           echo "Version check OK: $MANIFEST_VERSION"
@@ -61,25 +69,22 @@ jobs:
       - name: Build package
         run: bash scripts/build-zip.sh
 
-      - name: Resolve zip path
-        id: zip
-        run: |
-          VERSION="$(node -e "process.stdout.write(require('./manifest.json').version)")"
-          echo "path=dist/klick-klean-${VERSION}.zip" >> "$GITHUB_OUTPUT"
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: klick-klean-package
-          path: ${{ steps.zip.outputs.path }}
+          path: dist/klick-klean-*.zip
 
-      - name: Upload & publish to Chrome Web Store
+      - name: Upload and publish to Chrome Web Store
         env:
-          EXTENSION_ID: ${{ secrets.CWS_EXTENSION_ID }}
-          CLIENT_ID: ${{ secrets.CWS_CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CWS_CLIENT_SECRET }}
-          REFRESH_TOKEN: ${{ secrets.CWS_REFRESH_TOKEN }}
+          CWS_EXTENSION_ID: ${{ secrets.CWS_EXTENSION_ID }}
+          CWS_SERVICE_ACCOUNT_JSON: ${{ secrets.CWS_SERVICE_ACCOUNT_JSON }}
+          CWS_SKIP_PUBLISH: ${{ github.event.inputs.publish == 'false' }}
         run: |
-          npx --yes chrome-webstore-upload-cli@3 upload \
-            --source "${{ steps.zip.outputs.path }}" \
-            --auto-publish
+          set -euo pipefail
+          if [ -z "${CWS_EXTENSION_ID:-}" ] || [ -z "${CWS_SERVICE_ACCOUNT_JSON:-}" ]; then
+            echo "::error::missing CWS_EXTENSION_ID or CWS_SERVICE_ACCOUNT_JSON secret"
+            exit 1
+          fi
+          VERSION="$(node -p "require('./manifest.json').version")"
+          node scripts/publish-chrome-webstore.mjs "dist/klick-klean-${VERSION}.zip"
