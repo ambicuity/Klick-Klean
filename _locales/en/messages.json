@@ -161,6 +161,18 @@
     "message": "Cleanup categories",
     "description": "Legend for cleanup settings fieldset in options."
   },
+  "optionsCustomRangeHint": {
+    "message": "Everything recorded after this date and time is removed. Chrome's cleanup API has no upper time bound, so a custom range cannot be limited to an end date.",
+    "description": "Hint shown under the custom time range start field in the options page."
+  },
+  "optionsCustomRangeInvalid": {
+    "message": "Enter a valid custom range start date and time before saving.",
+    "description": "Error shown when the custom time range is selected without a usable start."
+  },
+  "optionsCustomRangeStart": {
+    "message": "Remove data recorded after",
+    "description": "Label for the custom time range start field in the options page."
+  },
   "optionsContact": {
     "message": "Have feedback or suggestions? Email us at contact@riteshrana.engineer",
     "description": "Support/contact line on options page footer."

@@ -171,6 +171,109 @@ async function main() {
     );
   }
 
+  console.log("\n[6] A custom time range can be configured and persisted (#2)");
+  {
+    const sandbox = loadOptions();
+    const doc = sandbox.document;
+
+    doc.getElementById("defaultTimeRange").value = "custom";
+    doc.getElementById("customRangeStart").value = "2026-01-15T10:30";
+    doc.getElementById("history").checked = true;
+    doc.getElementById("settingsForm").dispatch("submit");
+
+    ok("settings were written", sandbox.chrome.writes.sync.length === 1);
+    const written = sandbox.chrome.writes.sync[0];
+    ok(
+      "the custom range was persisted",
+      Boolean(written) && written.settings.timeRange === "custom",
+      written && written.settings.timeRange
+    );
+    ok(
+      "the custom range carries a usable start",
+      Boolean(written) &&
+        written.settings.customRange &&
+        Number.isFinite(written.settings.customRange.start) &&
+        written.settings.customRange.start > 0,
+      written && JSON.stringify(written.settings.customRange)
+    );
+
+    const plan = sandbox.KlickKleanRequestBuilder.buildCleanupPlan(
+      {
+        categories: written.settings.categories,
+        timeRange: written.settings.timeRange,
+        customRange: written.settings.customRange,
+        scope: written.settings.scope
+      },
+      { activeOrigin: "" }
+    );
+    ok(
+      "the persisted settings produce a runnable plan",
+      plan.errors.length === 0,
+      JSON.stringify(plan.errors)
+    );
+    ok(
+      "the plan applies the custom start",
+      typeof plan.removeOptions.since === "number" && plan.removeOptions.since > 0,
+      JSON.stringify(plan.removeOptions)
+    );
+  }
+
+  console.log("\n[7] A custom range without a start is refused, not persisted (#2)");
+  {
+    const sandbox = loadOptions();
+    const doc = sandbox.document;
+
+    doc.getElementById("defaultTimeRange").value = "custom";
+    doc.getElementById("customRangeStart").value = "";
+    doc.getElementById("history").checked = true;
+    doc.getElementById("settingsForm").dispatch("submit");
+
+    ok("nothing was written", sandbox.chrome.writes.sync.length === 0, "writes=" + sandbox.chrome.writes.sync.length);
+    ok(
+      "the user is told what is missing",
+      textOf(doc.getElementById("status")).indexOf("valid custom range") !== -1,
+      JSON.stringify(textOf(doc.getElementById("status")))
+    );
+  }
+
+  console.log("\n[8] A stored custom range without bounds heals to all-time (#2)");
+  {
+    // Settings persisted by the broken 1.0.1 build: timeRange "custom" with
+    // no customRange. That combination used to make every cleanup fail.
+    const sandbox = loadOptions({
+      sync: {
+        settings: {
+          categories: { history: true },
+          timeRange: "custom",
+          customRange: null,
+          scope: "global",
+          origins: [],
+          presetId: "",
+          expertMode: false,
+          uiPreferences: { notificationsEnabled: true }
+        }
+      }
+    });
+
+    const settings = await new Promise((resolve) => sandbox.KlickKleanSettingsStore.readSettings(resolve));
+    ok(
+      "the broken custom range fell back to all-time",
+      settings.timeRange === "allTime",
+      settings.timeRange
+    );
+
+    const plan = sandbox.KlickKleanRequestBuilder.buildCleanupPlan(
+      {
+        categories: settings.categories,
+        timeRange: settings.timeRange,
+        customRange: settings.customRange,
+        scope: settings.scope
+      },
+      { activeOrigin: "" }
+    );
+    ok("the healed settings produce a runnable plan", plan.errors.length === 0, JSON.stringify(plan.errors));
+  }
+
   console.log("\n================ RESULT ================");
   console.log("PASS: " + pass + "  FAIL: " + fail);
   process.exit(fail === 0 ? 0 : 1);

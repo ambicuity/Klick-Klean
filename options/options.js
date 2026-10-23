@@ -163,6 +163,39 @@ function renderScopeOptions() {
   }
 }
 
+// The custom range only applies when the selected range is "custom".
+function syncCustomRangeVisibility() {
+  const select = document.getElementById("defaultTimeRange");
+  const field = document.getElementById("customRangeField");
+  if (!select || !field) return;
+  field.hidden = select.value !== TIME_RANGES.CUSTOM;
+}
+
+// <input type="datetime-local"> uses a local "YYYY-MM-DDTHH:mm" value.
+function toDateTimeLocalValue(timestamp) {
+  if (!Number.isFinite(Number(timestamp)) || Number(timestamp) <= 0) return "";
+  const date = new Date(Number(timestamp));
+  const pad = (n) => String(n).padStart(2, "0");
+  return (
+    date.getFullYear() +
+    "-" + pad(date.getMonth() + 1) +
+    "-" + pad(date.getDate()) +
+    "T" + pad(date.getHours()) +
+    ":" + pad(date.getMinutes())
+  );
+}
+
+// Returns the custom range start in epoch milliseconds, or null when the
+// field is empty or unparsable.
+function readCustomRangeStart() {
+  const field = document.getElementById("customRangeStart");
+  const raw = field && typeof field.value === "string" ? field.value.trim() : "";
+  if (!raw) return null;
+  const parsed = Date.parse(raw);
+  if (!Number.isFinite(parsed) || parsed <= 0) return null;
+  return parsed;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const status = document.getElementById("status");
 
@@ -186,6 +219,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("defaultScope").value = normalized.scope;
     document.getElementById("defaultOrigins").value = (normalized.origins || []).join("\n");
     document.getElementById("expertMode").checked = Boolean(normalized.expertMode);
+    const customRangeStart = document.getElementById("customRangeStart");
+    if (customRangeStart) {
+      customRangeStart.value = toDateTimeLocalValue(normalized.customRange?.start);
+    }
+    syncCustomRangeVisibility();
   });
 
   readAllowlist((origins) => {
@@ -204,8 +242,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("defaultPreset").addEventListener("change", updatePresetDescription);
 
+  document.getElementById("defaultTimeRange").addEventListener("change", syncCustomRangeVisibility);
+
   document.getElementById("settingsForm").addEventListener("submit", (event) => {
     event.preventDefault();
+
+    const selectedTimeRange = document.getElementById("defaultTimeRange").value;
+
+    // A custom range is only usable with a valid start. Refuse to persist a
+    // "custom" range without one -- that combination can never be executed
+    // and would break every later cleanup run (#2).
+    let customRange = null;
+    if (selectedTimeRange === TIME_RANGES.CUSTOM) {
+      const customStart = readCustomRangeStart();
+      if (!customStart) {
+        status.textContent = i18nT("optionsCustomRangeInvalid");
+        status.className = "status status--warn";
+        return;
+      }
+      customRange = { start: customStart, end: null };
+    }
 
     const rawOrigins = (document.getElementById("defaultOrigins").value || "")
       .split(/\n|,/)
@@ -216,7 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const settings = normalizeSettings({
       categories: getSelectedCategories(),
-      timeRange: document.getElementById("defaultTimeRange").value,
+      timeRange: selectedTimeRange,
+      customRange,
       scope: document.getElementById("defaultScope").value,
       origins: normalizedOrigins,
       presetId: document.getElementById("defaultPreset").value,
