@@ -76,6 +76,9 @@
     readSettings,
     saveSettings,
     readAllowlist,
-    saveAllowlist
+    saveAllowlist,
+    // Re-exported so surfaces that already depend on this namespace (popup,
+    // options) do not have to reach into KlickKleanUtils directly.
+    normalizeOriginList
   };
 })(typeof globalThis !== "undefined" ? globalThis : this);
