@@ -524,6 +524,13 @@ textarea:focus-visible,
 .report-item--skipped { color: var(--muted); }
 .report-item--failed { color: var(--danger); }
 
+.report-item__detail {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  word-break: break-word;
+}
+
 .field__hint {
   font-size: 11px;
   color: var(--muted);

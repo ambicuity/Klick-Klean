@@ -216,6 +216,15 @@ function renderReport(response) {
       const li = document.createElement("li");
       li.className = "report-item report-item--failed";
       li.textContent = `${entry.label}: ${i18nT(entry.reasonKey)}`;
+      // The worker captured the underlying reason for the failure. Showing it
+      // is the difference between "something went wrong" and an explanation
+      // the user can act on (#9).
+      if (entry.detail) {
+        const detail = document.createElement("span");
+        detail.className = "report-item__detail";
+        detail.textContent = entry.detail;
+        li.appendChild(detail);
+      }
       node.appendChild(li);
     }
   }
