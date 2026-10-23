@@ -9,6 +9,7 @@ let lastRunReport = null;
 let currentSettings = null;
 let currentAllowlist = [];
 let activePreset = null;
+let currentOriginValue = "";
 
 // Cache DOM references
 const DOM = {
@@ -16,6 +17,7 @@ const DOM = {
   reportList: null,
   reportSection: null,
   reportNote: null,
+  reportOrigin: null,
   reportLimitations: null,
   warningList: null,
   preview: null,
@@ -45,6 +47,7 @@ function initDOM() {
   DOM.reportList = document.getElementById("reportList");
   DOM.reportSection = document.getElementById("reportSection");
   DOM.reportNote = document.getElementById("reportNote");
+  DOM.reportOrigin = document.getElementById("reportOrigin");
   DOM.reportLimitations = document.getElementById("reportLimitations");
   DOM.warningList = document.getElementById("warningList");
   DOM.preview = document.getElementById("preview");
@@ -118,14 +121,29 @@ function renderReport(response) {
   const node = DOM.reportList;
   const section = DOM.reportSection;
   const noteNode = DOM.reportNote;
+  const originNode = DOM.reportOrigin;
   const limitationsNode = DOM.reportLimitations;
   section.hidden = false;
 
   if (!response || !Array.isArray(response.categories) || response.categories.length === 0) {
     section.hidden = true;
     if (noteNode) noteNode.hidden = true;
+    if (originNode) originNode.hidden = true;
     if (limitationsNode) limitationsNode.hidden = true;
     return;
+  }
+
+  // State the origin that was actually targeted, so the user can confirm it
+  // matches the site they expected (#6).
+  if (originNode) {
+    const cleanedOrigin = typeof response.activeOrigin === "string" ? response.activeOrigin : "";
+    if (cleanedOrigin) {
+      originNode.hidden = false;
+      originNode.textContent = i18nT("reportOriginLabel") + " " + cleanedOrigin;
+    } else {
+      originNode.hidden = true;
+      originNode.textContent = "";
+    }
   }
 
   const succeeded = [];
@@ -481,14 +499,22 @@ function executeCleanup(payload) {
   );
 }
 
-function resolveCurrentOriginBanner(url) {
+function resolveCurrentOrigin(url) {
   try {
     const parsed = new URL(url || "");
     if (parsed.protocol === "http:" || parsed.protocol === "https:") {
-      return i18nT("currentSiteLabel") + " " + parsed.origin;
+      return parsed.origin;
     }
   } catch (_error) {
     // noop
+  }
+  return "";
+}
+
+function resolveCurrentOriginBanner(url) {
+  const origin = resolveCurrentOrigin(url);
+  if (origin) {
+    return i18nT("currentSiteLabel") + " " + origin;
   }
   return i18nT("currentSiteUnavailable");
 }
@@ -540,6 +566,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const url = tabs && tabs[0] && tabs[0].url ? tabs[0].url : "";
+    // The worker must target exactly the origin shown here, so it is resolved
+    // once here and handed over with the request (#6).
+    currentOriginValue = resolveCurrentOrigin(url);
     DOM.currentOrigin.textContent = resolveCurrentOriginBanner(url);
   });
 
@@ -585,6 +614,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scope: effective.scope,
       origins: currentSettings.origins,
       allowlistOrigins: currentAllowlist,
+      activeOrigin: currentOriginValue,
       presetId: activePreset ? activePreset.id : currentSettings.presetId,
       expertMode: currentSettings.expertMode
     };

@@ -116,6 +116,80 @@ async function main() {
     ok("no browsing data was removed", chrome.browsingData.calls.length === 0);
   }
 
+  console.log("\n[5] The confirmed origin wins over the worker's own tab lookup (#6)");
+  {
+    const chrome = makeChrome({
+      // The worker's own lookup resolves to a different site.
+      tabsQuery: () => [{ id: 1, url: "https://other.example/page" }]
+    });
+    const sandbox = createServiceWorkerRuntime({ chrome });
+
+    const response = await runCleanup(sandbox, {
+      categories: { cookies: true, cache: true },
+      scope: "currentSite",
+      activeOrigin: "https://confirmed.example"
+    });
+
+    ok("the run succeeded", response && response.ok === true, JSON.stringify(response));
+    ok(
+      "the removal targeted the confirmed origin",
+      chrome.browsingData.calls.length === 1 &&
+        JSON.stringify(chrome.browsingData.calls[0].options.origins) === JSON.stringify(["https://confirmed.example"]),
+      JSON.stringify(chrome.browsingData.calls[0] && chrome.browsingData.calls[0].options)
+    );
+    ok(
+      "the worker did not run its own tab lookup",
+      chrome.tabs.queries.length === 0,
+      "queries=" + chrome.tabs.queries.length
+    );
+    ok(
+      "the effective origin was reported back",
+      Boolean(response) && response.activeOrigin === "https://confirmed.example",
+      response && response.activeOrigin
+    );
+  }
+
+  console.log("\n[6] The worker still falls back to its own lookup (#6)");
+  {
+    const chrome = makeChrome({
+      tabsQuery: () => [{ id: 1, url: "https://fallback.example/page" }]
+    });
+    const sandbox = createServiceWorkerRuntime({ chrome });
+
+    const response = await runCleanup(sandbox, {
+      categories: { cookies: true },
+      scope: "currentSite"
+    });
+
+    ok("the worker looked up the active tab", chrome.tabs.queries.length === 1, "queries=" + chrome.tabs.queries.length);
+    ok(
+      "the fallback origin was used",
+      chrome.browsingData.calls.length === 1 &&
+        JSON.stringify(chrome.browsingData.calls[0].options.origins) === JSON.stringify(["https://fallback.example"]),
+      JSON.stringify(chrome.browsingData.calls[0] && chrome.browsingData.calls[0].options)
+    );
+    ok(
+      "the effective origin was reported back",
+      Boolean(response) && response.activeOrigin === "https://fallback.example",
+      response && response.activeOrigin
+    );
+  }
+
+  console.log("\n[7] A non-http origin is rejected as a scope target (#6)");
+  {
+    const chrome = makeChrome();
+    const sandbox = createServiceWorkerRuntime({ chrome });
+
+    const response = await runCleanup(sandbox, {
+      categories: { cookies: true },
+      scope: "currentSite",
+      activeOrigin: "chrome://settings"
+    });
+
+    ok("the run was rejected", response && response.ok === false, JSON.stringify(response));
+    ok("nothing was removed", chrome.browsingData.calls.length === 0);
+  }
+
   console.log("\n================ RESULT ================");
   console.log("PASS: " + pass + "  FAIL: " + fail);
   process.exit(fail === 0 ? 0 : 1);
