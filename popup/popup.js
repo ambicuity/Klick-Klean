@@ -1,12 +1,14 @@
 const { CLEANUP_ORDER, LABEL_KEYS, WARNING_KEYS, HIGH_RISK_KEYS, DEFAULT_SETTINGS, normalizeSettings } = KlickKleanPrefs;
 const { readSettings, saveSettings, readAllowlist, normalizeOriginList } = KlickKleanSettingsStore;
 const { EXCLUDE_SUPPORTED } = KlickKleanCapabilities;
+const { PRESETS, applyPreset } = KlickKleanPresets;
 
 let isRunning = false;
 let pendingPayload = null;
 let lastRunReport = null;
 let currentSettings = null;
 let currentAllowlist = [];
+let activePreset = null;
 
 // Cache DOM references
 const DOM = {
@@ -33,7 +35,9 @@ const DOM = {
   permissionSummary: null,
   permissionBody: null,
   confirmHeading: null,
-  confirmBody: null
+  confirmBody: null,
+  presetSelect: null,
+  presetHint: null
 };
 
 function initDOM() {
@@ -61,6 +65,8 @@ function initDOM() {
   DOM.permissionBody = document.getElementById("permissionBody");
   DOM.confirmHeading = document.getElementById("confirmHeading");
   DOM.confirmBody = document.getElementById("confirmBody");
+  DOM.presetSelect = document.getElementById("presetSelect");
+  DOM.presetHint = document.getElementById("presetHint");
 }
 
 function setStatus(messageKeyOrText, variant) {
@@ -240,13 +246,99 @@ function renderPreview() {
     DOM.clean.disabled = false;
   }
 
+  const effective = effectiveRunSettings();
   const allowlistSupportedCount = selected.filter((key) => EXCLUDE_SUPPORTED.has(key)).length;
   preview.textContent = buildPreviewText({
     totalSelected: selected.length,
-    scope: currentSettings.scope,
-    range: currentSettings.timeRange,
+    scope: effective.scope,
+    range: effective.timeRange,
     allowlistSupportedCount
   });
+}
+
+// The settings a run will actually use.
+//
+// Categories always come from the visible checkboxes, so what the user sees
+// ticked is exactly what gets cleaned. A selected preset additionally supplies
+// its scope and time range, and pre-fills the checkboxes when it is chosen
+// (#4).
+function effectiveRunSettings() {
+  return {
+    categories: selectedCategories(),
+    timeRange: activePreset
+      ? activePreset.timeRange
+      : currentSettings
+        ? currentSettings.timeRange
+        : "allTime",
+    scope: activePreset
+      ? activePreset.scope
+      : currentSettings
+        ? currentSettings.scope
+        : "global"
+  };
+}
+
+function renderPresetOptions() {
+  const select = DOM.presetSelect;
+  if (!select) return;
+
+  const expertMode = Boolean(currentSettings && currentSettings.expertMode);
+  const pinnedId = currentSettings && currentSettings.presetId ? currentSettings.presetId : "";
+
+  select.innerHTML = "";
+
+  const manualOption = document.createElement("option");
+  manualOption.value = "";
+  manualOption.textContent = i18nT("optionsManualSelection");
+  select.appendChild(manualOption);
+
+  for (const preset of Object.values(PRESETS)) {
+    const pinned = preset.id === pinnedId;
+    if (preset.expertOnly && !expertMode && !pinned) {
+      continue;
+    }
+    const option = document.createElement("option");
+    option.value = preset.id;
+    option.textContent = i18nT(preset.labelKey);
+    select.appendChild(option);
+  }
+
+  select.value = pinnedId;
+  updatePresetHint(pinnedId);
+}
+
+function updatePresetHint(presetId) {
+  const hint = DOM.presetHint;
+  if (!hint) return;
+
+  const preset = presetId ? applyPreset(presetId) : null;
+  if (!preset) {
+    hint.hidden = true;
+    hint.textContent = "";
+    return;
+  }
+
+  const riskKey =
+    preset.riskLevel === "high" ? "presetRiskHigh" : preset.riskLevel === "medium" ? "presetRiskMedium" : "presetRiskLow";
+  const presetMeta = PRESETS[presetId];
+  hint.hidden = false;
+  hint.textContent = i18nT(presetMeta.description) + " " + i18nT(riskKey);
+}
+
+// Applies a preset to the popup: its categories replace the checkboxes and
+// its scope/time range drive the run (#4).
+function applyPresetToPopup(presetId) {
+  const applied = applyPreset(presetId);
+  activePreset = applied;
+
+  if (!applied) {
+    renderCategoryItems(currentSettings ? currentSettings.categories : {});
+  } else {
+    renderCategoryItems(applied.categories);
+  }
+
+  updatePresetHint(presetId);
+  renderWarnings();
 }
 
 function renderWarnings() {
@@ -438,6 +530,12 @@ document.addEventListener("DOMContentLoaded", () => {
     new Promise((resolve) => readAllowlist(resolve))
   ]).then(([settings, allowlist]) => {
     applySettingsToUI(settings || DEFAULT_SETTINGS, allowlist || []);
+    renderPresetOptions();
+
+    const storedPresetId = currentSettings && currentSettings.presetId ? currentSettings.presetId : "";
+    if (storedPresetId) {
+      applyPresetToPopup(storedPresetId);
+    }
   });
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -453,9 +551,13 @@ document.addEventListener("DOMContentLoaded", () => {
   DOM.savePrefs.addEventListener("click", () => {
     if (!currentSettings) return;
 
+    const effective = effectiveRunSettings();
     const updated = normalizeSettings({
       ...currentSettings,
-      categories: selectedCategories()
+      categories: effective.categories,
+      timeRange: effective.timeRange,
+      scope: effective.scope,
+      presetId: activePreset ? activePreset.id : currentSettings.presetId
     });
 
     saveSettings(updated, (_saved, saveError) => {
@@ -474,15 +576,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const categories = selectedCategories();
+    const effective = effectiveRunSettings();
+    const categories = effective.categories;
     const payload = {
       categories,
-      timeRange: currentSettings.timeRange,
+      timeRange: effective.timeRange,
       customRange: currentSettings.customRange,
-      scope: currentSettings.scope,
+      scope: effective.scope,
       origins: currentSettings.origins,
       allowlistOrigins: currentAllowlist,
-      presetId: currentSettings.presetId,
+      presetId: activePreset ? activePreset.id : currentSettings.presetId,
       expertMode: currentSettings.expertMode
     };
 
@@ -493,6 +596,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     executeCleanup(payload);
   });
+
+  if (DOM.presetSelect) {
+    DOM.presetSelect.addEventListener("change", (event) => {
+      applyPresetToPopup(event.target.value);
+    });
+  }
 
   DOM.confirmRisk.addEventListener("change", (event) => {
     DOM.confirmRun.disabled = !event.target.checked;

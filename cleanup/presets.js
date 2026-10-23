@@ -98,6 +98,24 @@
     return PRESETS[presetId] || null;
   }
 
+  // Returns the runnable shape of a preset: the categories it selects and the
+  // scope/time range it implies. Surfaces use this to actually apply the
+  // preset instead of only storing its id (#4).
+  function applyPreset(presetId) {
+    const preset = getPreset(presetId);
+    if (!preset) return null;
+
+    return {
+      id: preset.id,
+      categories: { ...preset.categories },
+      timeRange: preset.timeRange,
+      scope: preset.scope,
+      riskLevel: preset.riskLevel,
+      expertOnly: Boolean(preset.expertOnly),
+      requiresConfirmation: preset.requiresConfirmation !== false
+    };
+  }
+
   function isHighRiskPreset(presetId) {
     const preset = PRESETS[presetId];
     if (!preset) return false;
@@ -109,6 +127,7 @@
     PRESETS,
     RISK_LEVELS,
     getPreset,
+    applyPreset,
     isHighRiskPreset
   };
 

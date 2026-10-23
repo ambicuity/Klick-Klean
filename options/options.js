@@ -1,7 +1,7 @@
 const { CLEANUP_ORDER, LABEL_KEYS, DEFAULT_SETTINGS, normalizeSettings, HIGH_RISK_KEYS } = KlickKleanPrefs;
 const { readSettings, saveSettings, readAllowlist, saveAllowlist, normalizeOriginList } = KlickKleanSettingsStore;
 const { TIME_RANGES } = KlickKleanTimeRange;
-const { PRESETS, getPreset } = KlickKleanPresets;
+const { PRESETS, getPreset, applyPreset } = KlickKleanPresets;
 
 
 function assertRuntimeReady() {
@@ -68,7 +68,7 @@ function getSelectedCategories() {
   return prefs;
 }
 
-function renderPresetOptions(expertMode) {
+function renderPresetOptions(expertMode, pinnedPresetId) {
   const select = document.getElementById("defaultPreset");
   if (!select) return;
 
@@ -80,7 +80,10 @@ function renderPresetOptions(expertMode) {
   select.appendChild(manualOption);
 
   for (const preset of Object.values(PRESETS)) {
-    if (preset.expertOnly && !expertMode) {
+    // An expert-only preset that is already selected stays visible so it is
+    // never silently dropped from the user's configuration.
+    const pinned = Boolean(pinnedPresetId) && preset.id === pinnedPresetId;
+    if (preset.expertOnly && !expertMode && !pinned) {
       continue;
     }
     const option = document.createElement("option");
@@ -90,6 +93,25 @@ function renderPresetOptions(expertMode) {
   }
 
   updatePresetDescription();
+}
+
+// Applies a preset's categories, time range and scope to the form so the
+// selection actually changes what gets cleaned (#4).
+function applyPresetToForm(presetId) {
+  const applied = applyPreset(presetId);
+  if (!applied) return;
+
+  renderPreferenceItems(applied.categories);
+
+  const timeRangeSelect = document.getElementById("defaultTimeRange");
+  if (timeRangeSelect) {
+    timeRangeSelect.value = applied.timeRange;
+  }
+  const scopeSelect = document.getElementById("defaultScope");
+  if (scopeSelect) {
+    scopeSelect.value = applied.scope;
+  }
+  syncCustomRangeVisibility();
 }
 
 function updatePresetDescription() {
@@ -212,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   readSettings((settings) => {
     const normalized = normalizeSettings(settings || DEFAULT_SETTINGS);
     renderPreferenceItems(normalized.categories);
-    renderPresetOptions(Boolean(normalized.expertMode));
+    renderPresetOptions(Boolean(normalized.expertMode), normalized.presetId || "");
     document.getElementById("defaultPreset").value = normalized.presetId || "";
     document.getElementById("notificationsEnabled").checked = Boolean(normalized.uiPreferences.notificationsEnabled);
     document.getElementById("defaultTimeRange").value = normalized.timeRange;
@@ -235,12 +257,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("expertMode").addEventListener("change", (event) => {
     const currentPreset = document.getElementById("defaultPreset").value;
-    renderPresetOptions(Boolean(event.target.checked));
+    // Keep the current preset visible so turning expert mode off never
+    // silently discards it.
+    renderPresetOptions(Boolean(event.target.checked), currentPreset);
     document.getElementById("defaultPreset").value = currentPreset;
     updatePresetDescription();
   });
 
-  document.getElementById("defaultPreset").addEventListener("change", updatePresetDescription);
+  document.getElementById("defaultPreset").addEventListener("change", (event) => {
+    updatePresetDescription();
+    applyPresetToForm(event.target.value);
+  });
 
   document.getElementById("defaultTimeRange").addEventListener("change", syncCustomRangeVisibility);
 
