@@ -140,7 +140,37 @@ console.log("\n[9] buildCleanupPlan - custom range without data -> error");
   ok("INVALID_CUSTOM_RANGE error", plan.errors.some((e) => e.code === "INVALID_CUSTOM_RANGE"));
 }
 
-console.log("\n[10] i18n fallback returns key when chrome.i18n absent");
+console.log("\n[10] A custom range with an end bound is reported, never silently over-deleted (#3)");
+{
+  const withEnd = KlickKleanRequestBuilder.buildCleanupPlan(
+    { categories: { cache: true }, timeRange: "custom", scope: "global", customRange: { start: 1000, end: 2000 } },
+    { activeOrigin: "" }
+  );
+  ok(
+    "a limitation is emitted for the unenforceable end",
+    withEnd.limitations.some((l) => l.code === "CUSTOM_RANGE_END_UNSUPPORTED"),
+    JSON.stringify(withEnd.limitations)
+  );
+  ok("the limitation carries a message key", withEnd.limitations[0] && Boolean(withEnd.limitations[0].messageKey));
+  ok("the run is still valid", withEnd.errors.length === 0, JSON.stringify(withEnd.errors));
+
+  const withoutEnd = KlickKleanRequestBuilder.buildCleanupPlan(
+    { categories: { cache: true }, timeRange: "custom", scope: "global", customRange: { start: 1000, end: null } },
+    { activeOrigin: "" }
+  );
+  ok(
+    "no limitation for a start-only custom range",
+    !withoutEnd.limitations.some((l) => l.code === "CUSTOM_RANGE_END_UNSUPPORTED"),
+    JSON.stringify(withoutEnd.limitations)
+  );
+  ok(
+    "the start-only range is applied as the lower bound",
+    withoutEnd.removeOptions.since === 1000,
+    JSON.stringify(withoutEnd.removeOptions)
+  );
+}
+
+console.log("\n[11] i18n fallback returns key when chrome.i18n absent");
 ok("i18nT('cleanupComplete') === 'cleanupComplete'", sandbox.i18nT("cleanupComplete") === "cleanupComplete");
 
 console.log("\n================ RESULT ================");

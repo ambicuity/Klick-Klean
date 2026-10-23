@@ -96,6 +96,20 @@
       });
     }
 
+    // Chrome cannot limit a removal to an upper time bound, so a custom range
+    // that carries an end silently removes everything past the start. Say so
+    // explicitly instead of over-deleting quietly (#3).
+    if (
+      timeRange === timeRangeApi.TIME_RANGES.CUSTOM &&
+      typeof timeRangeApi.hasUnenforceableEnd === "function" &&
+      timeRangeApi.hasUnenforceableEnd(input.customRange)
+    ) {
+      limitations.push({
+        code: "CUSTOM_RANGE_END_UNSUPPORTED",
+        messageKey: "limitationCustomRangeEndUnsupported"
+      });
+    }
+
     if (scopedRun && requestedOrigins.length > 0) {
       removeOptions.origins = requestedOrigins;
     }
