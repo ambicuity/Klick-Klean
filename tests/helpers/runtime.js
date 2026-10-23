@@ -105,8 +105,17 @@ function makeChrome(options = {}) {
 
   const chrome = {
     runtime: Object.assign(runtime, {
-      onMessage: { addListener() {} },
-      onInstalled: { addListener() {} },
+      listeners: {},
+      onMessage: {
+        addListener(fn) {
+          runtime.listeners.message = fn;
+        }
+      },
+      onInstalled: {
+        addListener(fn) {
+          runtime.listeners.installed = fn;
+        }
+      },
       getURL: (p) => "chrome-extension://klickklean/" + p,
       openOptionsPage() {},
       sendMessage(message, callback) {
@@ -131,7 +140,9 @@ function makeChrome(options = {}) {
       }
     },
     tabs: {
+      queries: [],
       query(query, callback) {
+        chrome.tabs.queries.push(query);
         if (typeof query === "function") {
           callback(query);
           return;
@@ -140,12 +151,20 @@ function makeChrome(options = {}) {
       }
     },
     windows: {
+      removed: [],
       create: windows.create || (() => Promise.resolve({ id: 999 })),
       getAll: windows.getAll || (() => Promise.resolve([])),
-      remove: windows.remove || (() => Promise.resolve())
+      remove(id) {
+        chrome.windows.removed.push(id);
+        return windows.remove ? windows.remove(id) : Promise.resolve();
+      }
     },
     browsingData: {
-      remove: browsingData.remove || (() => Promise.resolve())
+      calls: [],
+      remove(options, data) {
+        chrome.browsingData.calls.push({ options, data });
+        return browsingData.remove ? browsingData.remove(options, data) : Promise.resolve();
+      }
     },
     notifications: {
       created: [],
@@ -197,4 +216,33 @@ function createRuntime(options = {}) {
   return sandbox;
 }
 
-module.exports = { ROOT, MODULE_ORDER, makeChrome, createRuntime, getMessage };
+// Replays the service worker exactly as Chrome loads it: importScripts()
+// pulls the runtime modules into the same context, then sw.js runs.
+function createServiceWorkerRuntime(options = {}) {
+  const sandbox = { console };
+  sandbox.globalThis = sandbox;
+  sandbox.self = sandbox;
+  sandbox.chrome = options.chrome || makeChrome(options.chromeOptions || {});
+  sandbox.NodeFilter = { SHOW_TEXT: 4 };
+  sandbox.window = { close() {} };
+
+  for (const g of [
+    "URL", "URLSearchParams", "Date", "Math", "JSON", "Set", "Map", "Array",
+    "Object", "Number", "Boolean", "String", "Promise", "RegExp", "Error",
+    "setTimeout", "clearTimeout"
+  ]) {
+    sandbox[g] = globalThis[g];
+  }
+
+  const context = vm.createContext(sandbox);
+  sandbox.importScripts = function importScripts(...paths) {
+    for (const rel of paths) {
+      vm.runInContext(fs.readFileSync(path.join(ROOT, rel), "utf8"), context, { filename: rel });
+    }
+  };
+
+  vm.runInContext(fs.readFileSync(path.join(ROOT, "sw.js"), "utf8"), context, { filename: "sw.js" });
+  return sandbox;
+}
+
+module.exports = { ROOT, MODULE_ORDER, makeChrome, createRuntime, createServiceWorkerRuntime, getMessage };

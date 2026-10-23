@@ -579,6 +579,10 @@
     "message": "Skip to main content",
     "description": "Skip link text for keyboard users to jump to main content."
   },
+  "tabsCloseFailed": {
+    "message": "Some browser windows could not be closed.",
+    "description": "Result message shown when closing all windows and tabs did not fully succeed."
+  },
   "tabsClosedResult": {
     "message": "Browser windows and tabs were closed as requested.",
     "description": "Result detail shown when the tabs/windows cleanup option succeeds."
