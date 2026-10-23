@@ -142,6 +142,66 @@ console.log("\n[3] saveSettings persists the normalised settings object");
   );
 }
 
-console.log("\n================ RESULT ================");
-console.log("PASS: " + pass + "  FAIL: " + fail);
-process.exit(fail === 0 ? 0 : 1);
+console.log("\n[4] A failed read never throws and always calls back (#7)");
+{
+  const sandbox = loadStore();
+  sandbox.chrome = makeChrome({ failSyncRead: true, failLocalRead: true });
+
+  let settingsResult = null;
+  let settingsCalls = 0;
+  let threw = null;
+  try {
+    sandbox.KlickKleanSettingsStore.readSettings((v) => {
+      settingsCalls += 1;
+      settingsResult = v;
+    });
+  } catch (error) {
+    threw = error;
+  }
+  ok("readSettings did not throw", threw === null, threw && threw.message);
+  ok("readSettings called back exactly once", settingsCalls === 1, "calls=" + settingsCalls);
+  ok(
+    "readSettings fell back to the default settings",
+    settingsResult !== null &&
+      settingsResult.timeRange === sandbox.KlickKleanPrefs.DEFAULT_SETTINGS.timeRange &&
+      settingsResult.scope === sandbox.KlickKleanPrefs.DEFAULT_SETTINGS.scope
+  );
+
+  let allowlistResult = null;
+  let allowlistCalls = 0;
+  threw = null;
+  try {
+    sandbox.KlickKleanSettingsStore.readAllowlist((v) => {
+      allowlistCalls += 1;
+      allowlistResult = v;
+    });
+  } catch (error) {
+    threw = error;
+  }
+  ok("readAllowlist did not throw", threw === null, threw && threw.message);
+  ok("readAllowlist called back exactly once", allowlistCalls === 1, "calls=" + allowlistCalls);
+  ok("readAllowlist returned an empty list", JSON.stringify(allowlistResult) === "[]", JSON.stringify(allowlistResult));
+}
+
+console.log("\n[5] A failed read resolves the awaiting promise (#7)");
+{
+  // The service worker awaits the store through `new Promise((resolve) =>
+  // readAllowlist(resolve))`. Before the fix the read threw inside Chrome's
+  // callback, which left that promise unsettled and latched the operation
+  // lock. Assert the promise now settles.
+  const sandbox = loadStore();
+  sandbox.chrome = makeChrome({ failSyncRead: true, failLocalRead: true });
+
+  new Promise((resolve) => {
+    const timer = setTimeout(() => resolve("HUNG"), 50);
+    new Promise((r) => sandbox.KlickKleanSettingsStore.readAllowlist(r)).then((v) => {
+      clearTimeout(timer);
+      resolve(v);
+    });
+  }).then((settled) => {
+    ok("the awaiting promise settled instead of hanging", settled !== "HUNG", String(settled));
+    console.log("\n================ RESULT ================");
+    console.log("PASS: " + pass + "  FAIL: " + fail);
+    process.exit(fail === 0 ? 0 : 1);
+  });
+}
