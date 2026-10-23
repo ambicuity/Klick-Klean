@@ -6,8 +6,83 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ## [Unreleased]
 
+### Fixed
+- **Critical: the options page could not save anything.** `normalizeOriginList` was
+  destructured from `KlickKleanSettingsStore`, which never exported it, so the
+  value was `undefined` and the submit handler threw a `TypeError` before
+  `saveSettings`/`saveAllowlist` were ever called. Every option -- categories,
+  scope, time range, origins, allowlist, expert mode, notifications -- was
+  silently discarded, and the allowlist field failed to render because its read
+  callback threw too. (#1)
+- **Critical: selecting the "Custom" time range permanently broke cleanup.** The
+  options page offered the value with no way to express a custom range, and the
+  submit handler never persisted `customRange`. That stored `timeRange: "custom"`
+  with `customRange: null`, which the planner rejects with
+  `INVALID_CUSTOM_RANGE` -- so every later cleanup run failed with a generic
+  "Could not process this request." and no UI could repair it. The custom range
+  is now configurable, and `normalizeSettings` heals the broken state written by
+  1.0.1 by falling back to all-time. (#2)
+- **A custom range's `end` bound was silently discarded.** Chrome's
+  `browsingData.remove` accepts only a lower time bound, so a range of
+  "1 Jan - 2 Jan" removed *everything* after 1 Jan. The planner now emits a
+  `CUSTOM_RANGE_END_UNSUPPORTED` limitation instead of over-deleting quietly.
+  (#3)
+- **Presets were decorative.** Selecting a preset stored its id and nothing
+  else -- the preset's categories, time range and scope were discarded, the
+  popup could not offer presets at all, and the worker ignored `presetId`.
+  Presets are now applied in both surfaces. (#4)
+- **"Close all windows and tabs" was always reported as succeeded**, even when
+  nothing was closed: the function swallowed every failure internally, so the
+  caller's `catch` branch was unreachable. It now returns a structured result
+  and reports `failed` when the keeper window or any window could not be
+  closed. (#5)
+- **`currentSite` scope could delete a different origin than the one the user
+  confirmed.** The popup resolved the origin for its banner and then discarded
+  it; the worker ran a second `tabs.query({currentWindow: true})`, which from a
+  service worker resolves against the last-focused window rather than the
+  window the user acted in. The popup now hands the confirmed origin over and
+  the worker prefers it, and the report states the origin that was cleaned.
+  (#6)
+- **A failed storage read hung the cleanup run and latched the operation lock.**
+  The read dereferenced an `undefined` result inside Chrome's callback, so the
+  awaited promise never settled and every later cleanup returned
+  `CLEANUP_IN_PROGRESS` for the next 60 seconds. Reads now check
+  `chrome.runtime.lastError` and always call back. (#7)
+- **Failed storage writes were reported as "Settings saved!".** The options page
+  and the popup rendered the success state unconditionally, so a rejected write
+  (a per-item sync quota overrun, for instance) left the extension running with
+  the previous scope and allowlist while the user believed the new ones were in
+  force. Both surfaces now report the failure. (#8)
+- **The cleanup report discarded the failure reason.** The worker captured a
+  detail message for every failed category and the popup never rendered it, so
+  every failure showed the same generic "Cleanup could not fully complete."
+  Failed categories now show their captured detail. (#9)
+- **Screen readers announced every locale as English.** The popup, options and
+  onboarding pages hardcoded `<html lang="en">`, and the i18n layer only set the
+  attribute when it was empty -- so it never was. The real UI language is now
+  always applied. (`privacy.html` keeps `lang="en"`: it carries no message
+  tokens and is genuinely English-only.) (#10)
+
+### Added
+- Dependency-free test suites that exercise the real surfaces: a DOM stub and a
+  `vm` harness that replays the module graph, the popup, the options page and
+  the service worker against stubbed browser APIs
+  (`tests/helpers/`, `tests/storage-store.test.js`, `tests/ui-surfaces.test.js`,
+  `tests/service-worker.test.js`). Every fix above is covered by a test that
+  fails without it.
+- A "Preset" selector in the popup, so a preset can be run without visiting
+  the options page.
+
 ### Changed
-- No unreleased changes currently tracked.
+- The custom time range is start-only in the UI, with an explicit hint that
+  Chrome's cleanup API cannot limit a range to an end date.
+
+### Notes
+- The new messages (`optionsSaveFailed`, `optionsCustomRange*`,
+  `popupPreset*`, `reportOriginLabel`, `tabsCloseFailed`) exist in `en` only, so
+  the other 34 locales fall back to English for them. This is cosmetic and
+  matches the existing situation with the `preview*` keys; `npm run i18n:validate`
+  reports it as a warning, not an error.
 
 ## [1.0.1] - 2026-07-10
 
