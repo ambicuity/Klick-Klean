@@ -75,6 +75,10 @@ function createNotification(titleKey, messageKey) {
   });
 }
 
+// Closes every window except a freshly created keeper window.
+//
+// Returns a structured result instead of swallowing failures: the caller has
+// to be able to say "nothing was closed" truthfully (#5).
 async function closeAllWindowsAndTabs() {
   let keeperId = null;
   try {
@@ -85,23 +89,49 @@ async function closeAllWindowsAndTabs() {
     }
   } catch (error) {
     console.error("closeAllWindowsAndTabs: failed to create keeper", error);
-    return;
+    return {
+      ok: false,
+      closed: 0,
+      failed: 0,
+      detail: error && error.message ? String(error.message) : ""
+    };
   }
+
+  let closed = 0;
+  let failed = 0;
 
   try {
     const wins = await chrome.windows.getAll({ populate: false });
-    const removals = [];
 
-    for (const win of wins) {
-      if (win.id !== keeperId) {
-        removals.push(chrome.windows.remove(win.id).catch(() => null));
-      }
-    }
-
-    await Promise.all(removals);
+    await Promise.all(
+      wins.map((win) => {
+        if (win.id === keeperId) {
+          return Promise.resolve(true);
+        }
+        return chrome.windows
+          .remove(win.id)
+          .then(() => {
+            closed += 1;
+            return true;
+          })
+          .catch((error) => {
+            failed += 1;
+            console.error("closeAllWindowsAndTabs: failed to remove window", win.id, error);
+            return false;
+          });
+      })
+    );
   } catch (error) {
     console.error("closeAllWindowsAndTabs: error removing windows", error);
+    failed += 1;
   }
+
+  return {
+    ok: failed === 0,
+    closed,
+    failed,
+    detail: failed > 0 ? `${failed} window(s) could not be closed` : ""
+  };
 }
 
 function getActiveOrigin() {
@@ -308,11 +338,13 @@ async function handleCleanup(message) {
     }
 
     if (plan.hasTabsAction) {
-      try {
-        await closeAllWindowsAndTabs();
+      const tabsResult = await closeAllWindowsAndTabs();
+      if (tabsResult.ok) {
         categoryResults.push(createCategoryResult("tabs", "succeeded", "tabsClosedResult"));
-      } catch (error) {
-        categoryResults.push(createCategoryResult("tabs", "failed", "cleanupFailed", error?.message || ""));
+      } else {
+        categoryResults.push(
+          createCategoryResult("tabs", "failed", "tabsCloseFailed", tabsResult.detail)
+        );
       }
     }
 

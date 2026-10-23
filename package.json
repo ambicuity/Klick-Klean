@@ -8,6 +8,7 @@
     "test:module-graph": "node tests/module-graph.test.js",
     "test:storage-store": "node tests/storage-store.test.js",
     "test:ui-surfaces": "node tests/ui-surfaces.test.js",
-    "test": "npm run test:integrity && npm run test:module-graph && npm run test:storage-store && npm run test:ui-surfaces && npm run i18n:validate"
+    "test:service-worker": "node tests/service-worker.test.js",
+    "test": "npm run test:integrity && npm run test:module-graph && npm run test:storage-store && npm run test:ui-surfaces && npm run test:service-worker && npm run i18n:validate"
   }
 }
