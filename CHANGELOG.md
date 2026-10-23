@@ -6,6 +6,11 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ## [Unreleased]
 
+### Changed
+- No unreleased changes currently tracked.
+
+## [1.1.0] - 2026-10-22
+
 ### Fixed
 - **Critical: the options page could not save anything.** `normalizeOriginList` was
   destructured from `KlickKleanSettingsStore`, which never exported it, so the
@@ -83,6 +88,16 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
   the other 34 locales fall back to English for them. This is cosmetic and
   matches the existing situation with the `preview*` keys; `npm run i18n:validate`
   reports it as a warning, not an error.
+
+### Release
+- The Chrome Web Store publish workflow now authenticates with a **Google Cloud
+  service account** (`CWS_SERVICE_ACCOUNT_JSON`) instead of an OAuth refresh
+  token, and calls the Chrome Web Store **v2** API through
+  `scripts/publish-chrome-webstore.mjs`. The previous OAuth path required three
+  secrets (`CWS_CLIENT_ID`, `CWS_CLIENT_SECRET`, `CWS_REFRESH_TOKEN`) that were
+  never configured in this repository, so the publish step could not have
+  succeeded. `docs/RELEASING.md` now documents the mechanism that is actually
+  in use.
 
 ## [1.0.1] - 2026-07-10
 

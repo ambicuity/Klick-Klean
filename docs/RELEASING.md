@@ -5,61 +5,58 @@ Updates are published to the Chrome Web Store **directly from GitHub** by the
 package (runtime files only), and uploads + publishes via the Chrome Web Store
 API.
 
+## How the workflow authenticates
+
+The workflow authenticates with a **Google Cloud service account**, not an OAuth
+refresh token. The service account is granted the
+`https://www.googleapis.com/auth/chromewebstore` scope by its own key, so no
+refresh token has to be rotated or re-issued.
+
+Two identifiers are involved:
+
+| Name | Where it lives | What it is |
+|------|----------------|------------|
+| `CWS_EXTENSION_ID` | repository **secret** | this extension's Web Store item id — `gaeddipmgpkeanmjbcenmcnjckhfjbkd` |
+| `CWS_PUBLISHER_ID` | `.github/workflows/publish.yml` (`env`) | the publisher id from the dashboard's Account page — `8b00f945-9ad2-4149-a831-8f017da3a783` |
+
+The publisher id is a public identifier (it appears in dashboard URLs), so it is
+kept in the workflow rather than hidden in a secret. The item id and the service
+account key are secrets.
+
+The service account in use is
+`chrome-webstore-ci@gen-lang-client-0993328265.iam.gserviceaccount.com`. It is
+registered as a publisher on the developer account that owns this listing, and
+its project has the Chrome Web Store API enabled.
+
 ## One-time setup: repository secrets
 
 Add these under **Settings → Secrets and variables → Actions**:
 
 | Secret | What it is |
 |--------|------------|
-| `CWS_EXTENSION_ID` | This extension's Web Store ID — `gaeddipmgpkeanmjbcenmcnjckhfjbkd` |
-| `CWS_CLIENT_ID` | OAuth2 client ID |
-| `CWS_CLIENT_SECRET` | OAuth2 client secret |
-| `CWS_REFRESH_TOKEN` | OAuth2 refresh token |
+| `CWS_EXTENSION_ID` | this extension's Web Store item id |
+| `CWS_SERVICE_ACCOUNT_JSON` | the service-account key file, as JSON text |
 
-### The OAuth credentials are account-wide and reusable
+GitHub repository secrets do not carry across repos, so the service-account
+key has to be present in **this** repo as well as in any other repo that
+publishes from the same account.
 
-`CWS_CLIENT_ID`, `CWS_CLIENT_SECRET`, and `CWS_REFRESH_TOKEN` authenticate the
-**Google developer account**, not a single extension. One set of tokens can
-publish **every extension owned by that account**. If you already publish another
-extension of yours from GitHub, reuse the exact same three values here — only
-`CWS_EXTENSION_ID` differs per extension (for Klick Klean it is
-`gaeddipmgpkeanmjbcenmcnjckhfjbkd`).
+### Adding a service account to the Web Store account
 
-GitHub repository secrets do not carry across repos, so copy the three OAuth
-values into *this* repo's secrets (or, if both repos live under a GitHub org, use
-an org-level secret shared to both).
+1. In **Google Cloud Console**, pick (or create) the project that will own the
+   service account, and enable the **Chrome Web Store API** for it.
+2. Create a service account and download its JSON key.
+3. In the **Chrome Web Store developer dashboard** → *Account* → *Service
+   accounts*, add the service account's email address. Without this the API
+   returns HTTP 403 even with a valid key.
+4. Install the key in the repo:
 
-The account behind the tokens must have **publisher access** to the Klick Klean
-listing (returns HTTP 403 otherwise).
+   ```
+   cat service-account.json | gh secret set CWS_SERVICE_ACCOUNT_JSON --repo ambicuity/Klick-Klean
+   ```
 
-### Obtaining the OAuth credentials (if you don't already have them)
-
-Easiest — the helper tool from the author of `chrome-webstore-upload-cli` walks
-through the Google Cloud setup, creates a Desktop OAuth client, opens the browser
-to authorize, and prints all three values:
-
-```
-npx chrome-webstore-upload-keys
-```
-
-Manual alternative:
-
-1. In **Google Cloud Console**, create (or reuse) a project and enable the
-   **Chrome Web Store API**.
-2. Configure the **OAuth consent screen** and add your Google account.
-3. Create an **OAuth client ID** of type **Desktop app** → gives the client ID
-   and client secret.
-4. Run the OAuth flow with that client to obtain a refresh token (the helper tool
-   above automates exactly this step).
-
-> ⚠️ **Set the OAuth consent screen to "In production," not "Testing."** In
-> Testing mode Google expires the refresh token after **7 days**, and the workflow
-> will start failing a week later with an auth error. Publishing the consent
-> screen makes the token long-lived.
-
-> Note: Google's old out-of-band (`urn:ietf:wg:oauth:2.0:oob`) copy-paste-code
-> flow is deprecated for new clients — use the helper tool or a Desktop-app
-> loopback flow instead.
+   The same key can publish **every extension owned by that account**; only
+   `CWS_EXTENSION_ID` differs per extension.
 
 ## Cutting a release
 
@@ -67,16 +64,32 @@ Manual alternative:
    match, and must be higher than the currently published version — the Web Store
    rejects re-uploads of an existing version).
 2. Update `CHANGELOG.md`.
-3. Commit, then tag and push:
+3. Commit and merge the release PR, then tag and push:
    ```
-   git tag v1.0.1
-   git push origin v1.0.1
+   git tag v1.1.0
+   git push origin v1.1.0
    ```
-   The tag push triggers the workflow. It fails fast if the tag version and
-   `manifest.json` version disagree.
+   The tag push triggers the workflow. It fails fast if the tag version and the
+   `manifest.json` / `package.json` versions disagree.
 
 You can also run the workflow manually from the **Actions** tab
-(`workflow_dispatch`).
+(`workflow_dispatch`); its `publish` input controls whether the uploaded draft
+is submitted for review or left as a draft.
+
+## Checking the review status
+
+The publish script prints the submitted and published revision states. To check
+them later without uploading anything:
+
+```
+CWS_SERVICE_ACCOUNT_JSON="$(cat service-account.json)" \
+CWS_EXTENSION_ID=gaeddipmgpkeanmjbcenmcnjckhfjbkd \
+CWS_PUBLISHER_ID=8b00f945-9ad2-4149-a831-8f017da3a783 \
+node scripts/publish-chrome-webstore.mjs --status
+```
+
+A submitted revision sits in `PENDING_REVIEW` until Google finishes reviewing
+it; the published revision only changes after approval.
 
 ## What the workflow ships
 
@@ -84,13 +97,13 @@ You can also run the workflow manually from the **Actions** tab
 (`manifest.json`, `sw.js`, `i18n.js`, `privacy.html`, `LICENSE`, `shared/`,
 `cleanup/`, `popup/`, `options/`, `onboarding/`, `static/`, `_locales/`) and zips
 them. Development files (`tests/`, `scripts/`, `package.json`, `.git/`, docs) are
-**not** shipped. Promotional images under `store-assets/` are uploaded through the
-dashboard listing, not in the package.
+**not** shipped. Promotional images under `store-assets/` are uploaded through
+the dashboard listing, not in the package.
 
 ## Local dry run
 
 ```
-npm test                 # integrity + module-graph + i18n validation
+npm test                    # integrity + module-graph + storage-store + ui-surfaces + service-worker + i18n
 bash scripts/build-zip.sh   # produces dist/klick-klean-<version>.zip
 ```
 
