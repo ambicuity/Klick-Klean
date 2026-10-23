@@ -458,7 +458,11 @@ document.addEventListener("DOMContentLoaded", () => {
       categories: selectedCategories()
     });
 
-    saveSettings(updated, () => {
+    saveSettings(updated, (_saved, saveError) => {
+      if (saveError) {
+        setStatus("optionsSaveFailed", "error");
+        return;
+      }
       currentSettings = updated;
       setStatus("optionsSaved", "success");
       renderPreview();

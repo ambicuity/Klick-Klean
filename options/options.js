@@ -243,8 +243,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalDropped = droppedOrigins + droppedAllowlist;
     const totalRaw = rawOrigins.length + rawAllowlist.length;
 
-    saveSettings(settings, () => {
-      saveAllowlist(allowlist, (savedAllowlist) => {
+    saveSettings(settings, (_saved, saveError) => {
+      if (saveError) {
+        status.textContent = i18nT("optionsSaveFailed");
+        status.className = "status status--warn";
+        return;
+      }
+
+      saveAllowlist(allowlist, (savedAllowlist, allowlistError) => {
+        if (allowlistError) {
+          status.textContent = i18nT("optionsSaveFailed");
+          status.className = "status status--warn";
+          return;
+        }
+
         document.getElementById("defaultOrigins").value = normalizedOrigins.join("\n");
         document.getElementById("allowlistOrigins").value = savedAllowlist.join("\n");
 
