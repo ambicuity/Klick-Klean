@@ -552,6 +552,27 @@ async function main() {
     ok("no empty detail element was added", reportText.indexOf("report-item__detail") === -1, JSON.stringify(reportText));
   }
 
+  console.log("\n[17] The document language reflects the active UI locale (#10)");
+  {
+    const sandbox = createRuntime({ chrome: makeChrome({ uiLanguage: "de-DE" }) });
+    const doc = sandbox.document;
+
+    ok(
+      "a pre-existing lang=\"en\" is replaced by the UI language",
+      doc.documentElement.lang === "de-DE",
+      doc.documentElement.lang
+    );
+    ok("the direction is still applied", doc.documentElement.dir === "ltr", doc.documentElement.dir);
+  }
+
+  {
+    const sandbox = createRuntime({ chrome: makeChrome({ uiLanguage: "ar" }) });
+    const doc = sandbox.document;
+
+    ok("the Arabic locale is applied", doc.documentElement.lang === "ar", doc.documentElement.lang);
+    ok("right-to-left is applied", doc.documentElement.dir === "rtl", doc.documentElement.dir);
+  }
+
   console.log("\n================ RESULT ================");
   console.log("PASS: " + pass + "  FAIL: " + fail);
   process.exit(fail === 0 ? 0 : 1);

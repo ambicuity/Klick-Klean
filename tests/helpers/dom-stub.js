@@ -87,6 +87,18 @@ function createElement(tagName, registry) {
     configurable: true
   });
 
+  // `lang` reflects the content attribute, like it does in a browser.
+  Object.defineProperty(el, "lang", {
+    get() {
+      return Object.prototype.hasOwnProperty.call(attributes, "lang") ? attributes.lang : "";
+    },
+    set(value) {
+      attributes.lang = value == null ? "" : String(value);
+    },
+    enumerable: true,
+    configurable: true
+  });
+
   Object.defineProperty(el, "innerHTML", {
     get() {
       return el._html || "";

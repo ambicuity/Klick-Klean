@@ -101,9 +101,10 @@
     }
 
     const normalized = uiLanguage.replace(/_/g, "-");
-    if (!document.documentElement.lang) {
-      document.documentElement.lang = normalized;
-    }
+    // Always apply the active UI language. A hardcoded lang="en" in the
+    // markup meant assistive technology announced every one of the supported
+    // locales as English (#10).
+    document.documentElement.lang = normalized;
 
     const primary = normalized.split("-")[0].toLowerCase();
     const rtlLangs = new Set(["ar", "fa", "he", "ur"]);

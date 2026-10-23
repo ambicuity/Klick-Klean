@@ -80,6 +80,33 @@ for (const htmlRel of HTML_FILES) {
   }
 }
 
+console.log("\n[4] Localized surfaces do not hardcode a language (#10)");
+{
+  // These pages carry __MSG_ tokens and are rendered in the browser's UI
+  // language. A fixed lang attribute would make assistive technology announce
+  // every locale as English. privacy.html is English-only by design, so it
+  // keeps lang="en".
+  const LOCALIZED_HTML = [
+    "popup/popup.html",
+    "options/options.html",
+    "onboarding/welcome.html"
+  ];
+  for (const htmlRel of LOCALIZED_HTML) {
+    const html = fs.readFileSync(path.join(ROOT, htmlRel), "utf8");
+    ok(
+      htmlRel + " has no hardcoded lang attribute",
+      !/<html[^>]*\slang\s*=/i.test(html),
+      "hardcoded lang attribute"
+    );
+  }
+
+  const privacyHtml = fs.readFileSync(path.join(ROOT, "privacy.html"), "utf8");
+  ok(
+    "privacy.html keeps its English lang attribute",
+    /<html[^>]*\slang\s*=\s*"en"/i.test(privacyHtml)
+  );
+}
+
 console.log("\n================ RESULT ================");
 console.log("PASS: " + pass + "  FAIL: " + fail);
 process.exit(fail === 0 ? 0 : 1);
