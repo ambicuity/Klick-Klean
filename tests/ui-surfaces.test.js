@@ -274,6 +274,161 @@ async function main() {
     ok("the healed settings produce a runnable plan", plan.errors.length === 0, JSON.stringify(plan.errors));
   }
 
+  console.log("\n[9] Selecting a preset applies it in the options page (#4)");
+  {
+    const sandbox = loadOptions();
+    const doc = sandbox.document;
+
+    const select = doc.getElementById("defaultPreset");
+    select.value = "quickPrivacy";
+    select.dispatch("change");
+
+    ok(
+      "the preset selected its categories",
+      doc.getElementById("history").checked === true && doc.getElementById("cookies").checked === true,
+      "history=" + doc.getElementById("history").checked + " cookies=" + doc.getElementById("cookies").checked
+    );
+    ok(
+      "categories outside the preset stayed unchecked",
+      doc.getElementById("indexedDB").checked === false,
+      "indexedDB=" + doc.getElementById("indexedDB").checked
+    );
+    ok(
+      "the preset applied its time range",
+      doc.getElementById("defaultTimeRange").value === "last24h",
+      doc.getElementById("defaultTimeRange").value
+    );
+
+    doc.getElementById("settingsForm").dispatch("submit");
+    const written = sandbox.chrome.writes.sync[0];
+    ok(
+      "the preset categories were persisted",
+      Boolean(written) &&
+        written.settings.categories.history === true &&
+        written.settings.categories.cookies === true &&
+        written.settings.categories.indexedDB === false,
+      written && JSON.stringify(written.settings.categories)
+    );
+    ok(
+      "the preset time range was persisted",
+      Boolean(written) && written.settings.timeRange === "last24h",
+      written && written.settings.timeRange
+    );
+    ok(
+      "the preset id was persisted",
+      Boolean(written) && written.settings.presetId === "quickPrivacy",
+      written && written.settings.presetId
+    );
+  }
+
+  console.log("\n[10] Selecting a preset applies it in the popup (#4)");
+  {
+    const sandbox = loadPopup();
+    const doc = sandbox.document;
+    await tick();
+
+    const select = doc.getElementById("presetSelect");
+    select.value = "fixBrokenWebsite";
+    select.dispatch("change");
+
+    ok(
+      "the preset selected its categories",
+      doc.getElementById("opt-cookies").checked === true &&
+        doc.getElementById("opt-cacheStorage").checked === true,
+      "cookies=" + doc.getElementById("opt-cookies").checked
+    );
+    ok(
+      "categories outside the preset stayed unchecked",
+      doc.getElementById("opt-history").checked === false,
+      "history=" + doc.getElementById("opt-history").checked
+    );
+
+    // Every preset touches a high-risk category, so the confirmation step is
+    // part of the flow.
+    doc.getElementById("clean").dispatch("click");
+    doc.getElementById("confirmRisk").checked = true;
+    doc.getElementById("confirmRisk").dispatch("change");
+    doc.getElementById("confirmRun").dispatch("click");
+
+    ok("a cleanup request was sent", sandbox.chrome.sentMessages.length === 1);
+    const sent = sandbox.chrome.sentMessages[0];
+    ok(
+      "the request used the preset categories",
+      Boolean(sent) && sent.categories.cookies === true && sent.categories.cacheStorage === true,
+      sent && JSON.stringify(sent.categories)
+    );
+    ok(
+      "the request used the preset scope",
+      Boolean(sent) && sent.scope === "currentSite",
+      sent && sent.scope
+    );
+    ok(
+      "the request carried the preset id",
+      Boolean(sent) && sent.presetId === "fixBrokenWebsite",
+      sent && sent.presetId
+    );
+  }
+
+  console.log("\n[11] A manual edit is respected and keeps the preset's scope (#4)");
+  {
+    const sandbox = loadPopup();
+    const doc = sandbox.document;
+    await tick();
+
+    const select = doc.getElementById("presetSelect");
+    select.value = "fixBrokenWebsite";
+    select.dispatch("change");
+    ok("the preset is active", doc.getElementById("opt-cookies").checked === true);
+
+    // Add one more category by hand.
+    doc.getElementById("opt-history").checked = true;
+    doc.getElementById("opt-history").dispatch("change");
+
+    doc.getElementById("clean").dispatch("click");
+    doc.getElementById("confirmRisk").checked = true;
+    doc.getElementById("confirmRisk").dispatch("change");
+    doc.getElementById("confirmRun").dispatch("click");
+
+    const sent = sandbox.chrome.sentMessages[0];
+    ok(
+      "the manual addition was included",
+      Boolean(sent) && sent.categories.history === true,
+      sent && JSON.stringify(sent.categories)
+    );
+    ok(
+      "the visible categories were used, not the preset's own list",
+      Boolean(sent) && sent.categories.cookies === true,
+      sent && JSON.stringify(sent.categories)
+    );
+    ok(
+      "the preset still supplied the scope",
+      Boolean(sent) && sent.scope === "currentSite",
+      sent && sent.scope
+    );
+  }
+
+  console.log("\n[12] An expert-only preset is not silently dropped (#4)");
+  {
+    const sandbox = loadOptions();
+    const doc = sandbox.document;
+
+    doc.getElementById("expertMode").checked = true;
+    doc.getElementById("expertMode").dispatch("change");
+
+    const select = doc.getElementById("defaultPreset");
+    select.value = "fullWipe";
+    select.dispatch("change");
+
+    doc.getElementById("expertMode").checked = false;
+    doc.getElementById("expertMode").dispatch("change");
+
+    ok(
+      "the expert-only preset is still selected",
+      select.value === "fullWipe",
+      "value=" + select.value
+    );
+  }
+
   console.log("\n================ RESULT ================");
   console.log("PASS: " + pass + "  FAIL: " + fail);
   process.exit(fail === 0 ? 0 : 1);

@@ -108,7 +108,13 @@ function makeChrome(options = {}) {
       onMessage: { addListener() {} },
       onInstalled: { addListener() {} },
       getURL: (p) => "chrome-extension://klickklean/" + p,
-      openOptionsPage() {}
+      openOptionsPage() {},
+      sendMessage(message, callback) {
+        chrome.sentMessages.push(message);
+        if (typeof callback === "function") {
+          callback(options.messageResponse || { ok: true, code: "CLEANUP_COMPLETE", categories: [] });
+        }
+      }
     }),
     i18n: {
       getMessage,
@@ -153,6 +159,7 @@ function makeChrome(options = {}) {
 
   chrome.state = state;
   chrome.writes = writes;
+  chrome.sentMessages = [];
   return chrome;
 }
 

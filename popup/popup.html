@@ -17,6 +17,17 @@
 
     <p id="currentOrigin" class="note" aria-label="Active site origin"></p>
 
+    <section class="zone zone--presets" aria-labelledby="presetHeading" role="group">
+      <div class="zone__head">
+        <h2 id="presetHeading">__MSG_popupPresetHeading__</h2>
+      </div>
+      <div class="field">
+        <label class="field__label" for="presetSelect" id="presetSelectLabel">__MSG_popupPresetLabel__</label>
+        <select id="presetSelect" class="field__control"></select>
+        <p class="field__hint" id="presetHint" hidden></p>
+      </div>
+    </section>
+
     <section class="zone zone--categories" aria-labelledby="cleanupCategoriesHeading" role="group">
       <div class="zone__head">
         <h2 id="cleanupCategoriesHeading">__MSG_popupCategoriesHeading__</h2>
@@ -89,7 +100,9 @@
   <script src="../shared/utils.js"></script>
   <script src="../shared/preferences.js"></script>
   <script src="../shared/settings-store.js"></script>
+  <script src="../cleanup/time-range.js"></script>
   <script src="../cleanup/capability-matrix.js"></script>
+  <script src="../cleanup/presets.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

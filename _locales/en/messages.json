@@ -317,6 +317,14 @@
     "message": "Klick Klean only uses Chrome cleanup APIs for categories you choose. Cleanup runs locally in your browser and no browsing data is sent to external servers.",
     "description": "Detailed permission and privacy rationale in popup."
   },
+  "popupPresetHeading": {
+    "message": "Preset",
+    "description": "Heading for the preset selector in the popup."
+  },
+  "popupPresetLabel": {
+    "message": "Apply a preset",
+    "description": "Label for the preset dropdown in the popup."
+  },
   "popupPermissionSummary": {
     "message": "Why these permissions are required",
     "description": "Summary text for permission rationale disclosure in popup."
